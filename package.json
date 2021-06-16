@@ -1,6 +1,6 @@
 {
-  "name": "vue-tronlink",
-  "version": "0.2.104",
+  "name": "vue-blocklink",
+  "version": "0.2.105",
   "description": "Vue support for the Blockchain Link browser extension",
   "main": "src/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "lint": "eslint './**/*.{js,vue}'",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
-  "repository": "git@gitee.com:jjhoc/vue-tronlink.git",
+  "repository": "git@github.com:tokenchain/vue-blocklink.git",
   "keywords": [
     "vue",
     "vue2",
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/tokenchain/vue-blocklink/issues"
   },
-  "homepage": "https://gitee.com/jjhoc/vue-tronlink",
+  "homepage": "https://github.com/tokenchain/vue-blocklink.git",
   "babel": {
     "presets": [
       "@babel/preset-env"

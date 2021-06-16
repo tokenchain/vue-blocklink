@@ -58,7 +58,6 @@ npmdeploy(){
 gitpush(){
     local gitcheck=$(git diff --shortstat)
     git add .
-    #git remote add origin https://gitee.com/jjhoc/vue-tronlink.git
     git commit -m "Please check! $gitcheck"
     git push
     echo "♻️ You can open ${GIT_LOC} or git clone ${GIT_LOC}.git to copy to the local"
@@ -71,10 +70,10 @@ taobao(){
   cnpm info vue-tronlink
 }
 
-GIT_LOC=https://gitee.com/jjhoc/vue-tronlink.git
+GIT_LOC=https://github.com/tokenchain/vue-blocklink.git
 AUTO_INSTALL=0
 #tsc -b
-PROJECT_NAME="vue-tronlink"
+PROJECT_NAME="vue-blocklink"
 VERSION=$(cat version)
 increment_version $VERSION > version
 VERSION=$(cat version)
@@ -83,8 +82,8 @@ NODEPFILE="package.json"
 mod_package_json ".version" $VERSION
 mod_package_json ".name" $PROJECT_NAME
 mod_package_json ".author" "HeskemoKondax"
-mod_package_json ".repository" "git@gitee.com:jjhoc/vue-tronlink.git"
-mod_package_json ".homepage" "https://gitee.com/jjhoc/vue-tronlink"
+mod_package_json ".repository" "git@github.com:tokenchain/vue-blocklink.git"
+mod_package_json ".homepage" "https://github.com/tokenchain/vue-blocklink.git"
 echo "==== done ====="
 gitpush
 npmdeploy
