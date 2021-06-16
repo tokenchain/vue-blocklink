@@ -1,0 +1,39 @@
+version: 2 # use CircleCI 2.0
+jobs: # a collection of steps
+  build: # runs not using Workflows must have a `build` job as entry point
+    docker: # run the steps with Docker
+      - image: circleci/node:4.8.2 # ...with this image as the primary container; this is where all `steps` will run
+    steps: # a collection of executable commands
+      - checkout # special step to check out source code to working directory
+      - run:
+          name: 'Update NPM package manager'
+          command: 'sudo npm cache clean -f && sudo npm install -g n && sudo n stable'
+      - restore_cache: # special step to restore the dependency cache
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: 'Install all project dependencies and packages'
+          command: npm install
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: "Run linting"
+          command: npm run lint -- --format junit -o reports/eslint/results.xml
+      - run: # run tests
+          name: 'Run unit-tests'
+          environment:
+            JEST_JUNIT_OUTPUT: reports/jest/results.xml
+          command: npm run test -- --ci --collectCoverage=true
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: reports
+      - store_artifacts: # special step to save test results as as artifact
+          # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/ 
+          path: reports
+          prefix: tests
+      - store_artifacts: # special step to save test results as as artifact
+          # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/ 
+          path: coverage
+          prefix: coverage
+      # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples

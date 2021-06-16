@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/base/eth/base.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/eth/schemas.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/eth/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/eth/validations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tzdtQx6DqH4xmKgr3Ks3qpmKUU" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/typescript-typings" />
+      <recent name="$PROJECT_DIR$/src/base/tron" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="" />
+      <created>1623776065949</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623776065949</updated>
+      <workItem from="1623776067011" duration="13162000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/address.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/int.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/pointer.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/filter_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/index.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/interfaces.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/array.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/math.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/raw_calldata.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/iterator.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/data_type.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/signature_parser.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/queue.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/rules.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-libs/lib_math_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/lib_asset_data_transfer_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/mixin_weth_utils_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/common_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata_block.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/coordinator/revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange/revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/proxy_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/simple_function_registry_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/wallet_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/ownable_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/signature_validator_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/liquidity_provider_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/meta_transaction_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/spender_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_address_array_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/authorizable_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_bytes_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/broker/revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/transform_erc20_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/safe_math_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/ownable_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/reentrancy_guard_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-forwarder/revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/staking_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/fixed_math_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/abi/TokenTrc20.js" />
+        <option value="$PROJECT_DIR$/src/abi/TronLink.js" />
+        <option value="$PROJECT_DIR$/src/abi/CoinDetail.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/schemas.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/types.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/set.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/blob.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/pointer.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/subscription_manager.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/index.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/set.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/blob.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/pointer.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/base.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/provider_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/index.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/types.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/web3_wrapper.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/types.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xassert/index.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xtypes/index.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/class_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/promisify.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/error_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/random.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/address_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/delete_nested_property.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/token_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/constants.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/hex_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/interval_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/log_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_decoder.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/fetch_async.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_error.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="310" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623820462993">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state x="310" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog/43.25.1493.935@43.25.1493.935" timestamp="1623820462993" />
+    <state x="268" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1623778280170">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state x="268" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/43.25.1493.935@43.25.1493.935" timestamp="1623778280170" />
+    <state x="528" y="247" width="597" height="490" key="find.popup" timestamp="1623828914919">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state x="528" y="247" width="597" height="490" key="find.popup/43.25.1493.935@43.25.1493.935" timestamp="1623828914919" />
+    <state x="632" y="271" key="refactoring.ChangeSignatureDialog" timestamp="1623824431179">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state x="632" y="271" key="refactoring.ChangeSignatureDialog/43.25.1493.935@43.25.1493.935" timestamp="1623824431179" />
+  </component>
+</project>

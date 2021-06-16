@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="22" failures="0" time="2.267">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-02-09T16:41:10" time="1.334" tests="22">
+    <testcase classname=" Useless conversion: hex --&gt; hex" name=" Useless conversion: hex --&gt; hex" time="0.002">
+    </testcase>
+    <testcase classname=" Useless conversion: base58 --&gt; base58" name=" Useless conversion: base58 --&gt; base58" time="0.001">
+    </testcase>
+    <testcase classname=" Useless conversion: tron --&gt; tron" name=" Useless conversion: tron --&gt; tron" time="0">
+    </testcase>
+    <testcase classname=" Useless conversion: trx --&gt; trx" name=" Useless conversion: trx --&gt; trx" time="0">
+    </testcase>
+    <testcase classname=" Conversion: hex --&gt; base58" name=" Conversion: hex --&gt; base58" time="0.005">
+    </testcase>
+    <testcase classname=" Conversion: hex --&gt; tron" name=" Conversion: hex --&gt; tron" time="0.001">
+    </testcase>
+    <testcase classname=" Conversion: hex --&gt; trx" name=" Conversion: hex --&gt; trx" time="0.001">
+    </testcase>
+    <testcase classname=" Conversion: base58 --&gt; hex" name=" Conversion: base58 --&gt; hex" time="0.002">
+    </testcase>
+    <testcase classname=" Conversion: tron --&gt; hex" name=" Conversion: tron --&gt; hex" time="0.001">
+    </testcase>
+    <testcase classname=" Conversion: trx --&gt; hex" name=" Conversion: trx --&gt; hex" time="0.001">
+    </testcase>
+    <testcase classname=" Invalid input format" name=" Invalid input format" time="0">
+    </testcase>
+    <testcase classname=" Invalid output format" name=" Invalid output format" time="0.001">
+    </testcase>
+    <testcase classname=" Invalid both formats" name=" Invalid both formats" time="0">
+    </testcase>
+    <testcase classname=" Invalid input HEX addresses: 0x1234567890abcdef" name=" Invalid input HEX addresses: 0x1234567890abcdef" time="0.001">
+    </testcase>
+    <testcase classname=" Invalid input HEX addresses: Test" name=" Invalid input HEX addresses: Test" time="0">
+    </testcase>
+    <testcase classname=" Invalid input HEX addresses: Hello World!" name=" Invalid input HEX addresses: Hello World!" time="0">
+    </testcase>
+    <testcase classname=" Invalid input HEX addresses: " name=" Invalid input HEX addresses: " time="0">
+    </testcase>
+    <testcase classname=" Invalid input HEX addresses: null" name=" Invalid input HEX addresses: null" time="0">
+    </testcase>
+    <testcase classname=" Invalid input HEX addresses: 0" name=" Invalid input HEX addresses: 0" time="0">
+    </testcase>
+    <testcase classname=" Invalid input HEX addresses: 0" name=" Invalid input HEX addresses: 0" time="0">
+    </testcase>
+    <testcase classname=" Invalid input HEX addresses: -1" name=" Invalid input HEX addresses: -1" time="0">
+    </testcase>
+    <testcase classname=" Invalid input HEX addresses: [object Object]" name=" Invalid input HEX addresses: [object Object]" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>
