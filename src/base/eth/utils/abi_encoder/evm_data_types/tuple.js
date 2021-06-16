@@ -1,4 +1,4 @@
-import { SolidityTypes } from 'ethereum-types';
+import { SolidityTypes } from '../../../types';
 import * as _ from 'lodash';
 import { AbstractSetDataType } from '../abstract_data_types/types/set';
 export class TupleDataType extends AbstractSetDataType {

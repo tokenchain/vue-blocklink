@@ -1,8 +1,7 @@
-import { DataItem, SolidityTypes } from 'ethereum-types';
+import {DataItem, SolidityTypes} from '../../../types';
 import * as _ from 'lodash';
-
-import { DataTypeFactory } from '../abstract_data_types/interfaces';
-import { AbstractSetDataType } from '../abstract_data_types/types/set';
+import {DataTypeFactory} from '../abstract_data_types/interfaces';
+import {AbstractSetDataType} from '../abstract_data_types/types/set';
 
 export class TupleDataType extends AbstractSetDataType {
     public static matchType(type: string): boolean {

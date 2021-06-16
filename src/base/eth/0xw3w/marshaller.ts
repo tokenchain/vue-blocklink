@@ -1,4 +1,4 @@
-import { addressUtils } from '@0x/utils';
+import { addressUtils } from '../utils';
 import {
     BlockParam,
     BlockParamLiteral,
@@ -12,7 +12,8 @@ import {
     Transaction,
     TransactionReceipt,
     TxData,
-} from 'ethereum-types';
+} from '../types';
+// @ts-ignore
 import ethUtil = require('ethereumjs-util');
 import * as _ from 'lodash';
 
@@ -222,7 +223,9 @@ export const marshaller = {
         if (blockParam === undefined) {
             return BlockParamLiteral.Latest;
         }
+        // @ts-ignore
         const encodedBlockParam = _.isNumber(blockParam) ? utils.numberToHex(blockParam) : blockParam;
+        // @ts-ignore
         return encodedBlockParam;
     },
     /**

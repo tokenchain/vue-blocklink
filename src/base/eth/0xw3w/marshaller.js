@@ -1,5 +1,5 @@
-import { addressUtils } from '@0x/utils';
-import { BlockParamLiteral, } from 'ethereum-types';
+import { addressUtils } from '../utils';
+import { BlockParamLiteral, } from '../types';
 import * as _ from 'lodash';
 import { utils } from './utils';
 export const marshaller = {

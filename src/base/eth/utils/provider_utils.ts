@@ -5,7 +5,7 @@ import {
     JSONRPCResponsePayload,
     SupportedProvider,
     ZeroExProvider,
-} from 'ethereum-types';
+} from '../types';
 import * as _ from 'lodash';
 
 export const providerUtils = {

@@ -1,4 +1,4 @@
-import { SolidityTypes } from 'ethereum-types';
+import { SolidityTypes } from '../../../types';
 import * as ethUtil from 'ethereumjs-util';
 import { BigNumber } from '../../configured_bignumber';
 import { AbstractBlobDataType } from '../abstract_data_types/types/blob';

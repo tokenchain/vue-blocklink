@@ -1,4 +1,4 @@
-import { DataItem, SolidityTypes } from 'ethereum-types';
+import { DataItem, SolidityTypes } from '../../../types';
 import * as ethUtil from 'ethereumjs-util';
 import * as _ from 'lodash';
 

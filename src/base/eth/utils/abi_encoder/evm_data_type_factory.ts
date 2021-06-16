@@ -1,5 +1,5 @@
 /* tslint:disable max-classes-per-file */
-import { DataItem, MethodAbi } from 'ethereum-types';
+import { DataItem, MethodAbi } from '../../types';
 import * as _ from 'lodash';
 
 import { generateDataItemFromSignature } from './utils/signature_parser';
@@ -159,6 +159,7 @@ function consolidateDataItemsIntoSingle(input: DataItem | DataItem[] | string): 
             components: dataItems,
         };
     } else {
+        // @ts-ignore
         dataItem = _.isString(input) ? generateDataItemFromSignature(input) : (input as DataItem);
     }
     return dataItem;

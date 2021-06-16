@@ -1,4 +1,5 @@
 declare module 'ganache-core' {
+    // @ts-ignore
     import EthereumTypes = require('ethereum-types');
     export interface GanacheOpts {
         verbose?: boolean;

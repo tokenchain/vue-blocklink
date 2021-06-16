@@ -1,4 +1,4 @@
-import { DataItem } from 'ethereum-types';
+import { DataItem } from '../../../types';
 
 import { DataType } from '../abstract_data_types/data_type';
 import { DataTypeFactory } from '../abstract_data_types/interfaces';

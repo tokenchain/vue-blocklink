@@ -113,10 +113,34 @@ function splitTupleTypes(type) {
     types.push(currToken);
     return types;
 }
+function formatABIDataItem(abi, value, formatter) {
+    const trailingArrayRegex = /\[\d*\]$/;
+    if (abi.type.match(trailingArrayRegex)) {
+        const arrayItemType = abi.type.replace(trailingArrayRegex, '');
+        return _.map(value, val => {
+            const arrayItemAbi = {
+                ...abi,
+                type: arrayItemType,
+            };
+            return formatABIDataItem(arrayItemAbi, val, formatter);
+        });
+    }
+    else if (abi.type === 'tuple') {
+        const formattedTuple = {};
+        _.forEach(abi.components, componentABI => {
+            formattedTuple[componentABI.name] = formatABIDataItem(componentABI, value[componentABI.name], formatter);
+        });
+        return formattedTuple;
+    }
+    else {
+        return formatter(abi.type, value);
+    }
+}
 export const abiUtils = {
     parseEthersParams,
     isAbiDataEqual,
     splitTupleTypes,
+    formatABIDataItem,
     parseFunctionParam(param) {
         if (param.type === 'tuple') {
             const tupleComponents = param.components;

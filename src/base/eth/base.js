@@ -9,9 +9,32 @@ import { default as VM } from 'ethereumjs-vm';
 import * as _ from "lodash";
 import PStateManager from 'ethereumjs-vm/dist/state/promisified';
 import { AbiType, } from "./types";
-export { linkLibrariesInBytecode, methodAbiToFunctionSignature } from './utils';
 export { SubscriptionManager } from './subscription_manager';
 const ARBITRARY_PRIVATE_KEY = 'e331b6d69882b4cb4ea581d88e0b604039a3de5967688d3dcffdd2270c0fd109';
+export function methodAbiToFunctionSignature(methodAbi) {
+    const method = AbiEncoder.createMethod(methodAbi.name, methodAbi.inputs);
+    return method.getSignature();
+}
+export function linkLibrariesInBytecode(artifact, libraryAddresses) {
+    const bytecodeArtifact = artifact.compilerOutput.evm.bytecode;
+    let bytecode = bytecodeArtifact.object.substr(2);
+    for (const link of Object.values(bytecodeArtifact.linkReferences)) {
+        for (const [libraryName, libraryRefs] of Object.entries(link)) {
+            const libraryAddress = libraryAddresses[libraryName];
+            if (!libraryAddress) {
+                throw new Error(`${artifact.contractName} has an unlinked reference library ${libraryName} but no addresses was provided'.`);
+            }
+            for (const ref of libraryRefs) {
+                bytecode = [
+                    bytecode.substring(0, ref.start * 2),
+                    libraryAddress.toLowerCase().substr(2),
+                    bytecode.substring((ref.start + ref.length) * 2),
+                ].join('');
+            }
+        }
+    }
+    return `0x${bytecode}`;
+}
 function formatABIDataItem(type, components, value) {
     const trailingArrayRegex = /\[\d*\]$/;
     if (type.match(trailingArrayRegex)) {

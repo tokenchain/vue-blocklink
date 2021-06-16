@@ -1,4 +1,4 @@
-import { DataItem, SolidityTypes } from 'ethereum-types';
+import { DataItem, SolidityTypes } from '../../../types';
 import * as _ from 'lodash';
 
 import { BigNumber } from '../../configured_bignumber';

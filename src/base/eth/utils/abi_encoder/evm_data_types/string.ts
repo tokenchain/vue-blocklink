@@ -1,4 +1,4 @@
-import { DataItem, SolidityTypes } from 'ethereum-types';
+import { DataItem, SolidityTypes } from '../../../types';
 import * as ethUtil from 'ethereumjs-util';
 import * as _ from 'lodash';
 
@@ -50,6 +50,7 @@ export class StringDataType extends AbstractBlobDataType {
         const wordsToStoreValuePadded = Math.ceil(length / constants.EVM_WORD_WIDTH_IN_BYTES);
         const valueBufPadded = calldata.popWords(wordsToStoreValuePadded);
         const valueBuf = valueBufPadded.slice(0, length);
+        // @ts-ignore
         const value = valueBuf.toString('UTF-8');
         return value;
     }
