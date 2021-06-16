@@ -34,6 +34,7 @@ mod_package_json() {
     echo "$param_chan"
     cat $NODEPFILE | jq "$param_chan" $NODEPFILE | sponge $NODEPFILE
 }
+
 auto_install_nvm(){
     if (( AUTO_INSTALL==1 )); then
         $CMD_FINAL

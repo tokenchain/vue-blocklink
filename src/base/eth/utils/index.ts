@@ -16,11 +16,6 @@ export {signTypedDataUtils} from './sign_typed_data_utils';
 export {hexUtils} from './hex_utils';
 // @ts-ignore
 export import AbiEncoder = require('./abi_encoder');
-
-import {DataItem} from '../types';
-
-export declare function formatABIDataItem(abi: DataItem, value: any, formatter: (type: string, value: any) => any): any;
-
 export {EncodingRules, DecodingRules} from './abi_encoder';
 export * from './types';
 export {generatePseudoRandom256BitNumber} from './random';

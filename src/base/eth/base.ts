@@ -30,6 +30,7 @@ import {
     ContractFunctionObj,
     ContractTxFunctionObj,
     SubscriptionErrors,
+    ContractArtifact,
     AbiDefinition,
     AbiType,
     BlockParam,
@@ -43,10 +44,7 @@ import {
     TxDataPayable,
 } from "./types";
 // @ts-ignore
-export { linkLibrariesInBytecode, methodAbiToFunctionSignature} from './utils';
-// @ts-ignore
 export {SubscriptionManager} from './subscription_manager';
-
 
 export interface AbiEncoderByFunctionSignature {
     [key: string]: AbiEncoder.Method;
@@ -54,6 +52,47 @@ export interface AbiEncoderByFunctionSignature {
 
 const ARBITRARY_PRIVATE_KEY = 'e331b6d69882b4cb4ea581d88e0b604039a3de5967688d3dcffdd2270c0fd109';
 
+
+/**
+ * Takes a MethodAbi and returns a function signature for ABI encoding/decoding
+ * @return a function signature as a string, e.g. 'functionName(uint256, bytes[])'
+ */
+export function methodAbiToFunctionSignature(methodAbi: MethodAbi): string {
+    const method = AbiEncoder.createMethod(methodAbi.name, methodAbi.inputs);
+    return method.getSignature();
+}
+
+/**
+ * Replaces unliked library references in the bytecode of a contract artifact
+ * with real addresses and returns the bytecode.
+ */
+export function linkLibrariesInBytecode(
+    artifact: ContractArtifact,
+    libraryAddresses: { [libraryName: string]: string },
+): string {
+    const bytecodeArtifact = artifact.compilerOutput.evm.bytecode;
+    let bytecode = bytecodeArtifact.object.substr(2);
+    for (const link of Object.values(bytecodeArtifact.linkReferences)) {
+        for (const [libraryName, libraryRefs] of Object.entries(link)) {
+            const libraryAddress = libraryAddresses[libraryName];
+            if (!libraryAddress) {
+                throw new Error(
+                    `${
+                        artifact.contractName
+                    } has an unlinked reference library ${libraryName} but no addresses was provided'.`,
+                );
+            }
+            for (const ref of libraryRefs) {
+                bytecode = [
+                    bytecode.substring(0, ref.start * 2),
+                    libraryAddress.toLowerCase().substr(2),
+                    bytecode.substring((ref.start + ref.length) * 2),
+                ].join('');
+            }
+        }
+    }
+    return `0x${bytecode}`;
+}
 
 function formatABIDataItem(type: string, components: any, value: any): any {
     const trailingArrayRegex = /\[\d*\]$/;
