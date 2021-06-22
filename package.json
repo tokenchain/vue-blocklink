@@ -1,6 +1,6 @@
 {
   "name": "vue-blocklink",
-  "version": "0.2.108",
+  "version": "0.2.110",
   "description": "Vue support for the Blockchain Link browser extension",
   "main": "src/index.js",
   "scripts": {
