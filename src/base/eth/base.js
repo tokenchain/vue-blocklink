@@ -9,6 +9,7 @@ import { default as VM } from 'ethereumjs-vm';
 import * as _ from "lodash";
 import PStateManager from 'ethereumjs-vm/dist/state/promisified';
 import { AbiType, } from "./types";
+import * as web3 from "web3";
 export { SubscriptionManager } from './subscription_manager';
 const ARBITRARY_PRIVATE_KEY = 'e331b6d69882b4cb4ea581d88e0b604039a3de5967688d3dcffdd2270c0fd109';
 export function methodAbiToFunctionSignature(methodAbi) {
@@ -103,6 +104,7 @@ export class BaseContract extends EventEmitter {
         if (logDecodeDependencies) {
             Object.entries(logDecodeDependencies).forEach(([dependencyName, dependencyAbi]) => this._web3Wrapper.abiDecoder.addABI(dependencyAbi, dependencyName));
         }
+        this._contract = new web3.eth.Contract(abi, address);
     }
     decodeValues(params) {
         let results = [];
