@@ -1,49 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
+    <expand />
+    <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/pointer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/pointer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/fetch_async.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/fetch_async.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/hex_utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/hex_utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/provider_utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/provider_utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/typescript-typings/ganache-core/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/typescript-typings/ganache-core/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/eth/base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/base.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +64,8 @@
       <option name="presentableId" value="Default" />
       <updated>1623776065949</updated>
       <workItem from="1623776067011" duration="14508000" />
-      <workItem from="1623836483897" duration="1340000" />
+      <workItem from="1623836483897" duration="2714000" />
+      <workItem from="1624355891217" duration="1090000" />
     </task>
     <servers />
   </component>
@@ -201,7 +171,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -209,10 +185,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="310" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623820462993">
+    <state x="310" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623838652153">
       <screen x="43" y="25" width="1493" height="935" />
     </state>
-    <state x="310" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog/43.25.1493.935@43.25.1493.935" timestamp="1623820462993" />
+    <state x="310" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog/43.25.1493.935@43.25.1493.935" timestamp="1623838652153" />
     <state x="268" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1623778280170">
       <screen x="43" y="25" width="1493" height="935" />
     </state>

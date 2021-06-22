@@ -43,6 +43,7 @@ import {
     TxData,
     TxDataPayable,
 } from "./types";
+import * as web3 from "web3";
 // @ts-ignore
 export {SubscriptionManager} from './subscription_manager';
 
@@ -51,7 +52,6 @@ export interface AbiEncoderByFunctionSignature {
 }
 
 const ARBITRARY_PRIVATE_KEY = 'e331b6d69882b4cb4ea581d88e0b604039a3de5967688d3dcffdd2270c0fd109';
-
 
 /**
  * Takes a MethodAbi and returns a function signature for ABI encoding/decoding
@@ -165,13 +165,16 @@ export class BaseContract extends EventEmitter {
     protected _abiEncoderByFunctionSignature: AbiEncoderByFunctionSignature;
     protected _web3Wrapper: Web3Wrapper;
     protected _encoderOverrides: Partial<EncoderOverrides>;
+    // @ts-ignore
+    protected _contract: web3.eth.Contract;
+    private _evmIfExists?: VM;
+    private _evmAccountIfExists?: Buffer;
+
     public abi: ContractAbi;
     public address: string;
     public contractName: string;
     public constructorArgs: any[] = [];
     public _deployedBytecodeIfExists?: Buffer;
-    private _evmIfExists?: VM;
-    private _evmAccountIfExists?: Buffer;
 
     protected decodeValues(params: any): Array<any> {
         let results = []
@@ -498,6 +501,7 @@ export class BaseContract extends EventEmitter {
         }// @ts-ignore
         this.contractName = contractName;// @ts-ignore
         this._web3Wrapper = new Web3Wrapper(provider, callAndTxnDefaults);// @ts-ignore
+
         this._encoderOverrides = encoderOverrides || {};// @ts-ignore
         this.abi = abi;// @ts-ignore
         this.address = address;// @ts-ignore
@@ -517,5 +521,7 @@ export class BaseContract extends EventEmitter {
                 this._web3Wrapper.abiDecoder.addABI(dependencyAbi, dependencyName),
             );
         }
+        // @ts-ignore
+        this._contract = new web3.eth.Contract(abi, address);
     }
 }
