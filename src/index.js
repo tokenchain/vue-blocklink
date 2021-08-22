@@ -1,6 +1,5 @@
 import TRON_NODES from "./utils/const"
-import TronLink from "./abi/TronLink";
-import TronLinkComponent from "./mixins/vue-tronlink"
+import BlockAcon from "./abi/BlockAcon";
 import EthereumWeb3Component from "./mixins/vue-metamask"
 import ImTokenComponent from "./mixins/vue-imtoken"
 import BnX from "./utils/bnx"
@@ -19,12 +18,10 @@ import TronBaseContract from "./base/tron/base"
  **/
 
 export {
-    TronLink,
+    BlockAcon,
     TRON_NODES,
     TronTypes,
-    TronBaseContract,
     ImTokenComponent,
-    TronLinkComponent,
     BnX,
     EthereumWeb3Component,
 }

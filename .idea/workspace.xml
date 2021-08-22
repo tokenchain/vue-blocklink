@@ -2,16 +2,29 @@
 <project version="4">
   <component name="BranchesTreeState">
     <expand />
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.1f19ae8e.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.1f19ae8e.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.1f19ae8e.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.1f19ae8e.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/CoinDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/CoinDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/CoinDetail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/CoinDetail.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/TronLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockAcon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/TronLink.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockAcon.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/tron/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/tron/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entry/TronTest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/test/entry/TronTest.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entry/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/entry/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entry/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/entry/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mixins/vue-eosscatter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mixins/vue-metamask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/vue-metamask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mixins/vue-tronlink.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/version" beforeDir="false" afterPath="$PROJECT_DIR$/version" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +50,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -49,6 +62,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/src/typescript-typings" />
       <recent name="$PROJECT_DIR$/src/base/tron" />
       <recent name="$PROJECT_DIR$/src" />
@@ -84,7 +98,8 @@
       <workItem from="1623836483897" duration="2714000" />
       <workItem from="1624355891217" duration="1532000" />
       <workItem from="1624358400414" duration="3000" />
-      <workItem from="1624358956152" duration="503000" />
+      <workItem from="1624358956152" duration="1314000" />
+      <workItem from="1629623415321" duration="13883000" />
     </task>
     <servers />
   </component>
@@ -144,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/staking_revert_errors.js" />
         <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/fixed_math_revert_errors.js" />
         <option value="$PROJECT_DIR$/src/abi/TokenTrc20.js" />
-        <option value="$PROJECT_DIR$/src/abi/TronLink.js" />
         <option value="$PROJECT_DIR$/src/abi/CoinDetail.js" />
         <option value="$PROJECT_DIR$/src/base/eth/schemas.js" />
         <option value="$PROJECT_DIR$/src/base/eth/types.js" />
@@ -208,21 +222,33 @@
       <screen x="43" y="25" width="1493" height="935" />
     </state>
     <state x="310" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog/43.25.1493.935@43.25.1493.935" timestamp="1623838652153" />
-    <state x="268" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1623778280170">
+    <state x="268" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1629623816566">
       <screen x="43" y="25" width="1493" height="935" />
     </state>
-    <state x="268" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/43.25.1493.935@43.25.1493.935" timestamp="1623778280170" />
+    <state x="268" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/43.25.1493.935@43.25.1493.935" timestamp="1629623816566" />
+    <state x="764" y="243" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1629644007086">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state x="764" y="243" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/43.25.1493.935@43.25.1493.935" timestamp="1629644007086" />
+    <state x="614" y="280" key="FileChooserDialogImpl" timestamp="1629623722649">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state x="614" y="280" key="FileChooserDialogImpl/43.25.1493.935@43.25.1493.935" timestamp="1629623722649" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1623837421360">
       <screen x="43" y="25" width="1493" height="935" />
     </state>
     <state width="500" height="445" key="SwitcherDM/43.25.1493.935@43.25.1493.935" timestamp="1623837421360" />
-    <state x="528" y="247" width="597" height="490" key="find.popup" timestamp="1623837538314">
+    <state x="528" y="247" width="597" height="548" key="find.popup" timestamp="1629655892518">
       <screen x="43" y="25" width="1493" height="935" />
     </state>
-    <state x="528" y="247" width="597" height="490" key="find.popup/43.25.1493.935@43.25.1493.935" timestamp="1623837538314" />
+    <state x="528" y="247" width="597" height="548" key="find.popup/43.25.1493.935@43.25.1493.935" timestamp="1629655892518" />
     <state x="632" y="271" key="refactoring.ChangeSignatureDialog" timestamp="1623824431179">
       <screen x="43" y="25" width="1493" height="935" />
     </state>
     <state x="632" y="271" key="refactoring.ChangeSignatureDialog/43.25.1493.935@43.25.1493.935" timestamp="1623824431179" />
+    <state x="850" y="229" width="670" height="676" key="search.everywhere.popup" timestamp="1629626453818">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state x="850" y="229" width="670" height="676" key="search.everywhere.popup/43.25.1493.935@43.25.1493.935" timestamp="1629626453818" />
   </component>
 </project>

@@ -7,6 +7,10 @@ export interface Balancer {
     [holder_address: string]: number;
 }
 
+export interface Unlimited {
+    [holder_address: string]: boolean;
+}
+
 export interface TronLinkEventCaller {
     signer(payload: TronLinkTunnelMessage): boolean;
 
@@ -15,10 +19,42 @@ export interface TronLinkEventCaller {
     debug(message_called): boolean;
 }
 
+export interface WatchAssetParams {
+    type: string; // In the future, other standards will be supported
+    options: {
+        address: string; // The address of the token contract
+        symbol: string; // A ticker symbol or shorthand, up to 5 characters
+        decimals: number; // The number of token decimals
+        image: string; // A string url of the token logo
+    };
+}
+
+export interface AddEthereumChainParameter {
+    chainId: string; // A 0x-prefixed hexadecimal string
+    chainName: string;
+    nativeCurrency: {
+        name: string;
+        symbol: string; // 2-6 characters long
+        decimals: 18;
+    };
+    rpcUrls: string[];
+    blockExplorerUrls?: string[];
+    iconUrls?: string[]; // Currently ignored.
+}
+
+
 export interface TronTRC20Token {
     address: string;
     decimal: number;
+    tokenName: string;
+    tokenSymbol: string;
     holder: Balancer;
+    unlimited: Unlimited;
+    spender: Spending;
+}
+
+export interface Spending {
+    [holder_address: string]: Balancer;
 }
 
 export interface TronLinkTunnelMessageDataTransaction {
@@ -89,7 +125,7 @@ export interface TronLinkTabReply {
     data: TronLinkTunnelMessageDataTransactionSigned;
 }
 
-export interface TronLinkToken {
+export interface AccorToken {
     [contract_address: string]: CoinDetail;
 }
 

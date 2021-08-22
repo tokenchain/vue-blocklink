@@ -1,11 +1,11 @@
 {
   "name": "vue-blocklink",
-  "version": "0.2.112",
+  "version": "0.1.202",
   "description": "Vue support for the Blockchain Link browser extension",
   "main": "src/index.js",
   "scripts": {
-    "dev": "parcel serve watch src/entry/index.html",
-    "build": "parcel build src/entry/index.html --no-cache --no-source-maps --detailed-report",
+    "dev": "parcel serve watch test/entry/index.html",
+    "build": "parcel build test/entry/index.html --no-cache --no-source-maps --detailed-report",
     "test": "jest",
     "lint": "eslint './**/*.{js,vue}'",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
@@ -62,10 +62,14 @@
     "vue-template-compiler": "^2.6.12"
   },
   "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
+    "@metamask/onboarding": "^1.0.1",
     "bignumber.js": "^9.0.1",
     "elliptic": "^6.5.3",
+    "eth-sig-util": "^3.0.1",
     "ethereumjs-account": "^3.0.0",
     "ethereumjs-blockstream": "^7.0.0",
+    "ethereumjs-util": "^7.1.0",
     "ethereumjs-vm": "^4.2.0",
     "ethers": "^5.0.17",
     "eventemitter3": "^4.0.7",

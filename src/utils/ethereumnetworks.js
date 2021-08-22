@@ -588,16 +588,16 @@ const networks = [
         "infoURL": "https://www.hecochain.com"
     },
     {
-        "name": "High Performance Blockchain",
-        "chainId": 269,
-        "shortName": "hpb",
+        "name": "xDai Mainnet",
+        "chainId": 100,
+        "shortName": "xDai",
         "chain": "HPB",
         "network": "mainnet",
         "networkId": 100,
-        "nativeCurrency": {"name": "High Performance Blockchain Ether", "symbol": "HPB", "decimals": 18},
-        "rpc": ["https://node.hpb.blue"],
+        "nativeCurrency": {"name": "xdai coin", "symbol": "xdai", "decimals": 18},
+        "rpc": ["https://rpc.xdaichain.com"],
         "faucets": [],
-        "infoURL": "https://hpb.io"
+        "infoURL": "https://explorer.anyblock.tools/ethereum/poa/xdai"
     },
     {
         "name": "Auxilium Network Mainnet",
@@ -1078,6 +1078,18 @@ const networks = [
         "rpc": ["https://sokol.poa.network", "wss://sokol.poa.network/wss", "ws://sokol.poa.network:8546"],
         "faucets": ["https://faucet-sokol.herokuapp.com"],
         "infoURL": "https://poa.network"
+    },
+    {
+        "name": "Moonbase Alphanet",
+        "chainId": 1287,
+        "shortName": "moonbase",
+        "chain": "Moonbase",
+        "network": "moonbase-alphanet",
+        "networkId": 1287,
+        "nativeCurrency": {"name": "Moonbase coin", "symbol": "DEV", "decimals": 18},
+        "rpc": ["https://rpc.testnet.moonbeam.network"],
+        "faucets": [],
+        "infoURL": "https://moonbase.subscan.io/"
     },
     {
         "name": "Musicoin",
