@@ -67,8 +67,8 @@ gitpush(){
 taobao(){
   echo "wait a moment then let taobao to sync the package"
   sleep 10
-  cnpm sync vue-tronlink
-  cnpm info vue-tronlink
+  cnpm sync vue-blocklink
+  cnpm info vue-blocklink
 }
 
 GIT_LOC=https://github.com/tokenchain/vue-blocklink.git
@@ -87,5 +87,5 @@ mod_package_json ".repository" "git@github.com:tokenchain/vue-blocklink.git"
 mod_package_json ".homepage" "https://github.com/tokenchain/vue-blocklink.git"
 echo "==== done ====="
 gitpush
-npmdeploy
+# npmdeploy
 taobao
