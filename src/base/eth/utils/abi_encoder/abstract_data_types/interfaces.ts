@@ -1,8 +1,8 @@
-import { DataItem } from '../../../types';
+import {DataItem} from '../../../types';
 
-import { RawCalldata } from '../calldata/raw_calldata';
+import {RawCalldata} from '../calldata/raw_calldata';
 
-import { DataType } from './data_type';
+import {DataType} from './data_type';
 
 export interface DataTypeFactory {
     create: (dataItem: DataItem, parentDataType?: DataType) => DataType;

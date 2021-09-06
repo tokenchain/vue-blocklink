@@ -1,7 +1,13 @@
+import BigNumber from "bignumber.js";
 export default class CoinDetail {
     constructor(address, dec, sym, name) {
         this.address = address;
-        this.decimal = dec;
+        if (dec instanceof BigNumber) {
+            this.decimal = dec.toNumber();
+        }
+        else {
+            this.decimal = dec;
+        }
         this.tokenName = name;
         this.tokenSymbol = sym;
         this.unlimited = {};
@@ -9,11 +15,18 @@ export default class CoinDetail {
         this.spender = {};
     }
     setHolder(address, bal) {
-        if (this.holder.hasOwnProperty(address)) {
-            this.holder[address] = bal;
+        let abal = 0;
+        if (bal instanceof BigNumber) {
+            abal = bal.toNumber();
         }
         else {
-            this.holder[address] = bal;
+            abal = bal;
+        }
+        if (this.holder.hasOwnProperty(address)) {
+            this.holder[address] = abal;
+        }
+        else {
+            this.holder[address] = abal;
         }
     }
     setSpenderAllowed(coin_owner, spender, isAll) {

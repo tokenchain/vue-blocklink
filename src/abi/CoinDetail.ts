@@ -1,6 +1,7 @@
-import {Balancer, Spending, TronTRC20Token, Unlimited} from "../base/tron/types";
+import {Balancer, Spending, Web3ERC20Token, Unlimited} from "../base/eth/types";
+import BigNumber from "bignumber.js";
 
-export default class CoinDetail implements TronTRC20Token {
+export default class CoinDetail implements Web3ERC20Token {
     address: string;
     decimal: number;
     tokenName: string;
@@ -9,9 +10,13 @@ export default class CoinDetail implements TronTRC20Token {
     spender: Spending;
     unlimited: Unlimited;
 
-    constructor(address: string, dec: number, sym: string, name: string) {
+    constructor(address: string, dec: any, sym: string, name: string) {
         this.address = address
-        this.decimal = dec
+        if (dec instanceof BigNumber) {
+            this.decimal = dec.toNumber()
+        } else {
+            this.decimal = dec
+        }
         this.tokenName = name
         this.tokenSymbol = sym
         this.unlimited = {}
@@ -19,11 +24,17 @@ export default class CoinDetail implements TronTRC20Token {
         this.spender = {}
     }
 
-    setHolder(address: string, bal: number) {
-        if (this.holder.hasOwnProperty(address)) {
-            this.holder[address] = bal
+    setHolder(address: string, bal: any) {
+        let abal = 0
+        if (bal instanceof BigNumber) {
+            abal = bal.toNumber()
         } else {
-            this.holder[address] = bal
+            abal = bal
+        }
+        if (this.holder.hasOwnProperty(address)) {
+            this.holder[address] = abal
+        } else {
+            this.holder[address] = abal
         }
     }
 

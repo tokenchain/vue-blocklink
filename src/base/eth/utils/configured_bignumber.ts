@@ -1,4 +1,4 @@
-import { BigNumber } from 'bignumber.js';
+import {BigNumber} from 'bignumber.js';
 
 BigNumber.config({
     // By default BigNumber's `toString` method converts to exponential notation if the value has
@@ -14,7 +14,7 @@ BigNumber.config({
 // Set a debug print function for NodeJS
 // Upstream issue: https://github.com/MikeMcl/bignumber.js/issues/188
 // @ts-ignore
-import isNode = require('detect-node');
+const isNode = false;
 if (isNode) {
     // Dynamically load a NodeJS specific module.
     // TypeScript requires all imports to be global, so we need to use
@@ -25,7 +25,7 @@ if (isNode) {
     // Set a custom util.inspect function
     // HACK: We add a function to the BigNumber class by assigning to the
     //       prototype. The function name is a symbol provided by Node.
-    (BigNumber.prototype as any)[util.inspect.custom] = function(): string {
+    (BigNumber.prototype as any)[util.inspect.custom] = function (): string {
         // HACK: When executed, `this` will refer to the BigNumber instance.
         //       This is also why we need a function expression instead of an
         //       arrow function, as the latter does not have a `this`.
@@ -40,4 +40,4 @@ if (isNode) {
 (orig => (BigNumber.config = (..._args: any[]) => orig({})))(BigNumber.config);
 BigNumber.set = BigNumber.config;
 
-export { BigNumber };
+export {BigNumber};

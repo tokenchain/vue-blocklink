@@ -1,9 +1,11 @@
-import { IndexedFilterValues } from '../0xtypes';
-import { BigNumber } from './configured_bignumber';
-import { BlockRange, ContractAbi, EventAbi, FilterObject, LogEntry } from '../types';
+import {IndexedFilterValues} from '../0xtypes';
+import {BigNumber} from './configured_bignumber';
+import {BlockRange, ContractAbi, EventAbi, FilterObject, LogEntry} from '../types';
 import * as ethUtil from 'ethereumjs-util';
 import * as jsSHA3 from 'js-sha3';
 import * as uuid from 'uuid/v4';
+import {AbiItem} from "web3-utils";
+import * as _ from 'lodash';
 
 const TOPIC_LENGTH = 32;
 
@@ -15,11 +17,14 @@ export const filterUtils = {
         address: string,
         eventName: ContractEvents,
         indexFilterValues: IndexedFilterValues,
-        abi: ContractAbi,
+        abi: AbiItem[],
         blockRange?: BlockRange,
     ): FilterObject {
         // tslint:disable:next-line no-unnecessary-type-assertion
-        const eventAbi = abi.find(abiDefinition => (abiDefinition as EventAbi).name === eventName) as EventAbi;
+
+        const eventAbi = _.find(abi, (abiDefinition) => {
+            return (abiDefinition as EventAbi).name === eventName
+        }) as EventAbi;
         const eventSignature = filterUtils.getEventSignatureFromAbiByName(eventAbi);
         // @ts-ignore
         const topicForEventSignature = ethUtil.addHexPrefix(jsSHA3.keccak256(eventSignature));
@@ -39,8 +44,7 @@ export const filterUtils = {
     },
     getEventSignatureFromAbiByName(eventAbi: EventAbi): string {
         const types = eventAbi.inputs.map(i => i.type);
-        const signature = `${eventAbi.name}(${types.join(',')})`;
-        return signature;
+        return `${eventAbi.name}(${types.join(',')})`;
     },
     getTopicsForIndexedArgs(abi: EventAbi, indexFilterValues: IndexedFilterValues): Array<string | null> {
         const topics: Array<string | null> = [];

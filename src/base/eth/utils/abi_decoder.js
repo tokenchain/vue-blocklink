@@ -90,8 +90,12 @@ export class AbiDecoder {
         });
     }
     _addEventABI(eventAbi, ethersInterface) {
-        const topic = ethersInterface.events[eventAbi.name].name;
         const numIndexedArgs = _.reduce(eventAbi.inputs, (sum, input) => (input.indexed ? sum + 1 : sum), 0);
+        const signature_s1 = _.map(eventAbi.inputs, (input) => {
+            return input.type;
+        }).join(',');
+        const signature = `${eventAbi.name}(${signature_s1})`;
+        const topic = ethersInterface.events[signature].name;
         this._eventIds[topic] = {
             ...this._eventIds[topic],
             [numIndexedArgs]: eventAbi,

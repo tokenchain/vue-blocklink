@@ -1,14 +1,14 @@
 import { AbiDecoder, intervalUtils, logUtils } from './utils';
-import { marshaller } from './0xw3w';
+import { marshaller, Web3Wrapper } from './0xw3w';
 import { BlockParamLiteral, } from './types';
 import { BlockAndLogStreamer } from 'ethereumjs-blockstream';
 import { SubscriptionErrors } from './types';
 import { filterUtils } from './utils/filter_utils';
 const DEFAULT_BLOCK_POLLING_INTERVAL = 1000;
 export class SubscriptionManager {
-    constructor(abi, web3Wrapper) {
+    constructor(abi, prov) {
         this.abi = abi;
-        this._web3Wrapper = web3Wrapper;
+        this._web3Wrapper = new Web3Wrapper(prov);
         this._filters = {};
         this._filterCallbacks = {};
         this._blockAndLogStreamerIfExists = undefined;

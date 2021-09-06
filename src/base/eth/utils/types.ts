@@ -1,5 +1,4 @@
-import { AbiEncoder } from '.';
-import { BigNumber } from './index';
+import {BigNumber, AbiEncoder} from './index';
 
 export interface FunctionInfo {
     functionSignature: string;

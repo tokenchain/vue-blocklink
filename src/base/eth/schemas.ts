@@ -1,23 +1,27 @@
 import * as AJV from 'ajv'; // namespace and constructor
 // tslint:disable:no-duplicate-imports
-import { Ajv } from 'ajv'; // interface
+import {Ajv} from 'ajv'; // interface
 // @ts-ignore
-import values = require('lodash.values');
+import lodash from 'lodash'
 
-import { schemas } from './validations';
+const values = lodash.values
+import {schemas} from './validations';
+
 /**
  * A validator wrapping (AJV) [https://github.com/ajv-validator/ajv]
  */
 export class SchemaValidator {
     private readonly _validator: Ajv;
+
     /**
      * Instantiates a SchemaValidator instance
      */
     constructor(newSchemas: object[] = []) {
-        this._validator = new AJV({ schemaId: 'auto' });
+        this._validator = new AJV({schemaId: 'auto'});
         this._validator.addSchema(values(schemas).filter(s => s !== undefined && s.id !== undefined));
         this._validator.addSchema(newSchemas.filter(s => s !== undefined));
     }
+
     /**
      * Add a schema to the validator. All schemas and sub-schemas must be added to
      * the validator before the `validate` and `isValid` methods can be called with
@@ -37,6 +41,7 @@ export class SchemaValidator {
             }
         }
     }
+
     // In order to validate a complex JS object using jsonschema, we must replace any complex
     // sub-types (e.g BigNumber) with a simpler string representation. Since BigNumber and other
     // complex types implement the `toString` method, we can stringify the object and
@@ -51,6 +56,7 @@ export class SchemaValidator {
         this.isValid(instance, schema);
         return this._validator; // errors field is returned here. Will be overwritten on the next validation.
     }
+
     /**
      * Check whether an instance properly adheres to a JSON schema
      * @param instance JS object in question

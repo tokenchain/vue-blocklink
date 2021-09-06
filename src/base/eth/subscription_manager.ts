@@ -1,5 +1,5 @@
-import { AbiDecoder, intervalUtils, logUtils } from './utils';
-import { marshaller, Web3Wrapper } from './0xw3w';
+import {AbiDecoder, intervalUtils, logUtils} from './utils';
+import {AbiDefinition, marshaller, SupportedProvider, Web3Wrapper} from './0xw3w';
 import {
     BlockParamLiteral,
     BlockRange,
@@ -11,18 +11,22 @@ import {
     RawLogEntry,
 } from './types';
 // @ts-ignore
-import { Block, BlockAndLogStreamer, Log } from 'ethereumjs-blockstream';
+import {Block, BlockAndLogStreamer, Log} from 'ethereumjs-blockstream';
 
-import { EventCallback, IndexedFilterValues } from './0xtypes';
+import {Utils, AbiItem} from 'web3-utils';
 
-import { SubscriptionErrors } from './types';
+import {EventCallback, IndexedFilterValues} from './0xtypes';
+import {
+    provider
+} from 'web3-core';
+import {SubscriptionErrors} from './types';
 // @ts-ignore
-import { filterUtils } from './utils/filter_utils';
+import {filterUtils} from './utils/filter_utils';
 
 const DEFAULT_BLOCK_POLLING_INTERVAL = 1000;
 
 export class SubscriptionManager<ContractEventArgs, ContractEvents extends string> {
-    public abi: ContractAbi;
+    public abi: AbiItem[];
     private _blockAndLogStreamerIfExists: BlockAndLogStreamer<Block, Log> | undefined;
     private _blockAndLogStreamIntervalIfExists?: NodeJS.Timer;
     private readonly _web3Wrapper: Web3Wrapper;
@@ -32,6 +36,7 @@ export class SubscriptionManager<ContractEventArgs, ContractEvents extends strin
     };
     private _onLogAddedSubscriptionToken: string | undefined;
     private _onLogRemovedSubscriptionToken: string | undefined;
+
     private static _onBlockAndLogStreamerError(isVerbose: boolean, err: Error): void {
         // Since Blockstream errors are all recoverable, we simply log them if the verbose
         // config is passed in.
@@ -39,19 +44,23 @@ export class SubscriptionManager<ContractEventArgs, ContractEvents extends strin
             logUtils.warn(err);
         }
     }
-    constructor(abi: ContractAbi, web3Wrapper: Web3Wrapper) {
+
+    constructor(abi: AbiItem[], prov: provider) {
         this.abi = abi;
-        this._web3Wrapper = web3Wrapper;
+        this._web3Wrapper = new Web3Wrapper(prov as SupportedProvider);
+        // this._web3Wrapper = web3Wrapper;
         this._filters = {};
         this._filterCallbacks = {};
         this._blockAndLogStreamerIfExists = undefined;
         this._onLogAddedSubscriptionToken = undefined;
         this._onLogRemovedSubscriptionToken = undefined;
     }
+
     public unsubscribeAll(): void {
         const filterTokens = Object.keys(this._filterCallbacks);
         filterTokens.forEach(filterToken => this.unsubscribe(filterToken));
     }
+
     public unsubscribe(filterToken: string, err?: Error): void {
         if (this._filters[filterToken] === undefined) {
             throw new Error(SubscriptionErrors.SubscriptionNotFound);
@@ -66,11 +75,12 @@ export class SubscriptionManager<ContractEventArgs, ContractEvents extends strin
             this._stopBlockAndLogStream();
         }
     }
+
     public subscribe<ArgsType extends ContractEventArgs>(
         address: string,
         eventName: ContractEvents,
         indexFilterValues: IndexedFilterValues,
-        abi: ContractAbi,
+        abi: AbiItem[],
         callback: EventCallback<ArgsType>,
         isVerbose: boolean = false,
         blockPollingIntervalMs?: number,
@@ -84,25 +94,28 @@ export class SubscriptionManager<ContractEventArgs, ContractEvents extends strin
         this._filterCallbacks[filterToken] = callback as EventCallback<ContractEventArgs>; // tslint:disable-line:no-unnecessary-type-assertion
         return filterToken;
     }
+
     public async getLogsAsync<ArgsType extends ContractEventArgs>(
         address: string,
         eventName: ContractEvents,
         blockRange: BlockRange,
         indexFilterValues: IndexedFilterValues,
-        abi: ContractAbi,
+        abi: AbiItem[],
     ): Promise<Array<LogWithDecodedArgs<ArgsType>>> {
         const filter = filterUtils.getFilter(address, eventName, indexFilterValues, abi, blockRange);
         const logs = await this._web3Wrapper.getLogsAsync(filter);
         const logsWithDecodedArguments = logs.map(this._tryToDecodeLogOrNoop.bind(this)) as any[];
         return logsWithDecodedArguments;
     }
+
     protected _tryToDecodeLogOrNoop<ArgsType extends ContractEventArgs>(
         log: LogEntry,
     ): LogWithDecodedArgs<ArgsType> | RawLog {
-        const abiDecoder = new AbiDecoder([this.abi]);
+        const abiDecoder = new AbiDecoder([this.abi] as AbiDefinition[][]);
         const logWithDecodedArgs = abiDecoder.tryToDecodeLogOrNoop(log);
         return logWithDecodedArgs;
     }
+
     private _onLogStateChanged<ArgsType extends ContractEventArgs>(
         isRemoved: boolean,
         blockHash: string,
@@ -123,6 +136,7 @@ export class SubscriptionManager<ContractEventArgs, ContractEvents extends strin
             });
         });
     }
+
     private _startBlockAndLogStream(isVerbose: boolean, blockPollingIntervalMs?: number): void {
         if (this._blockAndLogStreamerIfExists !== undefined) {
             throw new Error(SubscriptionErrors.SubscriptionAlreadyPresent);
@@ -150,6 +164,7 @@ export class SubscriptionManager<ContractEventArgs, ContractEvents extends strin
             this._onLogStateChanged.bind(this, isRemoved),
         );
     }
+
     // This method only exists in order to comply with the expected interface of Blockstream's constructor
     private async _blockstreamGetBlockOrNullAsync(hash: string): Promise<Block | null> {
         const shouldIncludeTransactionData = false;
@@ -159,6 +174,7 @@ export class SubscriptionManager<ContractEventArgs, ContractEvents extends strin
         });
         return blockOrNull;
     }
+
     // This method only exists in order to comply with the expected interface of Blockstream's constructor
     private async _blockstreamGetLatestBlockOrNullAsync(): Promise<Block | null> {
         const shouldIncludeTransactionData = false;
@@ -168,6 +184,7 @@ export class SubscriptionManager<ContractEventArgs, ContractEvents extends strin
         });
         return blockOrNull;
     }
+
     // This method only exists in order to comply with the expected interface of Blockstream's constructor
     private async _blockstreamGetLogsAsync(filterOptions: FilterObject): Promise<Log[]> {
         const logs = await this._web3Wrapper.sendRawPayloadAsync<Log[]>({
@@ -176,6 +193,7 @@ export class SubscriptionManager<ContractEventArgs, ContractEvents extends strin
         });
         return logs as Log[];
     }
+
     private _stopBlockAndLogStream(): void {
         if (this._blockAndLogStreamerIfExists === undefined) {
             throw new Error(SubscriptionErrors.SubscriptionNotFound);
@@ -185,6 +203,7 @@ export class SubscriptionManager<ContractEventArgs, ContractEvents extends strin
         intervalUtils.clearAsyncExcludingInterval(this._blockAndLogStreamIntervalIfExists as NodeJS.Timer);
         delete this._blockAndLogStreamerIfExists;
     }
+
     private async _reconcileBlockAsync(): Promise<void> {
         const latestBlockOrNull = await this._blockstreamGetLatestBlockOrNullAsync();
         if (latestBlockOrNull === null) {

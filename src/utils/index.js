@@ -8,7 +8,7 @@ import * as abi from 'abi';
 import * as ethersUtils from 'ethersUtils';
 
 import validator from 'validator';
-import BigNumber from 'bignumber.js';
+import {BigNumber} from 'bignumber.js';
 import {ADDRESS_PREFIX} from 'address';
 
 const utils = {

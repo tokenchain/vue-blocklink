@@ -1,4 +1,6 @@
 import * as AJV from 'ajv';
+import lodash from 'lodash';
+const values = lodash.values;
 import { schemas } from './validations';
 export class SchemaValidator {
     constructor(newSchemas = []) {

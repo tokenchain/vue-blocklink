@@ -1,13 +1,13 @@
-import { DataItem } from '../../../../types';
+import {DataItem} from '../../../../types';
 import * as _ from 'lodash';
 
-import { BlobCalldataBlock } from '../../calldata/blocks/blob';
-import { CalldataBlock } from '../../calldata/calldata_block';
-import { RawCalldata } from '../../calldata/raw_calldata';
-import { DecodingRules } from '../../utils/rules';
+import {BlobCalldataBlock} from '../../calldata/blocks/blob';
+import {CalldataBlock} from '../../calldata/calldata_block';
+import {RawCalldata} from '../../calldata/raw_calldata';
+import {DecodingRules} from '../../utils/rules';
 
-import { DataType } from '../data_type';
-import { DataTypeFactory } from '../interfaces';
+import {DataType} from '../data_type';
+import {DataTypeFactory} from '../interfaces';
 
 export abstract class AbstractBlobDataType extends DataType {
     protected _sizeKnownAtCompileTime: boolean;
@@ -36,5 +36,6 @@ export abstract class AbstractBlobDataType extends DataType {
     }
 
     public abstract encodeValue(value: any): Buffer;
+
     public abstract decodeValue(calldata: RawCalldata): any;
 }

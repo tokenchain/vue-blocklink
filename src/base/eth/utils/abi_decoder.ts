@@ -12,8 +12,8 @@ import {
 import * as ethers from 'ethers';
 import * as _ from 'lodash';
 
-import { AbiEncoder } from '.';
-import { DecodedCalldata, SelectorToFunctionInfo } from './types';
+import {AbiEncoder} from '.';
+import {DecodedCalldata, SelectorToFunctionInfo} from './types';
 
 /**
  * AbiDecoder allows you to decode event logs given a set of supplied contract ABI's. It takes the contract's event
@@ -22,6 +22,7 @@ import { DecodedCalldata, SelectorToFunctionInfo } from './types';
 export class AbiDecoder {
     private readonly _eventIds: { [signatureHash: string]: { [numIndexedArgs: number]: EventAbi } } = {};
     private readonly _selectorToFunctionInfo: SelectorToFunctionInfo = {};
+
     /**
      * Retrieves the function selector from calldata.
      * @param calldata hex-encoded calldata.
@@ -37,6 +38,7 @@ export class AbiDecoder {
         const functionSelector = calldata.substr(0, functionSelectorLength);
         return functionSelector;
     }
+
     /**
      * Instantiate an AbiDecoder
      * @param abiArrays An array of contract ABI's
@@ -47,6 +49,7 @@ export class AbiDecoder {
             this.addABI(abi);
         });
     }
+
     /**
      * Attempt to decode a log given the ABI's the AbiDecoder knows about.
      * @param log The log to attempt to decode
@@ -62,7 +65,7 @@ export class AbiDecoder {
         const event = this._eventIds[eventId][numIndexedArgs];
 
         // Create decoders for indexed data
-        const indexedDataDecoders = _.mapValues(_.filter(event.inputs, { indexed: true }), input =>
+        const indexedDataDecoders = _.mapValues(_.filter(event.inputs, {indexed: true}), input =>
             // tslint:disable:next-line no-unnecessary-type-assertion
             AbiEncoder.create(input as DataItem),
         );
@@ -74,7 +77,7 @@ export class AbiDecoder {
         );
 
         // Decode non-indexed data
-        const decodedNonIndexedData = AbiEncoder.create(_.filter(event.inputs, { indexed: false })).decodeAsArray(
+        const decodedNonIndexedData = AbiEncoder.create(_.filter(event.inputs, {indexed: false})).decodeAsArray(
             log.data,
         );
 
@@ -101,6 +104,7 @@ export class AbiDecoder {
             args: decodedArgs as ArgsType,
         };
     }
+
     /**
      * Decodes calldata for a known ABI.
      * @param calldata hex-encoded calldata.
@@ -137,6 +141,7 @@ export class AbiDecoder {
         };
         return decodedCalldata;
     }
+
     /**
      * Adds a set of ABI definitions, after which calldata and logs targeting these ABI's can be decoded.
      * Additional properties can be included to disambiguate similar ABI's. For example, if two functions
@@ -170,14 +175,20 @@ export class AbiDecoder {
             }
         });
     }
+
     private _addEventABI(eventAbi: EventAbi, ethersInterface: ethers.utils.Interface): void {
-        const topic = ethersInterface.events[eventAbi.name].name;
         const numIndexedArgs = _.reduce(eventAbi.inputs, (sum, input) => (input.indexed ? sum + 1 : sum), 0);
+        const signature_s1 = _.map(eventAbi.inputs, (input) => {
+            return input.type
+        }).join(',');
+        const signature = `${eventAbi.name}(${signature_s1})`
+        const topic = ethersInterface.events[signature].name;
         this._eventIds[topic] = {
             ...this._eventIds[topic],
             [numIndexedArgs]: eventAbi,
         };
     }
+
     private _addMethodABI(methodAbi: MethodAbi, contractName?: string): void {
         const abiEncoder = new AbiEncoder.Method(methodAbi);
         const functionSelector = abiEncoder.getSelector();

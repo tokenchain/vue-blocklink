@@ -2,13 +2,16 @@ import { BigNumber } from './configured_bignumber';
 import * as ethUtil from 'ethereumjs-util';
 import * as jsSHA3 from 'js-sha3';
 import * as uuid from 'uuid/v4';
+import * as _ from 'lodash';
 const TOPIC_LENGTH = 32;
 export const filterUtils = {
     generateUUID() {
         return uuid();
     },
     getFilter(address, eventName, indexFilterValues, abi, blockRange) {
-        const eventAbi = abi.find(abiDefinition => abiDefinition.name === eventName);
+        const eventAbi = _.find(abi, (abiDefinition) => {
+            return abiDefinition.name === eventName;
+        });
         const eventSignature = filterUtils.getEventSignatureFromAbiByName(eventAbi);
         const topicForEventSignature = ethUtil.addHexPrefix(jsSHA3.keccak256(eventSignature));
         const topicsForIndexedArgs = filterUtils.getTopicsForIndexedArgs(eventAbi, indexFilterValues);
@@ -27,8 +30,7 @@ export const filterUtils = {
     },
     getEventSignatureFromAbiByName(eventAbi) {
         const types = eventAbi.inputs.map(i => i.type);
-        const signature = `${eventAbi.name}(${types.join(',')})`;
-        return signature;
+        return `${eventAbi.name}(${types.join(',')})`;
     },
     getTopicsForIndexedArgs(abi, indexFilterValues) {
         const topics = [];

@@ -11,12 +11,12 @@ export {abiUtils} from './abi_utils';
 export {NULL_BYTES, NULL_ADDRESS} from './constants';
 export {constants as AbiEncoderConstants} from './abi_encoder/utils/constants';
 export {errorUtils} from './error_utils';
-export {fetchAsync} from './fetch_async';
+// export {fetchAsync} from './fetch_async';
 export {signTypedDataUtils} from './sign_typed_data_utils';
 export {hexUtils} from './hex_utils';
 // @ts-ignore
-export import AbiEncoder = require('./abi_encoder');
-export {EncodingRules, DecodingRules} from './abi_encoder';
+export  * as AbiEncoder from './abi_encoder';
+export type {EncodingRules, DecodingRules} from './abi_encoder';
 export * from './types';
 export {generatePseudoRandom256BitNumber} from './random';
 export {

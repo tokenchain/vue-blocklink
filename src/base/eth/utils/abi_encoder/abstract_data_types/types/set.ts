@@ -1,19 +1,19 @@
-import { ObjectMap } from '../../../../0xtypes';
-import { DataItem } from '../../../../types';
+import {ObjectMap} from '../../../../0xtypes';
+import {DataItem} from '../../../../types';
 import * as ethUtil from 'ethereumjs-util';
 import * as _ from 'lodash';
 
-import { BigNumber } from '../../../configured_bignumber';
-import { SetCalldataBlock } from '../../calldata/blocks/set';
-import { CalldataBlock } from '../../calldata/calldata_block';
-import { RawCalldata } from '../../calldata/raw_calldata';
-import { constants } from '../../utils/constants';
-import { DecodingRules } from '../../utils/rules';
+import {BigNumber} from '../../../configured_bignumber';
+import {SetCalldataBlock} from '../../calldata/blocks/set';
+import {CalldataBlock} from '../../calldata/calldata_block';
+import {RawCalldata} from '../../calldata/raw_calldata';
+import {constants} from '../../utils/constants';
+import {DecodingRules} from '../../utils/rules';
 
-import { DataType } from '../data_type';
-import { DataTypeFactory, MemberIndexByName } from '../interfaces';
+import {DataType} from '../data_type';
+import {DataTypeFactory, MemberIndexByName} from '../interfaces';
 
-import { AbstractPointerDataType } from './pointer';
+import {AbstractPointerDataType} from './pointer';
 
 export abstract class AbstractSetDataType extends DataType {
     protected readonly _arrayLength: number | undefined;

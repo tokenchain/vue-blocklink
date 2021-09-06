@@ -1,15 +1,15 @@
-import { DataItem } from '../../../../types';
+import {DataItem} from '../../../../types';
 import * as ethUtil from 'ethereumjs-util';
 import * as _ from 'lodash';
 
-import { PointerCalldataBlock } from '../../calldata/blocks/pointer';
-import { CalldataBlock } from '../../calldata/calldata_block';
-import { RawCalldata } from '../../calldata/raw_calldata';
-import { constants } from '../../utils/constants';
-import { DecodingRules } from '../../utils/rules';
+import {PointerCalldataBlock} from '../../calldata/blocks/pointer';
+import {CalldataBlock} from '../../calldata/calldata_block';
+import {RawCalldata} from '../../calldata/raw_calldata';
+import {constants} from '../../utils/constants';
+import {DecodingRules} from '../../utils/rules';
 
-import { DataType } from '../data_type';
-import { DataTypeFactory } from '../interfaces';
+import {DataType} from '../data_type';
+import {DataTypeFactory} from '../interfaces';
 
 export abstract class AbstractPointerDataType extends DataType {
     protected _destination: DataType;
@@ -50,5 +50,6 @@ export abstract class AbstractPointerDataType extends DataType {
     public isStatic(): boolean {
         return true;
     }
+
     /* tslint:enable prefer-function-over-method */
 }

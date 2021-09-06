@@ -1,20 +1,18 @@
 import {explainNetworkById} from "../utils/ethereumnetworks";
-import BlockAcon from "../abi/BlockAcon"
-import NODES from "../utils/const";
+import BlockWrap from "../abi/BlockWrap"
 import Detection from "@metamask/detect-provider"
-import ethUtil from "ethereumjs-util"
-import sigUtil from "eth-sig-util"
 import MetaMaskOnboarding from '@metamask/onboarding';
+import Web3 from "web3";
 
 export default {
     data() {
         return {
             ethereum: false,
-            blockAccon: false,
-            MetaMaskId: "1",        // main net netID
-            netID: '1',             // user metamask id
+            blockLink: false,
+            signedInConnection: false,
+            MetaMaskId: "1",  // main net netID
+            netID: 1,         // user metamask id
             networkId: -1,
-            MetaMaskAddress: "",    // user Address
             Web3Interval: 0,
             AccountInterval: 0,
             NetworkInterval: 0,
@@ -22,11 +20,12 @@ export default {
             isMetamaskInterfaced: false,
             onboarding: false,
             type: "INIT",
+            w3: false,
             MetamaskMsg: {
                 LOAD_METAMASK_WALLET_ERROR: 'Loading metamask error, please try later',
                 EMPTY_METAMASK_ACCOUNT: 'Please log in to your metamask to continue with this app.',
                 NETWORK_ERROR: 'The connection is abnormal, please try again',
-                METAMASK_NOT_INSTALL: 'Please install metamask for this application',
+                METAMASK_NOT_INSTALL_OR_DISCONNECTED: 'Please install metamask for this application',
                 METAMASK_TEST_NET: 'Currently not in the main network.',
                 METAMASK_MAIN_NET: 'Currently Main network',
                 METAMASK_SWITCH_NET: 'Please switch this net to',
@@ -43,13 +42,14 @@ export default {
         notify_block_not_install() {
             this.$emit("notify_block_not_install")
         },
-        notify_account_changed(acc) {
-            this.$emit("notify_account_changed", acc)
+        notify_account_changed(accList) {
+            this.$emit("notify_account_changed", accList)
         },
         notify_block_installed() {
             this.$emit("notify_block_installed")
         },
         checkError(key) {
+            console.log(key)
         },
         async checkWeb3MetaMask() {
             if (window) {
@@ -60,6 +60,9 @@ export default {
                             method: 'eth_chainId'
                         })
                         this.ethereum = window.ethereum
+                        const W3 = new Web3(this.ethereum);
+                        this.w3 = W3
+                        window.web3 = W3
                         this.netID = chainId
                         clearInterval(this.Web3Interval)
                     }
@@ -67,22 +70,27 @@ export default {
 
                 if (window.hasOwnProperty("web3")) {
                     if (!this.ethereum) {
-                        this.ethereum = window.web3
                         clearInterval(this.Web3Interval)
                     }
                 }
 
-                if (!this.blockAccon) {
-                    this.blockAccon = new BlockAcon(this.ethereum)
+                if (!this.blockLink) {
+                    this.blockLink = new BlockWrap(this.w3, this.ethereum)
                     this.isMetamaskInterfaced = true
-                    this.blockAccon.setErrorHandler(this.handleErrors)
+                    this.blockLink.setHandlers(
+                        this.handleConfirm,
+                        this.handleBroadcast,
+                        this.handleErrors
+                    )
                 }
 
                 if (!this.ethereum) {
-                    this.checkError("METAMASK_NOT_INSTALL")
+                    this.checkError("METAMASK_NOT_INSTALL_OR_DISCONNECTED")
                 } else {
                     if (this.ethereum.isConnected()) {
-                        this.notify_block_installed()
+                        this.monitor()
+                        await this.checkNetWork();
+                        this.sign_in()
                     } else {
                         window.addEventListener('ethereum#initialized', this.checkWeb3MetaMask, {
                             once: true,
@@ -97,9 +105,11 @@ export default {
                 // Handle the new accounts, or lack thereof.
                 // "accounts" will always be an array, but it can be empty.
                 if (accounts.length === 0) {
-                    this.checkError("METAMASK_NOT_INSTALL")
+                    this.signedInConnection = false
+                    this.checkError("METAMASK_NOT_INSTALL_OR_DISCONNECTED")
                 } else {
-                    this.notify_account_changed(accounts[0])
+                    this.signedInConnection = true
+                    this.notify_account_changed(accounts)
                 }
             });
             this.ethereum.on('chainChanged', (chainId) => {
@@ -107,10 +117,13 @@ export default {
                 // Correctly handling chain changes can be complicated.
                 // We recommend reloading the page unless you have good reason not to.
                 this.netID = chainId
+                this.$emit("notify_node_change")
                 window.location.reload();
             });
             this.ethereum.on('connect', (connectInfo) => {
-
+                console.log(connectInfo)
+                console.log("on connect")
+                //this.notify_block_installed()
             });
             this.ethereum.on('disconnect', (error) => {
                 if (error.code === 4001) {
@@ -119,6 +132,8 @@ export default {
                     this.checkError("PARAMETERS_WERE_INVALID")
                 } else if (error.code === -32603) {
                     this.checkError("INTERNAL_ERROR")
+                } else {
+                    console.log("on disconnect")
                 }
             });
             this.ethereum.on('message', (message) => {
@@ -127,12 +142,15 @@ export default {
                         data: unknown;
                     }*/
                 if (this.metamask_debug) {
+                    console.log("on message now")
                     console.log(message)
                 }
-                if (this.blockAccon) {
-                    this.blockAccon.eventListener(message, this)
+                if (this.blockLink) {
+                    this.blockLink.eventListener(message, this)
                 }
             });
+        },
+        sign_in() {
             //start the account registrations
             this.ethereum
                 .request({method: 'eth_requestAccounts'})
@@ -140,31 +158,49 @@ export default {
                 .catch(this.handleErrors);
         },
         handleAccountsChanged(acc) {
+            if (this.blockLink) {
+                if (acc.length > 0) {
+                    this.signedInConnection = true
+                    this.notify_block_installed()
+                }
+                this.blockLink.setAccounts(acc)
+            }
         },
         handleErrors(error) {
             if (error.code === 4001) {
                 // EIP-1193 userRejectedRequest error
-                console.log('Please connect to MetaMask.');
                 this.checkError("USER_DENIED")
+            } else if (error.code === -32002) {
+                console.log('Please connection to sign in confirmation.');
             } else {
                 console.error(error);
             }
         },
-        checkAccounts() {
+        handleHash(hash) {
+            console.log(hash)
+        },
+        handleBroadcast(receipt) {
+            console.log(receipt)
+        },
+        handleConfirm(confirmation_num) {
+            if (confirmation_num === 3) {
+                console.log(`success confirmed`)
+            }
+        },
+        async checkAccounts() {
             if (!this.ethereum) return;
-
-            this.web3.eth.getAccounts((err, accounts) => {
-                if (err != null) {
-                    this.checkError("NETWORK_ERROR")
-                    return;
-                }
-                if (accounts.length === 0) {
-                    this.MetaMaskAddress = "";
+            if (!this.w3) return;
+            try {
+                let acct = await this.w3.eth.getAccounts();
+                if (acct.length === 0) {
                     this.checkError("EMPTY_METAMASK_ACCOUNT")
                     return;
                 }
-                this.MetaMaskAddress = accounts[0]; // user Address
-            });
+                this.handleAccountsChanged(acct)
+            } catch (e) {
+                console.log("error from check accounts")
+                this.handleErrors(e)
+            }
         },
         async metamask_switch_chain(chainID) {
             try {
@@ -174,7 +210,7 @@ export default {
                 });
             } catch (switchError) {
                 // This error code indicates that the chain has not been added to MetaMask.
-                if (error.code === 4902) {
+                if (switchError.code === 4902) {
                     try {
                         await this.ethereum.request({
                             method: 'wallet_addEthereumChain',
@@ -187,90 +223,37 @@ export default {
                 // handle other "switch" errors
             }
         },
-        checkNetWork() {
-            this.ethereum.version.getNetwork((err, netID) => {
-                if (err != null) {
-                    // return this.Log(this.MetamaskMsg.NETWORK_ERROR, "NETWORK_ERROR");
-                    this.checkError("NETWORK_ERROR")
-                    return;
-                }
-                this.netID = netID;    //User MetaMask's current status
-                if (this.MetaMaskAddress !== '') {
-                    const {name, network, networkId} = explainNetworkById(netID)
-                    let message = ""
-                    let networktype = ""
-                    if (networkId === 1) {
-                        message = `${this.MetamaskMsg.METAMASK_MAIN_NET} by ${name}`
-                        networktype = "MAINNET"
-                    } else {
-                        if (network.toUpperCase() === "TESTNET") {
-                            networktype = "TESTNET"
-                            message = `${this.MetamaskMsg.METAMASK_TEST_NET} by ${name}`
-                        } else {
-                            networktype = network.toUpperCase()
-                            message = `${this.MetamaskMsg.METAMASK_MAIN_NET} by ${name}`
-                        }
-                    }
-                    return this.Log(message, networktype);
-                }
-            })
+        async checkNetWork() {
+            const network_id = await this.w3.eth.net.getId()
+            this.netID = network_id
+            const {name, network, networkId} = explainNetworkById(network_id)
+            if (this.blockLink) {
+                console.log(`Now it is connected to ${name} ${network}`)
+            }
         },
-        checkRequiredNetwork(id) {
-            this.networkId = id
-            if (this.networkId === parseInt(this.netID)) {
+        checkRequiredNetwork(network_Id) {
+            if (network_Id === parseInt(this.netID)) {
                 return true;
             } else {
                 this.checkError("METAMASK_SWITCH_NET")
                 return false;
             }
         },
-        async register_onboarding() {
-            return await this.ethereumCore
-                .request({
-                    method: 'wallet_registerOnboarding',
-                })
-        },
         Log(msg, type = "") {
-            const letType = type;
-            if (letType === this.type) return;
-            const message = this.userMessage === "null" ? msg : this.userMessage;
-            this.type = type;
-            this.$emit("onComplete", {
-                web3: this.ethereum,
-                type,
-                metaMaskAddress: this.MetaMaskAddress,
-                message,
-                netID: this.netID,
-            });
-        },
-        web3TimerCheck(web3) {
-            this.ethereum = web3;
-            this.checkAccounts();
-            this.checkNetWork();
-            this.Web3Interval = setInterval(async () => {
-                await this.checkWeb3MetaMask()
-                clearInterval(this.Web3Interval)
-            }, 1000);
-            this.AccountInterval = setInterval(() => {
-                this.checkAccounts()
-                clearInterval(this.AccountInterval)
-            }, 1500);
-            this.NetworkInterval = setInterval(() => {
-                this.checkNetWork()
-                clearInterval(this.NetworkInterval)
-            }, 2000);
+            this.$emit("onComplete");
         },
         registerOnBoard() {
             if (MetaMaskOnboarding.isMetaMaskInstalled()) {
                 this.onboarding.stopOnboarding();
+                console.log("stop on board")
             } else {
                 this.onboarding.startOnboarding();
+                console.log("start on board")
             }
         },
     },
-
-    async mounted() {
-        this.nextTick(async () => {
+    mounted() {
+        this.$nextTick(async () => {
             this.onboarding = new MetaMaskOnboarding();
             await this.checkWeb3MetaMask()
         })

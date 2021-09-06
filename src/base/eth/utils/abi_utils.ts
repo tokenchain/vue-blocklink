@@ -33,7 +33,6 @@ function parseEthersParams(params: DataItem[]): { names: ParamName[]; types: str
             types.push(param.type);
         }
     });
-
     return {
         names,
         types,

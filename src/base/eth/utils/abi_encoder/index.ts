@@ -1,4 +1,4 @@
-export { EncodingRules, DecodingRules } from './utils/rules';
+export type {EncodingRules, DecodingRules} from './utils/rules';
 export {
     Address,
     Array,

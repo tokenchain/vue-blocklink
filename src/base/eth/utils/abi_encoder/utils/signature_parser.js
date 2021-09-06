@@ -58,6 +58,5 @@ export function generateDataItemFromSignature(signature) {
                 break;
         }
     }
-    const dataItem = parseNode(node);
-    return dataItem;
+    return parseNode(node);
 }

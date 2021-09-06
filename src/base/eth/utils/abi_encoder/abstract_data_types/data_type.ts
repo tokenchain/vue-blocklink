@@ -1,13 +1,12 @@
-import { DataItem } from '../../../types';
+import {DataItem} from '../../../types';
 import * as _ from 'lodash';
 
-import { Calldata } from '../calldata/calldata';
-import { CalldataBlock } from '../calldata/calldata_block';
-import { RawCalldata } from '../calldata/raw_calldata';
-import { constants } from '../utils/constants';
-import { DecodingRules, EncodingRules } from '../utils/rules';
-
-import { DataTypeFactory } from './interfaces';
+import {Calldata} from '../calldata/calldata';
+import {CalldataBlock} from '../calldata/calldata_block';
+import {RawCalldata} from '../calldata/raw_calldata';
+import {constants} from '../utils/constants';
+import {DecodingRules, EncodingRules} from '../utils/rules';
+import {DataTypeFactory} from './interfaces';
 
 export abstract class DataType {
     private readonly _dataItem: DataItem;
@@ -27,7 +26,7 @@ export abstract class DataType {
     }
 
     public encode(value: any, rules?: Partial<EncodingRules>, selector?: string): string {
-        const rules_ = { ...constants.DEFAULT_ENCODING_RULES, ...rules };
+        const rules_ = {...constants.DEFAULT_ENCODING_RULES, ...rules};
         const calldata = new Calldata(rules_);
         if (selector !== undefined) {
             calldata.setSelector(selector);
@@ -46,7 +45,7 @@ export abstract class DataType {
         }
         const hasSelector = selector !== undefined;
         const rawCalldata = new RawCalldata(calldata, hasSelector);
-        const rules_ = { ...constants.DEFAULT_DECODING_RULES, ...rules };
+        const rules_ = {...constants.DEFAULT_DECODING_RULES, ...rules};
         const value =
             rules_.isStrictMode || rawCalldata.getSizeInBytes() > 0
                 ? this.generateValue(rawCalldata, rules_)
@@ -73,8 +72,12 @@ export abstract class DataType {
     }
 
     public abstract generateCalldataBlock(value: any, parentBlock?: CalldataBlock): CalldataBlock;
+
     public abstract generateValue(calldata: RawCalldata, rules: DecodingRules): any;
+
     public abstract getDefaultValue(rules?: DecodingRules): any;
+
     public abstract getSignatureType(): string;
+
     public abstract isStatic(): boolean;
 }

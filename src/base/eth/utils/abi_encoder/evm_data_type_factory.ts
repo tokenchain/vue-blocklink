@@ -1,22 +1,22 @@
 /* tslint:disable max-classes-per-file */
-import { DataItem, MethodAbi } from '../../types';
+import {DataItem, MethodAbi} from '../../types';
 import * as _ from 'lodash';
 
-import { generateDataItemFromSignature } from './utils/signature_parser';
+import {generateDataItemFromSignature} from './utils/signature_parser';
 
-import { DataType } from './abstract_data_types/data_type';
-import { DataTypeFactory } from './abstract_data_types/interfaces';
-import { AddressDataType } from './evm_data_types/address';
-import { ArrayDataType } from './evm_data_types/array';
-import { BoolDataType } from './evm_data_types/bool';
-import { DynamicBytesDataType } from './evm_data_types/dynamic_bytes';
-import { IntDataType } from './evm_data_types/int';
-import { MethodDataType } from './evm_data_types/method';
-import { PointerDataType } from './evm_data_types/pointer';
-import { StaticBytesDataType } from './evm_data_types/static_bytes';
-import { StringDataType } from './evm_data_types/string';
-import { TupleDataType } from './evm_data_types/tuple';
-import { UIntDataType } from './evm_data_types/uint';
+import {DataType} from './abstract_data_types/data_type';
+import {DataTypeFactory} from './abstract_data_types/interfaces';
+import {AddressDataType} from './evm_data_types/address';
+import {ArrayDataType} from './evm_data_types/array';
+import {BoolDataType} from './evm_data_types/bool';
+import {DynamicBytesDataType} from './evm_data_types/dynamic_bytes';
+import {IntDataType} from './evm_data_types/int';
+import {MethodDataType} from './evm_data_types/method';
+import {PointerDataType} from './evm_data_types/pointer';
+import {StaticBytesDataType} from './evm_data_types/static_bytes';
+import {StringDataType} from './evm_data_types/string';
+import {TupleDataType} from './evm_data_types/tuple';
+import {UIntDataType} from './evm_data_types/uint';
 
 export class Address extends AddressDataType {
     public constructor(dataItem: DataItem) {
@@ -127,9 +127,10 @@ export class EvmDataTypeFactory implements DataTypeFactory {
         }
         return dataType;
     }
-    /* tslint:enable prefer-function-over-method */
 
-    private constructor() {}
+    /* tslint:enable prefer-function-over-method */
+    private constructor() {
+    }
 }
 
 /**
@@ -218,4 +219,5 @@ function consolidateDataItemsIntoArray(input: DataItem | DataItem[] | string | s
     }
     return dataItems;
 }
+
 /* tslint:enable no-construct */

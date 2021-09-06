@@ -1,4 +1,4 @@
-import { DataItem } from '../../../types';
+import {DataItem} from '../../../types';
 import * as _ from 'lodash';
 
 interface Node {
@@ -83,6 +83,5 @@ export function generateDataItemFromSignature(signature: string): DataItem {
         }
     }
     // Interpret data item from parse tree
-    const dataItem = parseNode(node);
-    return dataItem;
+    return parseNode(node);
 }

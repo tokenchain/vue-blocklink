@@ -1,6 +1,57 @@
-import {BigNumber} from 'bignumber.js';
+import {AbiDecoder, addressUtils, BigNumber, intervalUtils, promisify, providerUtils} from './utils';
+import {AbiItem} from 'web3-utils';
 
 export type JSONRPCErrorCallback = (err: Error | null, result?: JSONRPCResponsePayload) => void;
+
+
+export interface Balancer {
+    [holder_address: string]: number;
+}
+
+export interface Spending {
+    [holder_address: string]: Balancer;
+}
+
+export interface Unlimited {
+    [holder_address: string]: boolean;
+}
+
+export interface WebLinkTokenMap {
+    [contract_address: string]: Web3ERC20Token;
+}
+
+export interface Web3ERC20Token {
+    tokenSymbol: string;
+    tokenName: string;
+    address: string;
+    decimal: number;
+    holder: Balancer;
+    spender: Spending;
+    unlimited: Unlimited;
+}
+
+export interface WatchAssetParams {
+    type: string; // In the future, other standards will be supported
+    options: {
+        address: string; // The address of the token contract
+        'symbol': string; // A ticker symbol or shorthand, up to 5 characters
+        decimals: number; // The number of token decimals
+        image: string; // A string url of the token logo
+    };
+}
+
+export interface AddEthereumChainParameter {
+    chainId: string;
+    blockExplorerUrls?: string[];
+    chainName?: string;
+    iconUrls?: string[];
+    nativeCurrency?: {
+        name: string;
+        symbol: string;
+        decimals: number;
+    };
+    rpcUrls?: string[];
+}
 
 // tslint:disable: max-classes-per-file
 /**

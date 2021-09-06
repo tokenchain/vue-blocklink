@@ -67,7 +67,8 @@ export class Method extends MethodDataType {
     }
 }
 export class EvmDataTypeFactory {
-    constructor() { }
+    constructor() {
+    }
     static getInstance() {
         if (!EvmDataTypeFactory._instance) {
             EvmDataTypeFactory._instance = new EvmDataTypeFactory();

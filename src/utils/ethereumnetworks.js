@@ -974,7 +974,7 @@ const networks = [
     {
         "name": "OKExChain Testnet",
         "chainId": 65,
-        "shortName": "tokt",
+        "shortName": "okt",
         "chain": "okexchain",
         "network": "testnet",
         "networkId": 65,

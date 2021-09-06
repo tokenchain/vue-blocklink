@@ -1,8 +1,8 @@
 import * as ethUtil from 'ethereumjs-util';
 import * as _ from 'lodash';
 
-import { BigNumber } from '../../configured_bignumber';
-import { constants } from '../utils/constants';
+import {BigNumber} from '../../configured_bignumber';
+import {constants} from '../utils/constants';
 
 function sanityCheckBigNumberRange(
     value_: BigNumber | string | number,
@@ -18,9 +18,11 @@ function sanityCheckBigNumberRange(
         throw new Error(`Tried to assign NaN value`);
     }
 }
+
 function bigNumberToPaddedBuffer(value: BigNumber): Buffer {
     return ethUtil.setLengthLeft(ethUtil.toBuffer(new ethUtil.BN(value.toFixed(0))), constants.EVM_WORD_WIDTH_IN_BYTES);
 }
+
 /**
  * Takes a numeric value and returns its ABI-encoded value
  * @param value_    The value to encode.
@@ -48,6 +50,7 @@ export function encodeNumericValue(value_: BigNumber | string | number): Buffer 
     const encodedValue = bigNumberToPaddedBuffer(negativeValue);
     return encodedValue;
 }
+
 /**
  * Takes a numeric value and returns its ABI-encoded value.
  * Performs an additional sanity check, given the min/max allowed value.
@@ -63,6 +66,7 @@ export function safeEncodeNumericValue(
     const encodedValue = encodeNumericValue(value);
     return encodedValue;
 }
+
 /**
  * Takes an ABI-encoded numeric value and returns its decoded value as a BigNumber.
  * @param encodedValue    The encoded numeric value.
@@ -96,6 +100,7 @@ export function decodeNumericValue(encodedValue: Buffer, minValue: BigNumber): B
     const negativeValue = positiveValue.times(-1);
     return negativeValue;
 }
+
 /**
  * Takes an ABI-encoded numeric value and returns its decoded value as a BigNumber.
  * Performs an additional sanity check, given the min/max allowed value.

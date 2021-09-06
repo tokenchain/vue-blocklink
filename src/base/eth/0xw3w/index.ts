@@ -1,9 +1,14 @@
 export {Web3Wrapper} from './web3_wrapper';
 export {marshaller} from './marshaller';
 
-export {AbiDecoder, DecodedCalldata} from '../utils';
+export {AbiDecoder} from '../utils';
+export type {DecodedCalldata} from '../utils';
 
 export {
+    BlockParamLiteral,
+    OpCode
+} from '../types';
+export type {
     BlockParam,
     TxData,
     SupportedProvider,
@@ -23,11 +28,11 @@ export {
     TransactionReceiptStatus,
     DecodedLogArgs,
     StructLog,
-    BlockParamLiteral,
+
     ContractEventArg,
     DecodedLogEntry,
     LogEntryEvent,
-    OpCode,
+
     TxDataPayable,
     JSONRPCErrorCallback,
     JSONRPCResponsePayload,
@@ -57,11 +62,13 @@ export {
     Web3JsV3Provider,
     RevertErrorAbi,
     TxAccessList,
-    TxAccessListWithGas,
+    TxAccessListWithGas
 } from '../types';
 export {
     Web3WrapperErrors,
-    NodeType,
+    NodeType
+} from './types';
+export type {
     CallDataRPC,
     GethCallOverridesRPC,
     BlockWithoutTransactionDataRPC,
@@ -70,5 +77,6 @@ export {
     TransactionReceiptRPC,
     LogEntryRPC,
     TransactionRPC,
-    TxDataRPC,
+    TxDataRPC
 } from './types';
+

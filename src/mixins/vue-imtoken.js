@@ -4,7 +4,7 @@
  * notify_tron_installed
  * notify_tron_node_change
  * notify_tron_account_set
- * notify_tron_initialization
+ * notify_rn_initialization
  */
 export default {
     data() {
