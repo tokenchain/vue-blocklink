@@ -51,6 +51,9 @@ export default {
         checkError(key) {
             console.log(key)
         },
+        matchChainId(requiredId) {
+            return parseInt(this.netID) === parseInt(requiredId)
+        },
         async checkWeb3MetaMask() {
             if (window) {
                 if (!this.ethereum) {
