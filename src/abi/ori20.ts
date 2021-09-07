@@ -11,25 +11,25 @@ import {BlockRange, DecodedLogArgs, LogWithDecodedArgs, MethodAbi} from "../base
 import {BaseContract} from "../base/eth/base";
 import {SubscriptionManager} from "../base/eth/subscription_manager";
 import {
-    BatchRequest,
-    Extension,
-    Log,
-    PromiEvent,
-    provider,
-    Providers,
-    RLPEncodedTransaction,
-    Transaction,
-    TransactionConfig,
-    TransactionReceipt,
-    Common,
-    hardfork,
-    chain,
-    BlockNumber,
-    LogsOptions,
-    PastLogsOptions
+BatchRequest,
+Extension,
+Log,
+PromiEvent,
+provider,
+Providers,
+RLPEncodedTransaction,
+Transaction,
+TransactionConfig,
+TransactionReceipt,
+Common,
+hardfork,
+chain,
+BlockNumber,
+LogsOptions,
+PastLogsOptions
 } from 'web3-core';
 
-import {Utils, AbiItem} from 'web3-utils';
+import {Utils,AbiItem} from 'web3-utils';
 import {EventCallback, IndexedFilterValues} from "../base/eth/0xtypes";
 import {schemas} from "../base/eth/validations";
 import Web3 from "web3";
@@ -37,51 +37,51 @@ import Web3 from "web3";
 // tslint:enable:no-unused-variable
 export interface ContractInterface {
 
-    addMinter(account: string,): Promise<void>
+    addMinter(account: string,):Promise<void>
 
-    allowance(owner: string, spender: string,): Promise<BigNumber>
+    allowance(owner: string,spender: string,):Promise<BigNumber>
 
-    approve(spender: string, amount: BigNumber,): Promise<boolean>
+    approve(spender: string,amount: BigNumber,):Promise<boolean>
 
-    balanceOf(account: string,): Promise<BigNumber>
+    balanceOf(account: string,):Promise<BigNumber>
 
-    burn(amount: BigNumber,): Promise<void>
+    burn(amount: BigNumber,):Promise<void>
 
-    burnFrom(account: string, amount: BigNumber,): Promise<void>
+    burnFrom(account: string,amount: BigNumber,):Promise<void>
 
-    cap(): Promise<BigNumber>
+    cap():Promise<BigNumber>
 
-    decimals(): Promise<BigNumber>
+    decimals():Promise<BigNumber>
 
-    decreaseAllowance(spender: string, subtractedValue: BigNumber,): Promise<boolean>
+    decreaseAllowance(spender: string,subtractedValue: BigNumber,):Promise<boolean>
 
-    getDecimals(): Promise<BigNumber>
+    getDecimals():Promise<BigNumber>
 
-    gov(): Promise<string>
+    gov():Promise<string>
 
-    increaseAllowance(spender: string, addedValue: BigNumber,): Promise<boolean>
+    increaseAllowance(spender: string,addedValue: BigNumber,):Promise<boolean>
 
-    isMinter(account: string,): Promise<boolean>
+    isMinter(account: string,):Promise<boolean>
 
-    mint(account: string, amount: BigNumber,): Promise<boolean>
+    mint(account: string,amount: BigNumber,):Promise<boolean>
 
-    name(): Promise<string>
+    name():Promise<string>
 
-    removeMinter(account: string,): Promise<void>
+    removeMinter(account: string,):Promise<void>
 
-    renounceMinter(): Promise<void>
+    renounceMinter():Promise<void>
 
-    symbol(): Promise<string>
+    symbol():Promise<string>
 
-    tokenName(): Promise<string>
+    tokenName():Promise<string>
 
-    tokenSymbol(): Promise<string>
+    tokenSymbol():Promise<string>
 
-    totalSupply(): Promise<BigNumber>
+    totalSupply():Promise<BigNumber>
 
-    transfer(recipient: string, amount: BigNumber,): Promise<boolean>
+    transfer(recipient: string,amount: BigNumber,):Promise<boolean>
 
-    transferFrom(sender: string, recipient: string, amount: BigNumber,): Promise<boolean>
+    transferFrom(sender: string,recipient: string,amount: BigNumber,):Promise<boolean>
 }
 
 export type Ori20EventArgs =
@@ -118,30 +118,30 @@ export interface Ori20TransferEventArgs extends DecodedLogArgs {
 }
 
 
+
 /* istanbul ignore next */
 // tslint:disable:array-type
 // tslint:disable:no-parameter-reassignment
 // tslint:disable-next-line:class-name
-export class Ori20Contract extends BaseContract implements ContractInterface {
+export class Ori20Contract extends BaseContract implements ContractInterface{
     /**
      * @ignore
      */
-    public static deployedBytecode: string | undefined;
-    public static readonly contractName = 'Ori20';
+public static deployedBytecode: string | undefined;
+public static readonly contractName = 'Ori20';
     private readonly _methodABIIndex: { [name: string]: number } = {};
-    private readonly _subscriptionManager: SubscriptionManager<Ori20EventArgs, Ori20Events>;
-
-    public static Instance(): (Ori20Contract | any | boolean) {
+private readonly _subscriptionManager: SubscriptionManager<Ori20EventArgs, Ori20Events>;
+public static Instance(): (Ori20Contract | any | boolean) {
         if (window && window.hasOwnProperty("__eth_contract_Ori20")) {
-            // @ts-ignore
-            const obj = window.__eth_contract_Ori20
-            if (obj instanceof Ori20Contract) {
-                return (obj) as Ori20Contract
-            } else {
-                return (obj) as Ori20Contract
-            }
+          // @ts-ignore
+          const obj = window.__eth_contract_Ori20
+          if (obj instanceof Ori20Contract) {
+            return (obj) as Ori20Contract
+          } else {
+            return (obj) as Ori20Contract
+          }
         } else {
-            return false
+          return false
         }
     }
 
@@ -149,7 +149,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         contract_address: string,
         supportedProvider: provider,
         ww3: Web3
-    ): Promise<Ori20Contract> {
+        ):Promise<Ori20Contract>
+    {
         const contractInstance = await new Ori20Contract(
             contract_address,
             supportedProvider,
@@ -172,8 +173,10 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     public static ABI(): AbiItem[] {
         const abi = [
             {
-                inputs: [],
-                outputs: [],
+                inputs: [
+                ],
+                outputs: [
+                ],
                 payable: false,
                 stateMutability: 'nonpayable',
                 type: 'constructor',
@@ -198,7 +201,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
                     },
                 ],
                 name: 'Approval',
-                outputs: [],
+                outputs: [
+                ],
                 type: 'event',
             },
             {
@@ -211,7 +215,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
                     },
                 ],
                 name: 'MinterAdded',
-                outputs: [],
+                outputs: [
+                ],
                 type: 'event',
             },
             {
@@ -224,7 +229,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
                     },
                 ],
                 name: 'MinterRemoved',
-                outputs: [],
+                outputs: [
+                ],
                 type: 'event',
             },
             {
@@ -247,7 +253,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
                     },
                 ],
                 name: 'Transfer',
-                outputs: [],
+                outputs: [
+                ],
                 type: 'event',
             },
             {
@@ -259,7 +266,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
                     },
                 ],
                 name: 'addMinter',
-                outputs: [],
+                outputs: [
+                ],
                 payable: false,
                 stateMutability: 'nonpayable',
                 type: 'function',
@@ -338,7 +346,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
                     },
                 ],
                 name: 'burn',
-                outputs: [],
+                outputs: [
+                ],
                 payable: false,
                 stateMutability: 'nonpayable',
                 type: 'function',
@@ -356,14 +365,16 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
                     },
                 ],
                 name: 'burnFrom',
-                outputs: [],
+                outputs: [
+                ],
                 payable: false,
                 stateMutability: 'nonpayable',
                 type: 'function',
             },
             {
                 constant: true,
-                inputs: [],
+                inputs: [
+                ],
                 name: 'cap',
                 outputs: [
                     {
@@ -377,7 +388,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             },
             {
                 constant: true,
-                inputs: [],
+                inputs: [
+                ],
                 name: 'decimals',
                 outputs: [
                     {
@@ -414,7 +426,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             },
             {
                 constant: true,
-                inputs: [],
+                inputs: [
+                ],
                 name: 'getDecimals',
                 outputs: [
                     {
@@ -428,7 +441,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             },
             {
                 constant: true,
-                inputs: [],
+                inputs: [
+                ],
                 name: 'gov',
                 outputs: [
                     {
@@ -507,7 +521,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             },
             {
                 constant: true,
-                inputs: [],
+                inputs: [
+                ],
                 name: 'name',
                 outputs: [
                     {
@@ -528,23 +543,27 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
                     },
                 ],
                 name: 'removeMinter',
-                outputs: [],
+                outputs: [
+                ],
                 payable: false,
                 stateMutability: 'nonpayable',
                 type: 'function',
             },
             {
                 constant: false,
-                inputs: [],
+                inputs: [
+                ],
                 name: 'renounceMinter',
-                outputs: [],
+                outputs: [
+                ],
                 payable: false,
                 stateMutability: 'nonpayable',
                 type: 'function',
             },
             {
                 constant: true,
-                inputs: [],
+                inputs: [
+                ],
                 name: 'symbol',
                 outputs: [
                     {
@@ -558,7 +577,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             },
             {
                 constant: true,
-                inputs: [],
+                inputs: [
+                ],
                 name: 'tokenName',
                 outputs: [
                     {
@@ -572,7 +592,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             },
             {
                 constant: true,
-                inputs: [],
+                inputs: [
+                ],
                 name: 'tokenSymbol',
                 outputs: [
                     {
@@ -586,7 +607,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             },
             {
                 constant: true,
-                inputs: [],
+                inputs: [
+                ],
                 name: 'totalSupply',
                 outputs: [
                     {
@@ -654,19 +676,19 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
 
     /**
      the listed content for the contract functions
-     **/
+    **/
 
 
     public async addMinter(account: string,): Promise<void> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('account', account);
+            assert.isString('account', account);
 
         const promizz = self._contract.methods.addMinter(
             account,
         )
 
-        const result = await promizz.send({
+const result = await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -681,52 +703,54 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+return result;
     };
 
 
-    public async addMinterGas(account: string,): Promise<number> {
+    public async addMinterGas(account: string,): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.addMinter(account,).estimateGas();
         return gasAmount;
     };
 
 
-    public async allowance(owner: string, spender: string,): Promise<BigNumber> {
+
+    public async allowance(owner: string,spender: string,): Promise<BigNumber> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('owner', owner);
-        assert.isString('spender', spender);
+            assert.isString('owner', owner);
+            assert.isString('spender', spender);
 
         const promizz = self._contract.methods.allowance(
             owner,
-            spender,
+                    spender,
         )
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async allowanceGas(owner: string, spender: string,): Promise<number> {
+    public async allowanceGas(owner: string,spender: string,): Promise<number>{
         const self = this as any as Ori20Contract;
-        const gasAmount = await self._contract.methods.allowance(owner, spender,).estimateGas();
+        const gasAmount = await self._contract.methods.allowance(owner,spender,).estimateGas();
         return gasAmount;
     };
 
 
-    public async approve(spender: string, amount: BigNumber,): Promise<boolean> {
+
+    public async approve(spender: string,amount: BigNumber,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('spender', spender);
-        assert.isNumberOrBigNumber('amount', amount);
+            assert.isString('spender', spender);
+            assert.isNumberOrBigNumber('amount', amount);
 
         const promizz = self._contract.methods.approve(
             spender,
-            amount,
+                    amount,
         )
 
-        const result = await promizz.send({
+const result = await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -741,48 +765,50 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+return result;
     };
 
 
-    public async approveGas(spender: string, amount: BigNumber,): Promise<number> {
+    public async approveGas(spender: string,amount: BigNumber,): Promise<number>{
         const self = this as any as Ori20Contract;
-        const gasAmount = await self._contract.methods.approve(spender, amount,).estimateGas();
+        const gasAmount = await self._contract.methods.approve(spender,amount,).estimateGas();
         return gasAmount;
     };
+
 
 
     public async balanceOf(account: string,): Promise<BigNumber> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('account', account);
+            assert.isString('account', account);
 
         const promizz = self._contract.methods.balanceOf(
             account,
         )
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async balanceOfGas(account: string,): Promise<number> {
+    public async balanceOfGas(account: string,): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.balanceOf(account,).estimateGas();
         return gasAmount;
     };
 
 
+
     public async burn(amount: BigNumber,): Promise<void> {
         const self = this as any as Ori20Contract;
 
-        assert.isNumberOrBigNumber('amount', amount);
+            assert.isNumberOrBigNumber('amount', amount);
 
         const promizz = self._contract.methods.burn(
             amount,
         )
 
-        const result = await promizz.send({
+const result = await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -797,29 +823,30 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+return result;
     };
 
 
-    public async burnGas(amount: BigNumber,): Promise<number> {
+    public async burnGas(amount: BigNumber,): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.burn(amount,).estimateGas();
         return gasAmount;
     };
 
 
-    public async burnFrom(account: string, amount: BigNumber,): Promise<void> {
+
+    public async burnFrom(account: string,amount: BigNumber,): Promise<void> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('account', account);
-        assert.isNumberOrBigNumber('amount', amount);
+            assert.isString('account', account);
+            assert.isNumberOrBigNumber('amount', amount);
 
         const promizz = self._contract.methods.burnFrom(
             account,
-            amount,
+                    amount,
         )
 
-        const result = await promizz.send({
+const result = await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -834,15 +861,16 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+return result;
     };
 
 
-    public async burnFromGas(account: string, amount: BigNumber,): Promise<number> {
+    public async burnFromGas(account: string,amount: BigNumber,): Promise<number>{
         const self = this as any as Ori20Contract;
-        const gasAmount = await self._contract.methods.burnFrom(account, amount,).estimateGas();
+        const gasAmount = await self._contract.methods.burnFrom(account,amount,).estimateGas();
         return gasAmount;
     };
+
 
 
     public async cap(): Promise<BigNumber> {
@@ -850,18 +878,19 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
 
 
         const promizz = self._contract.methods.cap(
-        )
+)
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async capGas(): Promise<number> {
+    public async capGas(): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.cap().estimateGas();
         return gasAmount;
     };
+
 
 
     public async decimals(): Promise<BigNumber> {
@@ -869,32 +898,33 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
 
 
         const promizz = self._contract.methods.decimals(
-        )
+)
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async decimalsGas(): Promise<number> {
+    public async decimalsGas(): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.decimals().estimateGas();
         return gasAmount;
     };
 
 
-    public async decreaseAllowance(spender: string, subtractedValue: BigNumber,): Promise<boolean> {
+
+    public async decreaseAllowance(spender: string,subtractedValue: BigNumber,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('spender', spender);
-        assert.isNumberOrBigNumber('subtractedValue', subtractedValue);
+            assert.isString('spender', spender);
+            assert.isNumberOrBigNumber('subtractedValue', subtractedValue);
 
         const promizz = self._contract.methods.decreaseAllowance(
             spender,
-            subtractedValue,
+                    subtractedValue,
         )
 
-        const result = await promizz.send({
+const result = await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -909,15 +939,16 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+return result;
     };
 
 
-    public async decreaseAllowanceGas(spender: string, subtractedValue: BigNumber,): Promise<number> {
+    public async decreaseAllowanceGas(spender: string,subtractedValue: BigNumber,): Promise<number>{
         const self = this as any as Ori20Contract;
-        const gasAmount = await self._contract.methods.decreaseAllowance(spender, subtractedValue,).estimateGas();
+        const gasAmount = await self._contract.methods.decreaseAllowance(spender,subtractedValue,).estimateGas();
         return gasAmount;
     };
+
 
 
     public async getDecimals(): Promise<BigNumber> {
@@ -925,18 +956,19 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
 
 
         const promizz = self._contract.methods.getDecimals(
-        )
+)
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async getDecimalsGas(): Promise<number> {
+    public async getDecimalsGas(): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.getDecimals().estimateGas();
         return gasAmount;
     };
+
 
 
     public async gov(): Promise<string> {
@@ -944,32 +976,33 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
 
 
         const promizz = self._contract.methods.gov(
-        )
+)
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async govGas(): Promise<number> {
+    public async govGas(): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.gov().estimateGas();
         return gasAmount;
     };
 
 
-    public async increaseAllowance(spender: string, addedValue: BigNumber,): Promise<boolean> {
+
+    public async increaseAllowance(spender: string,addedValue: BigNumber,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('spender', spender);
-        assert.isNumberOrBigNumber('addedValue', addedValue);
+            assert.isString('spender', spender);
+            assert.isNumberOrBigNumber('addedValue', addedValue);
 
         const promizz = self._contract.methods.increaseAllowance(
             spender,
-            addedValue,
+                    addedValue,
         )
 
-        const result = await promizz.send({
+const result = await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -984,50 +1017,52 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+return result;
     };
 
 
-    public async increaseAllowanceGas(spender: string, addedValue: BigNumber,): Promise<number> {
+    public async increaseAllowanceGas(spender: string,addedValue: BigNumber,): Promise<number>{
         const self = this as any as Ori20Contract;
-        const gasAmount = await self._contract.methods.increaseAllowance(spender, addedValue,).estimateGas();
+        const gasAmount = await self._contract.methods.increaseAllowance(spender,addedValue,).estimateGas();
         return gasAmount;
     };
+
 
 
     public async isMinter(account: string,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('account', account);
+            assert.isString('account', account);
 
         const promizz = self._contract.methods.isMinter(
             account,
         )
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async isMinterGas(account: string,): Promise<number> {
+    public async isMinterGas(account: string,): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.isMinter(account,).estimateGas();
         return gasAmount;
     };
 
 
-    public async mint(account: string, amount: BigNumber,): Promise<boolean> {
+
+    public async mint(account: string,amount: BigNumber,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('account', account);
-        assert.isNumberOrBigNumber('amount', amount);
+            assert.isString('account', account);
+            assert.isNumberOrBigNumber('amount', amount);
 
         const promizz = self._contract.methods.mint(
             account,
-            amount,
+                    amount,
         )
 
-        const result = await promizz.send({
+const result = await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -1042,15 +1077,16 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+return result;
     };
 
 
-    public async mintGas(account: string, amount: BigNumber,): Promise<number> {
+    public async mintGas(account: string,amount: BigNumber,): Promise<number>{
         const self = this as any as Ori20Contract;
-        const gasAmount = await self._contract.methods.mint(account, amount,).estimateGas();
+        const gasAmount = await self._contract.methods.mint(account,amount,).estimateGas();
         return gasAmount;
     };
+
 
 
     public async name(): Promise<string> {
@@ -1058,30 +1094,31 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
 
 
         const promizz = self._contract.methods.name(
-        )
+)
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async nameGas(): Promise<number> {
+    public async nameGas(): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.name().estimateGas();
         return gasAmount;
     };
 
 
+
     public async removeMinter(account: string,): Promise<void> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('account', account);
+            assert.isString('account', account);
 
         const promizz = self._contract.methods.removeMinter(
             account,
         )
 
-        const result = await promizz.send({
+const result = await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -1096,15 +1133,16 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+return result;
     };
 
 
-    public async removeMinterGas(account: string,): Promise<number> {
+    public async removeMinterGas(account: string,): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.removeMinter(account,).estimateGas();
         return gasAmount;
     };
+
 
 
     public async renounceMinter(): Promise<void> {
@@ -1112,9 +1150,9 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
 
 
         const promizz = self._contract.methods.renounceMinter(
-        )
+)
 
-        const result = await promizz.send({
+const result = await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -1129,15 +1167,16 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+return result;
     };
 
 
-    public async renounceMinterGas(): Promise<number> {
+    public async renounceMinterGas(): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.renounceMinter().estimateGas();
         return gasAmount;
     };
+
 
 
     public async symbol(): Promise<string> {
@@ -1145,18 +1184,19 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
 
 
         const promizz = self._contract.methods.symbol(
-        )
+)
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async symbolGas(): Promise<number> {
+    public async symbolGas(): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.symbol().estimateGas();
         return gasAmount;
     };
+
 
 
     public async tokenName(): Promise<string> {
@@ -1164,18 +1204,19 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
 
 
         const promizz = self._contract.methods.tokenName(
-        )
+)
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async tokenNameGas(): Promise<number> {
+    public async tokenNameGas(): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.tokenName().estimateGas();
         return gasAmount;
     };
+
 
 
     public async tokenSymbol(): Promise<string> {
@@ -1183,18 +1224,19 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
 
 
         const promizz = self._contract.methods.tokenSymbol(
-        )
+)
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async tokenSymbolGas(): Promise<number> {
+    public async tokenSymbolGas(): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.tokenSymbol().estimateGas();
         return gasAmount;
     };
+
 
 
     public async totalSupply(): Promise<BigNumber> {
@@ -1202,32 +1244,33 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
 
 
         const promizz = self._contract.methods.totalSupply(
-        )
+)
 
         const result = await promizz.call();
-        return result;
+return result;
     };
 
 
-    public async totalSupplyGas(): Promise<number> {
+    public async totalSupplyGas(): Promise<number>{
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.totalSupply().estimateGas();
         return gasAmount;
     };
 
 
-    public async transfer(recipient: string, amount: BigNumber,): Promise<boolean> {
+
+    public async transfer(recipient: string,amount: BigNumber,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('recipient', recipient);
-        assert.isNumberOrBigNumber('amount', amount);
+            assert.isString('recipient', recipient);
+            assert.isNumberOrBigNumber('amount', amount);
 
         const promizz = self._contract.methods.transfer(
             recipient,
-            amount,
+                    amount,
         )
 
-        const result = await promizz.send({
+const result = await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -1242,31 +1285,32 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+return result;
     };
 
 
-    public async transferGas(recipient: string, amount: BigNumber,): Promise<number> {
+    public async transferGas(recipient: string,amount: BigNumber,): Promise<number>{
         const self = this as any as Ori20Contract;
-        const gasAmount = await self._contract.methods.transfer(recipient, amount,).estimateGas();
+        const gasAmount = await self._contract.methods.transfer(recipient,amount,).estimateGas();
         return gasAmount;
     };
 
 
-    public async transferFrom(sender: string, recipient: string, amount: BigNumber,): Promise<boolean> {
+
+    public async transferFrom(sender: string,recipient: string,amount: BigNumber,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
-        assert.isString('sender', sender);
-        assert.isString('recipient', recipient);
-        assert.isNumberOrBigNumber('amount', amount);
+            assert.isString('sender', sender);
+            assert.isString('recipient', recipient);
+            assert.isNumberOrBigNumber('amount', amount);
 
         const promizz = self._contract.methods.transferFrom(
             sender,
-            recipient,
-            amount,
+                    recipient,
+                    amount,
         )
 
-        const result = await promizz.send({
+const result = await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -1281,13 +1325,13 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+return result;
     };
 
 
-    public async transferFromGas(sender: string, recipient: string, amount: BigNumber,): Promise<number> {
+    public async transferFromGas(sender: string,recipient: string,amount: BigNumber,): Promise<number>{
         const self = this as any as Ori20Contract;
-        const gasAmount = await self._contract.methods.transferFrom(sender, recipient, amount,).estimateGas();
+        const gasAmount = await self._contract.methods.transferFrom(sender,recipient,amount,).estimateGas();
         return gasAmount;
     };
 
@@ -1370,12 +1414,12 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         supportedProvider: provider,
         ww3: Web3
     ) {
-        super('Ori20', Ori20Contract.ABI(), address, supportedProvider, ww3);
-        this._subscriptionManager = new SubscriptionManager<Ori20EventArgs, Ori20Events>(
+        super('Ori20', Ori20Contract.ABI(), address, supportedProvider,ww3);
+this._subscriptionManager = new SubscriptionManager<Ori20EventArgs, Ori20Events>(
             Ori20Contract.ABI(),
             supportedProvider,
         );
-        Ori20Contract.ABI().forEach((item, index) => {
+Ori20Contract.ABI().forEach((item, index) => {
             if (item.type === 'function') {
                 const methodAbi = item as MethodAbi;
                 this._methodABIIndex[methodAbi.name] = index;
