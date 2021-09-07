@@ -1,4 +1,7 @@
 # vue-blocklink
+[![npm](https://img.shields.io/npm/v/vue-blocklink.svg?style=plastic)](https://www.npmjs.com/package/vue-blocklink)
+[![npm](https://img.shields.io/npm/l/vue-blocklink?style=plastic)](https://www.npmjs.com/package/vue-blocklink)
+
 
 Also see some official repos
 Blockchain links on the browser based wallets
