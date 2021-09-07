@@ -1,8 +1,8 @@
-import {AbiDecoder, addressUtils, BigNumber, intervalUtils, promisify, providerUtils} from './utils';
+export type {AbiDecoder, addressUtils, intervalUtils, promisify, providerUtils} from './utils';
+import type {BigNumber} from 'bignumber.js'
 import {AbiItem} from 'web3-utils';
 
 export type JSONRPCErrorCallback = (err: Error | null, result?: JSONRPCResponsePayload) => void;
-
 
 export interface Balancer {
     [holder_address: string]: number;

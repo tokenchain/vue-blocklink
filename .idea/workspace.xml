@@ -7,7 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mixins/vue-metamask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/vue-metamask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/eth/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/eth/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,8 @@
       <workItem from="1630996608904" duration="3363000" />
       <workItem from="1631010687267" duration="1048000" />
       <workItem from="1631013576837" duration="389000" />
-      <workItem from="1631023809379" duration="647000" />
+      <workItem from="1631023809379" duration="1490000" />
+      <workItem from="1631037334432" duration="194000" />
     </task>
     <servers />
   </component>
