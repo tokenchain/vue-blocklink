@@ -667,6 +667,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         )
 
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -677,6 +678,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e)
         });
         return result;
     };
@@ -724,6 +727,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         )
 
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -734,6 +738,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e)
         });
         return result;
     };
@@ -777,6 +783,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         )
 
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -787,6 +794,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e)
         });
         return result;
     };
@@ -811,6 +820,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         )
 
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -821,6 +831,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e)
         });
         return result;
     };
@@ -883,6 +895,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         )
 
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -893,6 +906,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e)
         });
         return result;
     };
@@ -955,6 +970,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         )
 
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -965,6 +981,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e)
         });
         return result;
     };
@@ -1010,6 +1028,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         )
 
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -1020,6 +1039,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e)
         });
         return result;
     };
@@ -1061,6 +1082,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         )
 
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -1071,6 +1093,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e)
         });
         return result;
     };
@@ -1091,6 +1115,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         )
 
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -1101,6 +1126,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e)
         });
         return result;
     };
@@ -1201,6 +1228,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         )
 
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -1211,6 +1239,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e)
         });
         return result;
     };
@@ -1237,6 +1267,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         )
 
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -1247,6 +1278,8 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e)
         });
         return result;
     };

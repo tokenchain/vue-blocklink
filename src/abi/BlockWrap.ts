@@ -107,10 +107,7 @@ export default class BlockWrap {
     async sendToken(amount: any, toaddress: string, erc20_address: string): Promise<void> {
         const contract = await this.NewToken(erc20_address);
         // @ts-ignore
-        contract.setResource(this.gas, this.gasPrice);
-        // @ts-ignore
-        const send_amount = BigNumber.from(amount);
-        console.log(send_amount)
+        const send_amount = new BigNumber(amount);
         await contract.transfer(toaddress, send_amount);
     }
 
@@ -171,29 +168,10 @@ export default class BlockWrap {
         return await this.getThirdTokenBalance(this.getAccountAddress(), trc20_coin)
     }
 
-    async coinDPDetail(): Promise<CoinDetail> {
+    async coinExample(): Promise<CoinDetail> {
         return await this.getCoinDetail("TXHvwxYbqsDqTCQ9KxNFj4SkuXy7EF2AHR")
     }
 
-    async coinCOLADetail(): Promise<CoinDetail> {
-        return await this.getCoinDetail("TSNWgunSeGUQqBKK4bM31iLw3bn9SBWWTG")
-    }
-
-    async coinBTCDetail(): Promise<CoinDetail> {
-        return await this.getCoinDetail("TN3W4H6rK2ce4vX9YnFQHwKENnHjoxb3m9")
-    }
-
-    async coinETHDetail(): Promise<CoinDetail> {
-        return await this.getCoinDetail("THb4CqiFdwNHsWsQCs4JhzwjMWys4aqCbF")
-    }
-
-    async coinSUNDetail(): Promise<CoinDetail> {
-        return await this.getCoinDetail("TKkeiboTkxXKJpbmVFbv4a8ov5rAfRDMf9")
-    }
-
-    async coinUSDTDetail(): Promise<CoinDetail> {
-        return await this.getCoinDetail("TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t")
-    }
 
     /**
      * get TRC20 token in balance
@@ -248,7 +226,11 @@ export default class BlockWrap {
     }
 
     async NewToken(erc20_address: string): Promise<Ori20Contract> {
-        return await Ori20Contract.init(erc20_address, this.ethereumCore, this.w3)
+        const contr = await Ori20Contract.init(erc20_address, this.ethereumCore, this.w3)
+        // @ts-ignore
+        contr.setResource(this.gas, this.gasPrice);
+        contr.setBlockLink(this)
+        return contr
     }
 
     getListedCoins(): WebLinkTokenMap {
@@ -266,9 +248,9 @@ export default class BlockWrap {
 
     }
 
-    setHandlers(confirm, boardcast, err): void {
+    setHandlers(confirm, broadcast, err): void {
         this.errorHandler = err
-        this.boardcastHandler = boardcast
+        this.boardcastHandler = broadcast
         this.confirmHandler = confirm
     }
 

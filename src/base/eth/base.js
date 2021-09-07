@@ -15,23 +15,41 @@ export class BaseContract extends EventEmitter {
         this._address = address;
         this._provider = supportedProvider;
         this._contract = new webww3.eth.Contract(abi, address);
+        this._ww3 = webww3;
     }
     setDebug(bool) {
         this.__debug = bool;
+    }
+    setBlockLink(bw) {
+        if (!bw)
+            return;
+        this._blockwrap = bw;
+        this.setHandlers(this._blockwrap.confirmHandler, this._blockwrap.boardcastHandler, this._blockwrap.errorHandler);
     }
     setResource(gas, gas_price) {
         this.gas = gas;
         this.gasPrice = gas_price;
     }
     setHandlers(confirm, broadcast, err) {
-        this._errorHandler = err;
-        this._broadcastHandler = broadcast;
-        this._confirmHandler = confirm;
+        if (err) {
+            this._errorHandler = err;
+        }
+        if (broadcast) {
+            this._broadcastHandler = broadcast;
+        }
+        if (confirm) {
+            this._confirmHandler = confirm;
+        }
     }
     onError(receipt, err) {
-        if (!this._errorHandler)
+        if (!this._errorHandler || !receipt)
             return;
         this._receiptListFailure.push(receipt);
+        this._errorHandler(err);
+    }
+    catchErro(err) {
+        if (!this._errorHandler)
+            return;
         this._errorHandler(err);
     }
     onBroadcast(hash) {

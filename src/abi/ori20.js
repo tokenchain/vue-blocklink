@@ -530,6 +530,7 @@ export class Ori20Contract extends BaseContract {
         assert.isString('account', account);
         const promizz = self._contract.methods.addMinter(account);
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -540,6 +541,8 @@ export class Ori20Contract extends BaseContract {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e);
         });
         return result;
     }
@@ -571,6 +574,7 @@ export class Ori20Contract extends BaseContract {
         assert.isNumberOrBigNumber('amount', amount);
         const promizz = self._contract.methods.approve(spender, amount);
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -581,6 +585,8 @@ export class Ori20Contract extends BaseContract {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e);
         });
         return result;
     }
@@ -610,6 +616,7 @@ export class Ori20Contract extends BaseContract {
         assert.isNumberOrBigNumber('amount', amount);
         const promizz = self._contract.methods.burn(amount);
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -620,6 +627,8 @@ export class Ori20Contract extends BaseContract {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e);
         });
         return result;
     }
@@ -636,6 +645,7 @@ export class Ori20Contract extends BaseContract {
         assert.isNumberOrBigNumber('amount', amount);
         const promizz = self._contract.methods.burnFrom(account, amount);
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -646,6 +656,8 @@ export class Ori20Contract extends BaseContract {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e);
         });
         return result;
     }
@@ -688,6 +700,7 @@ export class Ori20Contract extends BaseContract {
         assert.isNumberOrBigNumber('subtractedValue', subtractedValue);
         const promizz = self._contract.methods.decreaseAllowance(spender, subtractedValue);
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -698,6 +711,8 @@ export class Ori20Contract extends BaseContract {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e);
         });
         return result;
     }
@@ -740,6 +755,7 @@ export class Ori20Contract extends BaseContract {
         assert.isNumberOrBigNumber('addedValue', addedValue);
         const promizz = self._contract.methods.increaseAllowance(spender, addedValue);
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -750,6 +766,8 @@ export class Ori20Contract extends BaseContract {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e);
         });
         return result;
     }
@@ -780,6 +798,7 @@ export class Ori20Contract extends BaseContract {
         assert.isNumberOrBigNumber('amount', amount);
         const promizz = self._contract.methods.mint(account, amount);
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -790,6 +809,8 @@ export class Ori20Contract extends BaseContract {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e);
         });
         return result;
     }
@@ -818,6 +839,7 @@ export class Ori20Contract extends BaseContract {
         assert.isString('account', account);
         const promizz = self._contract.methods.removeMinter(account);
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -828,6 +850,8 @@ export class Ori20Contract extends BaseContract {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e);
         });
         return result;
     }
@@ -842,6 +866,7 @@ export class Ori20Contract extends BaseContract {
         const self = this;
         const promizz = self._contract.methods.renounceMinter();
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -852,6 +877,8 @@ export class Ori20Contract extends BaseContract {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e);
         });
         return result;
     }
@@ -920,6 +947,7 @@ export class Ori20Contract extends BaseContract {
         assert.isNumberOrBigNumber('amount', amount);
         const promizz = self._contract.methods.transfer(recipient, amount);
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -930,6 +958,8 @@ export class Ori20Contract extends BaseContract {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e);
         });
         return result;
     }
@@ -947,6 +977,7 @@ export class Ori20Contract extends BaseContract {
         assert.isNumberOrBigNumber('amount', amount);
         const promizz = self._contract.methods.transferFrom(sender, recipient, amount);
         const result = await promizz.send({
+            from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
         }).on('transactionHash', (hash) => {
@@ -957,6 +988,8 @@ export class Ori20Contract extends BaseContract {
             this.pushReceiptSuccess(r);
         }).on('error', (error, receipt) => {
             this.onError(receipt, error);
+        }).catch((e) => {
+            this.catchErro(e);
         });
         return result;
     }

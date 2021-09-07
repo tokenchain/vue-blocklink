@@ -1,0 +1,11 @@
+{
+  "chainInfo": {
+    "chainId": 390
+  },
+  "data": [
+    {
+      "coin_name": "AAA",
+      "address": "0x284902384908293480928340928342"
+    }
+  ]
+}

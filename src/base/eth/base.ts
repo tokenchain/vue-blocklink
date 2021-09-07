@@ -26,6 +26,7 @@ import {Utils, AbiItem} from 'web3-utils';
 
 import {EventEmitter} from "eventemitter3"
 import Web3 from "web3";
+import BlockWrap from "../../abi/BlockWrap";
 
 export class BaseContract extends EventEmitter {
 
@@ -36,6 +37,8 @@ export class BaseContract extends EventEmitter {
     public _deployedBytecodeIfExists?: Buffer;
     public _address: string = "";
     public _provider: provider;
+    public _ww3: Web3;
+    public _blockwrap: BlockWrap;
     protected _errorHandler: any = false;
     protected _broadcastHandler: any = false;
     protected _confirmHandler: any = false;
@@ -50,20 +53,42 @@ export class BaseContract extends EventEmitter {
         this.__debug = bool
     }
 
+    public setBlockLink(bw: BlockWrap): void {
+        if (!bw) return;
+        this._blockwrap = bw
+        this.setHandlers(this._blockwrap.confirmHandler, this._blockwrap.boardcastHandler, this._blockwrap.errorHandler)
+    }
+
     public setResource(gas: number, gas_price: number): void {
         this.gas = gas
         this.gasPrice = gas_price
     }
 
     public setHandlers(confirm, broadcast, err): void {
-        this._errorHandler = err
-        this._broadcastHandler = broadcast
-        this._confirmHandler = confirm
+        if (err) {
+            this._errorHandler = err
+        }
+
+        if (broadcast) {
+            this._broadcastHandler = broadcast
+        }
+
+        if (confirm) {
+            this._confirmHandler = confirm
+        }
+
     }
 
     protected onError(receipt: any, err: any): void {
-        if (!this._errorHandler) return;
+        if (!this._errorHandler || !receipt) return;
+        //console.log("error 1", receipt, err)
         this._receiptListFailure.push(receipt)
+        this._errorHandler(err)
+    }
+
+    protected catchErro(err): void {
+        if (!this._errorHandler) return;
+        //console.log("error 2")
         this._errorHandler(err)
     }
 
@@ -102,5 +127,6 @@ export class BaseContract extends EventEmitter {
         this._address = address
         this._provider = supportedProvider
         this._contract = new webww3.eth.Contract(abi, address);
+        this._ww3 = webww3
     }
 }

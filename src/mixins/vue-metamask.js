@@ -60,9 +60,9 @@ export default {
                             method: 'eth_chainId'
                         })
                         this.ethereum = window.ethereum
-                        const W3 = new Web3(this.ethereum);
-                        this.w3 = W3
-                        window.web3 = W3
+                        const W3epp = new Web3(window.ethereum);
+                        this.w3 = W3epp
+                        window.web3 = W3epp
                         this.netID = chainId
                         clearInterval(this.Web3Interval)
                     }

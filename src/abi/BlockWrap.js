@@ -56,9 +56,7 @@ export default class BlockWrap {
     }
     async sendToken(amount, toaddress, erc20_address) {
         const contract = await this.NewToken(erc20_address);
-        contract.setResource(this.gas, this.gasPrice);
-        const send_amount = BigNumber.from(amount);
-        console.log(send_amount);
+        const send_amount = new BigNumber(amount);
         await contract.transfer(toaddress, send_amount);
     }
     convertAddress(address, fromFormat, toFormat) {
@@ -98,23 +96,8 @@ export default class BlockWrap {
     async getCoinDetail(trc20_coin) {
         return await this.getThirdTokenBalance(this.getAccountAddress(), trc20_coin);
     }
-    async coinDPDetail() {
+    async coinExample() {
         return await this.getCoinDetail("TXHvwxYbqsDqTCQ9KxNFj4SkuXy7EF2AHR");
-    }
-    async coinCOLADetail() {
-        return await this.getCoinDetail("TSNWgunSeGUQqBKK4bM31iLw3bn9SBWWTG");
-    }
-    async coinBTCDetail() {
-        return await this.getCoinDetail("TN3W4H6rK2ce4vX9YnFQHwKENnHjoxb3m9");
-    }
-    async coinETHDetail() {
-        return await this.getCoinDetail("THb4CqiFdwNHsWsQCs4JhzwjMWys4aqCbF");
-    }
-    async coinSUNDetail() {
-        return await this.getCoinDetail("TKkeiboTkxXKJpbmVFbv4a8ov5rAfRDMf9");
-    }
-    async coinUSDTDetail() {
-        return await this.getCoinDetail("TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t");
     }
     async getThirdTokenBalance(address, erc20_address) {
         if (!this.isLoggedIn()) {
@@ -150,7 +133,10 @@ export default class BlockWrap {
         return await token.approve(spender_address, BigNumber.from(amount_sun));
     }
     async NewToken(erc20_address) {
-        return await Ori20Contract.init(erc20_address, this.ethereumCore, this.w3);
+        const contr = await Ori20Contract.init(erc20_address, this.ethereumCore, this.w3);
+        contr.setResource(this.gas, this.gasPrice);
+        contr.setBlockLink(this);
+        return contr;
     }
     getListedCoins() {
         return this.tokens;
@@ -161,9 +147,9 @@ export default class BlockWrap {
     }
     eventListener(message, vueInstance) {
     }
-    setHandlers(confirm, boardcast, err) {
+    setHandlers(confirm, broadcast, err) {
         this.errorHandler = err;
-        this.boardcastHandler = boardcast;
+        this.boardcastHandler = broadcast;
         this.confirmHandler = confirm;
     }
     setDebug(debugx) {

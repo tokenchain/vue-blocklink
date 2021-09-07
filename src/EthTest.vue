@@ -79,8 +79,8 @@ export default {
       await this.blockLink.sendCoin(amount, to)
     },
     async send_token_trig() {
-      // less 0000
-      const amount = 100000000000000
+      //
+      const amount = 10000000000000000000
       const to = "0x25bf0C8d7909a581549Dc2d075Ba12364D5ec0CA"
       await (this.blockLink && this.blockLink.sendToken(amount, to, this.my_tokenaddress))
     },
