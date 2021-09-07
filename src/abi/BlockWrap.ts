@@ -9,8 +9,8 @@ import ethUtil from "ethereumjs-util";
 import sigUtil from "eth-sig-util";
 import Web3 from "web3";
 
+import {Utils} from 'web3-utils';
 import {PromiEvent, TransactionConfig} from 'web3-core';
-import {AbiDecoder, addressUtils, BigNumber, intervalUtils, promisify, providerUtils} from '../base/eth/utils';
 
 /**
  * BlockWrap extension interaction functionality
@@ -51,6 +51,22 @@ export default class BlockWrap {
      */
     isLoggedIn(): boolean {
         return this.ethereumCore && this.ethereumCore.isConnected()
+    }
+
+    /**
+     *
+     * Is this an address?
+     */
+    isAddress(test: any): boolean {
+        return this.w3.utils.isAddress(test)
+    }
+
+    /**
+     *
+     * Is this an address?
+     */
+    w3Utils(): Utils {
+        return this.w3.utils
     }
 
     /**

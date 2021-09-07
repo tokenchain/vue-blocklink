@@ -3,7 +3,6 @@ import { Ori20Contract } from "./ori20";
 import CoinDetail from "./CoinDetail";
 import ethUtil from "ethereumjs-util";
 import sigUtil from "eth-sig-util";
-import { BigNumber } from '../base/eth/utils';
 export default class BlockWrap {
     constructor(webThree, ethereumCore) {
         this.debug = false;
@@ -19,6 +18,12 @@ export default class BlockWrap {
     }
     isLoggedIn() {
         return this.ethereumCore && this.ethereumCore.isConnected();
+    }
+    isAddress(test) {
+        return this.w3.utils.isAddress(test);
+    }
+    w3Utils() {
+        return this.w3.utils;
     }
     async isUnlocked() {
         return await this.ethereumCore._metamask.isUnlocked();
