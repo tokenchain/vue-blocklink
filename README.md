@@ -1,6 +1,10 @@
 # vue-blocklink
 [![npm](https://img.shields.io/npm/v/vue-blocklink.svg?style=plastic)](https://www.npmjs.com/package/vue-blocklink)
-[![npm](https://img.shields.io/npm/l/vue-blocklink?style=plastic)](https://www.npmjs.com/package/vue-blocklink)
+[![license](https://img.shields.io/npm/l/vue-blocklink?style=plastic)](https://www.npmjs.com/package/vue-blocklink)
+[![language](https://img.shields.io/github/languages/top/tokenchain/vue-blocklink?style=plastic)](https://www.npmjs.com/package/vue-blocklink)
+[![size](https://img.shields.io/github/languages/code-size/tokenchain/vue-blocklink?style=plastic)](https://www.npmjs.com/package/vue-blocklink)
+[![issues](https://img.shields.io/github/issues/tokenchain/vue-blocklink?style=plastic)](https://www.npmjs.com/package/vue-blocklink)
+[![stars](https://img.shields.io/github/stars/tokenchain/vue-blocklink?style=plastic)](https://www.npmjs.com/package/vue-blocklink)
 
 
 Also see some official repos
