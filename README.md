@@ -1,30 +1,32 @@
 # vue-blocklink
-blockchain links on the browser based wallets
 
+Also see some official repos
+Blockchain links on the browser based wallets
+Works for vue 2.0 and not 3.0
 
-
-# tron supports
-Vue support for the TronLink browser extension
-
+# EVM supports
+Vue support for the Metamask browser extension
 This project will also support the future networks
 
-### ETH Metamask wallet
- * Support all metamask ethereum related networks
+### EVM wallet
+ * Support all EVM ethereum related networks
 
-### TRC20 display
- * support TRC20 balance
- * TronLink support TRC20 token
- * Basic coins from USDT, BTC, ETH, SUN, DP 
+### ERC20 or XRC20 display
+ * support all ERC20 balance
+ * BlockLink support TRC20 token
+ * Basic coins from some custom addressses
 
 ### vue mixin Events:
- * notify_tron_not_install
- * notify_tron_installed
- * notify_tron_node_change
- * notify_tron_account_set
- * notify_tron_initialization
+ * notify_evm_not_install
+ * notify_evm_installed
+ * notify_evm_node_change
+ * notify_evm_account_set
+ * notify_evm_initialization
 
-### mixin support imtoken events:
+### mixin support imtoken wallet api events:
  * imtoken_on_detect
  * listen to: set_imtoken_style
  * listen to: set_imtoken_pop
 
+### Support metamask operation API:
+ * will work on more api supports
