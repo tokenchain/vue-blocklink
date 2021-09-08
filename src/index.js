@@ -1,7 +1,7 @@
 import BlockWrap from "./abi/BlockWrap";
 import EthereumWeb3Component from "./mixins/vue-metamask"
 import ImTokenComponent from "./mixins/vue-imtoken"
-import {BigNumber} from "./base/eth/utils/configured_bignumber"
+import {BigNumber} from "base/eth/utils/configured_bignumber"
 import {
     fromTokenUnitAmount,
     toTokenUnitAmount
