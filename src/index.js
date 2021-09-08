@@ -6,8 +6,8 @@ import {
     fromTokenUnitAmount,
     toTokenUnitAmount
 } from "./base/eth/utils"
+import {BaseContract} from "./base/eth/base"
 import {assert} from "./base/eth/0xassert"
-
 import {schemas} from "./base/eth/validations"
 
 export {
@@ -15,6 +15,7 @@ export {
     ImTokenComponent,
     EthereumWeb3Component,
     BigNumber,
+    BaseContract,
     fromTokenUnitAmount,
     toTokenUnitAmount,
     assert, schemas

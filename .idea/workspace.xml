@@ -6,16 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/CoinDetail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/CoinDetail.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/ori20.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +99,9 @@
       <workItem from="1631039035665" duration="632000" />
       <workItem from="1631080068629" duration="869000" />
       <workItem from="1631081458456" duration="570000" />
-      <workItem from="1631083488193" duration="579000" />
+      <workItem from="1631083488193" duration="695000" />
+      <workItem from="1631087144750" duration="674000" />
+      <workItem from="1631092994493" duration="22000" />
     </task>
     <servers />
   </component>
