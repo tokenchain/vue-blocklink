@@ -4,8 +4,13 @@
     "es6": true,
     "jest": true
   },
+  "plugins": [
+    "vue",
+    "@typescript-eslint"
+  ],
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:vue/essential"
   ],
   "globals": {
@@ -17,10 +22,6 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "vue",
-    "@typescript-eslint"
-  ],
   "rules": {
     "indent": [
       "error",
@@ -38,9 +39,10 @@
       "double"
     ],
     "semi": [
-      "error",
+      2,
       "never"
     ],
+    "camelcase": "off",
     "no-undef": "warn",
     "no-console": "warn",
     "space-before-function-paren": [

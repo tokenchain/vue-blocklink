@@ -1,6 +1,6 @@
 {
   "name": "vue-blocklink",
-  "version": "0.1.226",
+  "version": "0.1.227",
   "description": "Vue support for the Blockchain Link browser extension",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -49,6 +49,7 @@
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@vue/component-compiler-utils": "^3.2.0",
+    "@typescript-eslint/eslint-plugin": "1.2.0",
     "babel-jest": "^24.9.0",
     "babel-preset-vue": "^2.0.2",
     "coveralls": "^3.1.0",
@@ -66,6 +67,7 @@
     "vue-template-compiler": "^2.6.12"
   },
   "dependencies": {
+    "typescript": "3.2.1",
     "@metamask/detect-provider": "^1.2.0",
     "@metamask/onboarding": "^1.0.1",
     "bignumber.js": "^9.0.1",

@@ -14,11 +14,10 @@ export {
     BlockWrap,
     ImTokenComponent,
     EthereumWeb3Component,
-    BigNumber,
     BlockRange,
     DecodedLogArgs, LogWithDecodedArgs, MethodAbi,
     EventCallback, IndexedFilterValues, SubscriptionManager,
     BaseContract,
-    schemas, assert
+    BigNumber, schemas, assert
 }
 

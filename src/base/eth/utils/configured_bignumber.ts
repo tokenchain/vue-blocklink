@@ -1,4 +1,4 @@
-import {BigNumber} from 'bignumber.js';
+import BigNumber from 'bignumber.js';
 
 BigNumber.config({
     // By default BigNumber's `toString` method converts to exponential notation if the value has

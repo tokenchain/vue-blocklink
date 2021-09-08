@@ -1,5 +1,6 @@
-import {Balancer, Spending, Web3ERC20Token, Unlimited} from "../base/eth/types";
-import BigNumber from "bignumber.js";
+import {Balancer, Spending, Web3ERC20Token, Unlimited} from "../base/eth/types"
+import {BigNumber} from "../base/eth/utils/configured_bignumber"
+
 
 export default class CoinDetail implements Web3ERC20Token {
     address: string;

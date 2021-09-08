@@ -1,23 +1,21 @@
-export type {AbiDecoder, addressUtils, intervalUtils, promisify, providerUtils} from './utils';
-import type {BigNumber} from 'bignumber.js'
-import {AbiItem} from 'web3-utils';
+import {BigNumber} from "./utils/configured_bignumber"
 
 export type JSONRPCErrorCallback = (err: Error | null, result?: JSONRPCResponsePayload) => void;
 
 export interface Balancer {
-    [holder_address: string]: number;
+    [holderAddress: string]: number;
 }
 
 export interface Spending {
-    [holder_address: string]: Balancer;
+    [holderAddress: string]: Balancer;
 }
 
 export interface Unlimited {
-    [holder_address: string]: boolean;
+    [holderAddress: string]: boolean;
 }
 
 export interface WebLinkTokenMap {
-    [contract_address: string]: Web3ERC20Token;
+    [contractAddress: string]: Web3ERC20Token;
 }
 
 export interface Web3ERC20Token {
@@ -34,7 +32,7 @@ export interface WatchAssetParams {
     type: string; // In the future, other standards will be supported
     options: {
         address: string; // The address of the token contract
-        'symbol': string; // A ticker symbol or shorthand, up to 5 characters
+        "symbol": string; // A ticker symbol or shorthand, up to 5 characters
         decimals: number; // The number of token decimals
         image: string; // A string url of the token logo
     };
@@ -65,8 +63,8 @@ export class PromiseWithTransactionHash<T> implements Promise<T> {
     private readonly _promise: Promise<T>;
 
     constructor(txHashPromise: Promise<string>, promise: Promise<T>) {
-        this.txHashPromise = txHashPromise;
-        this._promise = promise;
+        this.txHashPromise = txHashPromise
+        this._promise = promise
     }
 
     // tslint:disable:promise-function-async
@@ -75,21 +73,21 @@ export class PromiseWithTransactionHash<T> implements Promise<T> {
         onFulfilled?: (v: T) => TResult | Promise<TResult>,
         onRejected?: (reason: any) => Promise<never>,
     ): Promise<TResult> {
-        return this._promise.then<TResult>(onFulfilled, onRejected);
+        return this._promise.then<TResult>(onFulfilled, onRejected)
     }
 
     public catch<TResult>(onRejected?: (reason: any) => Promise<TResult>): Promise<TResult | T> {
-        return this._promise.catch(onRejected);
+        return this._promise.catch(onRejected)
     }
 
     public finally(onFinally?: (() => void) | null): Promise<T> {
-        return this._promise.finally(onFinally);
+        return this._promise.finally(onFinally)
     }
 
     // tslint:enable:promise-function-async
     // tslint:enable:async-suffix
     get [Symbol.toStringTag](): string {
-        return this._promise[Symbol.toStringTag];
+        return this._promise[Symbol.toStringTag]
     }
 }
 
@@ -109,8 +107,8 @@ export interface ContractEvent<ContractEventArgs> {
 }
 
 export enum SubscriptionErrors {
-    SubscriptionNotFound = 'SUBSCRIPTION_NOT_FOUND',
-    SubscriptionAlreadyPresent = 'SUBSCRIPTION_ALREADY_PRESENT',
+    SubscriptionNotFound = "SUBSCRIPTION_NOT_FOUND",
+    SubscriptionAlreadyPresent = "SUBSCRIPTION_ALREADY_PRESENT",
 }
 
 /**
@@ -224,7 +222,7 @@ export interface Web3JsV3Provider {
  * Interface for providers that conform to EIP 1193
  * Source: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1193.md
  */
-export type EIP1193Event = 'accountsChanged' | 'networkChanged' | 'close' | 'connect' | 'notification';
+export type EIP1193Event = "accountsChanged" | "networkChanged" | "close" | "connect" | "notification";
 
 export interface EIP1193Provider {
     isEIP1193: boolean;
@@ -240,8 +238,8 @@ export type AbiDefinition = FunctionAbi | EventAbi | RevertErrorAbi;
 
 export type FunctionAbi = MethodAbi | ConstructorAbi | FallbackAbi;
 
-export type ConstructorStateMutability = 'nonpayable' | 'payable';
-export type StateMutability = 'pure' | 'view' | ConstructorStateMutability;
+export type ConstructorStateMutability = "nonpayable" | "payable";
+export type StateMutability = "pure" | "view" | ConstructorStateMutability;
 
 export interface MethodAbi {
     // Ideally this would be set to: `'function'` but then TS complains when artifacts are loaded
@@ -276,7 +274,7 @@ export interface EventParameter extends DataItem {
 }
 
 export interface RevertErrorAbi {
-    type: 'error';
+    type: "error";
     name: string;
     arguments?: DataItem[];
 }
@@ -303,150 +301,150 @@ export interface TupleDataItem extends DataItem {
 
 export enum OpCode {
     // 0s: Stop and Arithmetic Operations
-    Stop = 'STOP',
-    Add = 'ADD',
-    Mul = 'MUL',
-    Sub = 'SUB',
-    Div = 'DIV',
-    SDiv = 'SDIV',
-    Mod = 'MOD',
-    SMod = 'SMOD',
-    AddMod = 'ADDMOD',
-    MulMod = 'MULMOD',
-    Exp = 'EXP',
-    SignExtend = 'SIGNEXTEND',
+    Stop = "STOP",
+    Add = "ADD",
+    Mul = "MUL",
+    Sub = "SUB",
+    Div = "DIV",
+    SDiv = "SDIV",
+    Mod = "MOD",
+    SMod = "SMOD",
+    AddMod = "ADDMOD",
+    MulMod = "MULMOD",
+    Exp = "EXP",
+    SignExtend = "SIGNEXTEND",
     // 10s: Comparison & Bitwise Logic Operations
-    Lt = 'LT',
-    Gt = 'GT',
-    SLt = 'SLT',
-    SGt = 'SGT',
-    Eq = 'EQ',
-    IsZero = 'ISZERO',
-    And = 'AND',
-    Or = 'OR',
-    Xor = 'XOR',
-    Not = 'NOT',
-    Byte = 'BYTE',
+    Lt = "LT",
+    Gt = "GT",
+    SLt = "SLT",
+    SGt = "SGT",
+    Eq = "EQ",
+    IsZero = "ISZERO",
+    And = "AND",
+    Or = "OR",
+    Xor = "XOR",
+    Not = "NOT",
+    Byte = "BYTE",
     // 20s: SHA3
-    Sha3 = 'SHA3',
+    Sha3 = "SHA3",
     // 30s: Environmental Information
-    Address = 'ADDRESS',
-    Balance = 'BALANCE',
-    Origin = 'ORIGIN',
-    Caller = 'CALLER',
-    CallValue = 'CALLVALUE',
-    CallDataLoad = 'CALLDATALOAD',
-    CallDataSize = 'CALLDATASIZE',
-    CallDataCopy = 'CALLDATACOPY',
-    CodeSize = 'CODESIZE',
-    CodeCopy = 'CODECOPY',
-    GasPrice = 'GASPRICE',
-    ExtCodeSize = 'EXTCODESIZE',
-    ExtCodeCopy = 'EXTCODECOPY',
-    ReturnDataSize = 'RETURNDATASIZE',
-    ReturnDataCopy = 'RETURNDATACOPY',
+    Address = "ADDRESS",
+    Balance = "BALANCE",
+    Origin = "ORIGIN",
+    Caller = "CALLER",
+    CallValue = "CALLVALUE",
+    CallDataLoad = "CALLDATALOAD",
+    CallDataSize = "CALLDATASIZE",
+    CallDataCopy = "CALLDATACOPY",
+    CodeSize = "CODESIZE",
+    CodeCopy = "CODECOPY",
+    GasPrice = "GASPRICE",
+    ExtCodeSize = "EXTCODESIZE",
+    ExtCodeCopy = "EXTCODECOPY",
+    ReturnDataSize = "RETURNDATASIZE",
+    ReturnDataCopy = "RETURNDATACOPY",
     // 40s: Block Information
-    BlockHash = 'BLOCKHASH',
-    Coinbase = 'COINBASE',
-    TimeStamp = 'TimeStamp',
-    Number = 'NUMBER',
-    Difficulty = 'DIFFICULTY',
-    Gaslimit = 'GASLIMIT',
+    BlockHash = "BLOCKHASH",
+    Coinbase = "COINBASE",
+    TimeStamp = "TimeStamp",
+    Number = "NUMBER",
+    Difficulty = "DIFFICULTY",
+    Gaslimit = "GASLIMIT",
     // 50s: Stack, Memory, Storage and Flow Operations
-    Pop = 'POP',
-    MLoad = 'MLOAD',
-    MStore = 'MSTORE',
-    MStore8 = 'MSTORE8',
-    SLoad = 'SLOAD',
-    SStore = 'SSTORE',
-    Jump = 'JUMP',
-    Jumpi = 'JUMPI',
-    Pc = 'PC',
-    MSize = 'MSIZE',
-    Gas = 'GAS',
-    JumpDest = 'JUMPDEST',
+    Pop = "POP",
+    MLoad = "MLOAD",
+    MStore = "MSTORE",
+    MStore8 = "MSTORE8",
+    SLoad = "SLOAD",
+    SStore = "SSTORE",
+    Jump = "JUMP",
+    Jumpi = "JUMPI",
+    Pc = "PC",
+    MSize = "MSIZE",
+    Gas = "GAS",
+    JumpDest = "JUMPDEST",
     // 60s & 70s: Push Operations
-    Push1 = 'PUSH1',
-    Push2 = 'PUSH2',
-    Push3 = 'PUSH3',
-    Push4 = 'PUSH4',
-    Push5 = 'PUSH5',
-    Push6 = 'PUSH6',
-    Push7 = 'PUSH7',
-    Push8 = 'PUSH8',
-    Push9 = 'PUSH9',
-    Push10 = 'PUSH10',
-    Push11 = 'PUSH11',
-    Push12 = 'PUSH12',
-    Push13 = 'PUSH13',
-    Push14 = 'PUSH14',
-    Push15 = 'PUSH15',
-    Push16 = 'PUSH16',
-    Push17 = 'PUSH17',
-    Push18 = 'PUSH18',
-    Push19 = 'PUSH19',
-    Push20 = 'PUSH20',
-    Push21 = 'PUSH21',
-    Push22 = 'PUSH22',
-    Push23 = 'PUSH23',
-    Push24 = 'PUSH24',
-    Push25 = 'PUSH25',
-    Push26 = 'PUSH26',
-    Push27 = 'PUSH27',
-    Push28 = 'PUSH28',
-    Push29 = 'PUSH29',
-    Push30 = 'PUSH30',
-    Push31 = 'PUSH31',
-    Push32 = 'PUSH32',
+    Push1 = "PUSH1",
+    Push2 = "PUSH2",
+    Push3 = "PUSH3",
+    Push4 = "PUSH4",
+    Push5 = "PUSH5",
+    Push6 = "PUSH6",
+    Push7 = "PUSH7",
+    Push8 = "PUSH8",
+    Push9 = "PUSH9",
+    Push10 = "PUSH10",
+    Push11 = "PUSH11",
+    Push12 = "PUSH12",
+    Push13 = "PUSH13",
+    Push14 = "PUSH14",
+    Push15 = "PUSH15",
+    Push16 = "PUSH16",
+    Push17 = "PUSH17",
+    Push18 = "PUSH18",
+    Push19 = "PUSH19",
+    Push20 = "PUSH20",
+    Push21 = "PUSH21",
+    Push22 = "PUSH22",
+    Push23 = "PUSH23",
+    Push24 = "PUSH24",
+    Push25 = "PUSH25",
+    Push26 = "PUSH26",
+    Push27 = "PUSH27",
+    Push28 = "PUSH28",
+    Push29 = "PUSH29",
+    Push30 = "PUSH30",
+    Push31 = "PUSH31",
+    Push32 = "PUSH32",
     // 80s: Duplication Operation
-    Dup1 = 'DUP1',
-    Dup2 = 'DUP2',
-    Dup3 = 'DUP3',
-    Dup4 = 'DUP4',
-    Dup5 = 'DUP5',
-    Dup6 = 'DUP6',
-    Dup7 = 'DUP7',
-    Dup8 = 'DUP8',
-    Dup9 = 'DUP9',
-    Dup10 = 'DUP10',
-    Dup11 = 'DUP11',
-    Dup12 = 'DUP12',
-    Dup13 = 'DUP13',
-    Dup14 = 'DUP14',
-    Dup15 = 'DUP15',
-    Dup16 = 'DUP16',
+    Dup1 = "DUP1",
+    Dup2 = "DUP2",
+    Dup3 = "DUP3",
+    Dup4 = "DUP4",
+    Dup5 = "DUP5",
+    Dup6 = "DUP6",
+    Dup7 = "DUP7",
+    Dup8 = "DUP8",
+    Dup9 = "DUP9",
+    Dup10 = "DUP10",
+    Dup11 = "DUP11",
+    Dup12 = "DUP12",
+    Dup13 = "DUP13",
+    Dup14 = "DUP14",
+    Dup15 = "DUP15",
+    Dup16 = "DUP16",
     // 90s: Exchange Operation
-    Swap1 = 'SWAP1',
-    Swap2 = 'SWAP2',
-    Swap3 = 'SWAP3',
-    Swap4 = 'SWAP4',
-    Swap5 = 'SWAP5',
-    Swap6 = 'SWAP6',
-    Swap7 = 'SWAP7',
-    Swap8 = 'SWAP8',
-    Swap9 = 'SWAP9',
-    Swap10 = 'SWAP10',
-    Swap11 = 'SWAP11',
-    Swap12 = 'SWAP12',
-    Swap13 = 'SWAP13',
-    Swap14 = 'SWAP14',
-    Swap15 = 'SWAP15',
-    Swap16 = 'SWAP16',
+    Swap1 = "SWAP1",
+    Swap2 = "SWAP2",
+    Swap3 = "SWAP3",
+    Swap4 = "SWAP4",
+    Swap5 = "SWAP5",
+    Swap6 = "SWAP6",
+    Swap7 = "SWAP7",
+    Swap8 = "SWAP8",
+    Swap9 = "SWAP9",
+    Swap10 = "SWAP10",
+    Swap11 = "SWAP11",
+    Swap12 = "SWAP12",
+    Swap13 = "SWAP13",
+    Swap14 = "SWAP14",
+    Swap15 = "SWAP15",
+    Swap16 = "SWAP16",
     // a0s: Logging Operations
-    Log1 = 'LOG1',
-    Log2 = 'LOG2',
-    Log3 = 'LOG3',
-    Log4 = 'LOG4',
+    Log1 = "LOG1",
+    Log2 = "LOG2",
+    Log3 = "LOG3",
+    Log4 = "LOG4",
     // f0s: System operations
-    Create = 'CREATE',
-    Call = 'CALL',
-    CallCode = 'CALLCODE',
-    Return = 'RETURN',
-    DelegateCall = 'DELEGATECALL',
-    StaticCall = 'STATICCALL',
-    Revert = 'REVERT',
-    Invalid = 'INVALID',
-    SelfDestruct = 'SELFDESTRUCT',
+    Create = "CREATE",
+    Call = "CALL",
+    CallCode = "CALLCODE",
+    Return = "RETURN",
+    DelegateCall = "DELEGATECALL",
+    StaticCall = "STATICCALL",
+    Revert = "REVERT",
+    Invalid = "INVALID",
+    SelfDestruct = "SELFDESTRUCT",
 }
 
 export interface StructLog {
@@ -468,21 +466,21 @@ export interface TransactionTrace {
 }
 
 export type Unit =
-    | 'kwei'
-    | 'ada'
-    | 'mwei'
-    | 'babbage'
-    | 'gwei'
-    | 'shannon'
-    | 'szabo'
-    | 'finney'
-    | 'ether'
-    | 'kether'
-    | 'grand'
-    | 'einstein'
-    | 'mether'
-    | 'gether'
-    | 'tether';
+    | "kwei"
+    | "ada"
+    | "mwei"
+    | "babbage"
+    | "gwei"
+    | "shannon"
+    | "szabo"
+    | "finney"
+    | "ether"
+    | "kether"
+    | "grand"
+    | "einstein"
+    | "mether"
+    | "gether"
+    | "tether";
 
 export interface JSONRPCRequestPayload {
     params: any[];
@@ -615,7 +613,7 @@ export interface LogEntry {
     topics: string[];
 }
 
-export type DecodedLogs = Array<LogWithDecodedArgs<DecodedLogArgs>>;
+export type DecodedLogs = LogWithDecodedArgs<DecodedLogArgs>[];
 
 export interface TxDataPayable extends TxData {
     value?: BigNumber;
@@ -638,10 +636,10 @@ export interface TransactionReceipt {
 }
 
 export enum AbiType {
-    Function = 'function',
-    Constructor = 'constructor',
-    Event = 'event',
-    Fallback = 'fallback',
+    Function = "function",
+    Constructor = "constructor",
+    Event = "event",
+    Fallback = "fallback",
 }
 
 export type ContractEventArg = any;
@@ -656,9 +654,9 @@ export interface LogWithDecodedArgs<ArgsType extends DecodedLogArgs> extends Dec
 export type RawLog = LogEntry;
 
 export enum BlockParamLiteral {
-    Earliest = 'earliest',
-    Latest = 'latest',
-    Pending = 'pending',
+    Earliest = "earliest",
+    Latest = "latest",
+    Pending = "pending",
 }
 
 export type BlockParam = BlockParamLiteral | number;
@@ -675,15 +673,15 @@ export interface RawLogEntry {
 }
 
 export enum SolidityTypes {
-    Address = 'address',
-    Bool = 'bool',
-    Bytes = 'bytes',
-    Int = 'int',
-    String = 'string',
-    Tuple = 'tuple',
-    Uint256 = 'uint256',
-    Uint8 = 'uint8',
-    Uint = 'uint',
+    Address = "address",
+    Bool = "bool",
+    Bytes = "bytes",
+    Int = "int",
+    String = "string",
+    Tuple = "tuple",
+    Uint256 = "uint256",
+    Uint8 = "uint8",
+    Uint = "uint",
 }
 
 /**
@@ -692,7 +690,7 @@ export enum SolidityTypes {
  * otherwise we don't.
  */
 export interface TransactionReceiptWithDecodedLogs extends TransactionReceipt {
-    logs: Array<LogWithDecodedArgs<DecodedLogArgs> | LogEntry>;
+    logs: (LogWithDecodedArgs<DecodedLogArgs> | LogEntry)[];
 }
 
 export interface TraceParams {
@@ -704,28 +702,28 @@ export interface TraceParams {
 }
 
 export type OutputField =
-    | '*'
-    | 'ast'
-    | 'legacyAST'
-    | 'abi'
-    | 'devdoc'
-    | 'userdoc'
-    | 'metadata'
-    | 'ir'
-    | 'evm.assembly'
-    | 'evm.legacyAssembly'
-    | 'evm.bytecode.object'
-    | 'evm.bytecode.opcodes'
-    | 'evm.bytecode.sourceMap'
-    | 'evm.bytecode.linkReferences'
-    | 'evm.deployedBytecode.object'
-    | 'evm.deployedBytecode.opcodes'
-    | 'evm.deployedBytecode.sourceMap'
-    | 'evm.deployedBytecode.linkReferences'
-    | 'evm.methodIdentifiers'
-    | 'evm.gasEstimates'
-    | 'ewasm.wast'
-    | 'ewasm.wasm';
+    | "*"
+    | "ast"
+    | "legacyAST"
+    | "abi"
+    | "devdoc"
+    | "userdoc"
+    | "metadata"
+    | "ir"
+    | "evm.assembly"
+    | "evm.legacyAssembly"
+    | "evm.bytecode.object"
+    | "evm.bytecode.opcodes"
+    | "evm.bytecode.sourceMap"
+    | "evm.bytecode.linkReferences"
+    | "evm.deployedBytecode.object"
+    | "evm.deployedBytecode.opcodes"
+    | "evm.deployedBytecode.sourceMap"
+    | "evm.deployedBytecode.linkReferences"
+    | "evm.methodIdentifiers"
+    | "evm.gasEstimates"
+    | "ewasm.wast"
+    | "ewasm.wasm";
 
 export interface ContractChains {
     [chainId: number]: ContractChainData;
@@ -764,25 +762,25 @@ export interface StandardOutput {
 }
 
 export type ErrorType =
-    | 'JSONError'
-    | 'IOError'
-    | 'ParserError'
-    | 'DocstringParsingError'
-    | 'SyntaxError'
-    | 'DeclarationError'
-    | 'TypeError'
-    | 'UnimplementedFeatureError'
-    | 'InternalCompilerError'
-    | 'Exception'
-    | 'CompilerError'
-    | 'FatalError'
-    | 'Warning';
-export type ErrorSeverity = 'error' | 'warning';
+    | "JSONError"
+    | "IOError"
+    | "ParserError"
+    | "DocstringParsingError"
+    | "SyntaxError"
+    | "DeclarationError"
+    | "TypeError"
+    | "UnimplementedFeatureError"
+    | "InternalCompilerError"
+    | "Exception"
+    | "CompilerError"
+    | "FatalError"
+    | "Warning";
+export type ErrorSeverity = "error" | "warning";
 
 export interface SolcError {
     sourceLocation?: SourceLocation;
     type: ErrorType;
-    component: 'general' | 'ewasm';
+    component: "general" | "ewasm";
     severity: ErrorSeverity;
     message: string;
     formattedMessage?: string;
@@ -807,7 +805,7 @@ export interface EvmBytecodeOutput {
 
 export interface EvmBytecodeOutputLinkReferences {
     [sourceFile: string]: {
-        [libraryName: string]: Array<{ start: number; length: number }>;
+        [libraryName: string]: { start: number; length: number }[];
     };
 }
 
@@ -840,7 +838,7 @@ export interface ContractVersionData {
 }
 
 export interface CompilerOpts {
-    name: 'solc';
+    name: "solc";
     version: string;
     settings: CompilerSettings;
 }
@@ -865,7 +863,7 @@ export interface ContractArtifact extends ContractVersionData {
 }
 
 export interface GeneratedCompilerOptions {
-    name: 'solc';
+    name: "solc";
     version: string;
     settings: CompilerSettings;
 }
@@ -874,7 +872,7 @@ export interface GeneratedCompilerOptions {
 export interface CompilerSettings {
     remappings?: string[];
     optimizer?: OptimizerSettings;
-    evmVersion?: 'homestead' | 'tangerineWhistle' | 'spuriousDragon' | 'byzantium' | 'constantinople';
+    evmVersion?: "homestead" | "tangerineWhistle" | "spuriousDragon" | "byzantium" | "constantinople";
     metadata?: CompilerSettingsMetadata;
     libraries?: {
         [fileName: string]: {
@@ -919,7 +917,7 @@ export interface CompilerOptions {
     contractsDir?: string;
     artifactsDir?: string;
     compilerSettings?: CompilerSettings;
-    contracts?: string[] | '*';
+    contracts?: string[] | "*";
     useDockerisedSolc?: boolean;
     isOfflineMode?: boolean;
     solcVersion?: string;

@@ -6,10 +6,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/CoinDetail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/CoinDetail.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/ori20.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/eth/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +44,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -93,7 +102,10 @@
       <workItem from="1631023809379" duration="1490000" />
       <workItem from="1631037334432" duration="340000" />
       <workItem from="1631038735181" duration="98000" />
-      <workItem from="1631039035665" duration="410000" />
+      <workItem from="1631039035665" duration="632000" />
+      <workItem from="1631080068629" duration="869000" />
+      <workItem from="1631081458456" duration="570000" />
+      <workItem from="1631083488193" duration="579000" />
     </task>
     <servers />
   </component>
@@ -212,6 +224,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="576" y="389" width="811" height="516" key="#ESLint" timestamp="1631084045217">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state x="576" y="389" width="811" height="516" key="#ESLint/43.25.1493.935@43.25.1493.935" timestamp="1631084045217" />
     <state x="310" y="151" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623838652153">
       <screen x="43" y="25" width="1493" height="935" />
     </state>
