@@ -8,7 +8,7 @@ import ethUtil from "ethereumjs-util";
 import sigUtil from "eth-sig-util";
 import Web3 from "web3";
 import {Utils} from 'web3-utils';
-import {PromiEvent, TransactionConfig} from 'web3-core';
+import {TransactionConfig} from 'web3-core';
 import {BigNumber} from "../base/eth/utils";
 
 /**
@@ -126,12 +126,24 @@ export default class BlockWrap {
         await contract.transfer(toaddress, send_amount);
     }
 
+    /**
+     * get the keccak256
+     * @param data
+     */
     public keccak256(data: any): string {
         return this.w3.utils.keccak256(data)
     }
 
+    /**
+     *
+     * @param data
+     */
     public sha(data: any): string {
         return this.w3.utils.soliditySha3(data)
+    }
+
+    public async balance(): BigNumber {
+        return await this.w3.eth.getBalance(this.getAccountAddress())
     }
 
     /**
