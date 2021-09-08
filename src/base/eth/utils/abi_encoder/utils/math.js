@@ -1,9 +1,9 @@
 import * as ethUtil from 'ethereumjs-util';
 import * as _ from 'lodash';
-import { BigNumber } from '../../configured_bignumber';
+import { B } from '../../configured_bignumber';
 import { constants } from '../utils/constants';
 function sanityCheckBigNumberRange(value_, minValue, maxValue) {
-    const value = new BigNumber(value_, 10);
+    const value = new B.BigNumber(value_, 10);
     if (value.isGreaterThan(maxValue)) {
         throw new Error(`Tried to assign value of ${value}, which exceeds max value of ${maxValue}`);
     }
@@ -18,7 +18,7 @@ function bigNumberToPaddedBuffer(value) {
     return ethUtil.setLengthLeft(ethUtil.toBuffer(new ethUtil.BN(value.toFixed(0))), constants.EVM_WORD_WIDTH_IN_BYTES);
 }
 export function encodeNumericValue(value_) {
-    const value = new BigNumber(value_, 10);
+    const value = new B.BigNumber(value_, 10);
     if (value.isGreaterThanOrEqualTo(0)) {
         const encodedPositiveValue = bigNumberToPaddedBuffer(value);
         return encodedPositiveValue;
@@ -28,7 +28,7 @@ export function encodeNumericValue(value_) {
     _.each(valueBin, (bit) => {
         invertedValueBin += bit === '1' ? '0' : '1';
     });
-    const invertedValue = new BigNumber(invertedValueBin, constants.BIN_BASE);
+    const invertedValue = new B.BigNumber(invertedValueBin, constants.BIN_BASE);
     const negativeValue = invertedValue.plus(1);
     const encodedValue = bigNumberToPaddedBuffer(negativeValue);
     return encodedValue;
@@ -40,7 +40,7 @@ export function safeEncodeNumericValue(value, minValue, maxValue) {
 }
 export function decodeNumericValue(encodedValue, minValue) {
     const valueHex = ethUtil.bufferToHex(encodedValue);
-    const value = new BigNumber(valueHex, constants.HEX_BASE);
+    const value = new B.BigNumber(valueHex, constants.HEX_BASE);
     if (!minValue.isLessThan(0)) {
         return value;
     }
@@ -53,7 +53,7 @@ export function decodeNumericValue(encodedValue, minValue) {
     _.each(valueBin, (bit) => {
         invertedValueBin += bit === '1' ? '0' : '1';
     });
-    const invertedValue = new BigNumber(invertedValueBin, constants.BIN_BASE);
+    const invertedValue = new B.BigNumber(invertedValueBin, constants.BIN_BASE);
     const positiveValue = invertedValue.plus(1);
     const negativeValue = positiveValue.times(-1);
     return negativeValue;

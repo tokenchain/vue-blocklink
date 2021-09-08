@@ -1,4 +1,4 @@
-import { BigNumber } from './configured_bignumber';
+import { B } from './configured_bignumber';
 import * as ethUtil from 'ethereumjs-util';
 import * as jsSHA3 from 'js-sha3';
 import * as uuid from 'uuid/v4';
@@ -43,7 +43,7 @@ export const filterUtils = {
             }
             else {
                 let value = indexFilterValues[eventInput.name];
-                if (BigNumber.isBigNumber(value)) {
+                if (B.BigNumber.isBigNumber(value)) {
                     value = ethUtil.fromSigned(value.toString(10));
                 }
                 const buffer = ethUtil.toBuffer(value);

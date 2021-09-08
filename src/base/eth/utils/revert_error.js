@@ -2,7 +2,7 @@ import * as ethUtil from 'ethereumjs-util';
 import * as _ from 'lodash';
 import { inspect } from 'util';
 import * as AbiEncoder from './abi_encoder';
-import { BigNumber } from './configured_bignumber';
+import { B } from './configured_bignumber';
 export function registerRevertErrorType(revertClass, force = false) {
     RevertError.registerType(revertClass, force);
 }
@@ -326,7 +326,7 @@ function checkArgEquality(type, lhs, rhs) {
         }
         return true;
     }
-    return new BigNumber(lhs || 0).eq(rhs);
+    return new B.BigNumber(lhs || 0).eq(rhs);
 }
 function normalizeAddress(addr) {
     const ADDRESS_SIZE = 20;

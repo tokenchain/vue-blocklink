@@ -1,9 +1,9 @@
-import {BigNumber} from '../utils';
+import {BigNumber, B} from '../utils';
 import * as _ from 'lodash';
 
 export const utils = {
     convertHexToNumber(value: string): number {
-        const valueBigNumber = new BigNumber(value);
+        const valueBigNumber = new B.BigNumber(value);
         const valueNumber = valueBigNumber.toNumber();
         return valueNumber;
     },
@@ -16,7 +16,7 @@ export const utils = {
     },
     convertAmountToBigNumber(value: string | number | BigNumber): BigNumber {
         const num = value || 0;
-        const isBigNumber = BigNumber.isBigNumber(num);
+        const isBigNumber = B.BigNumber.isBigNumber(num);
         if (isBigNumber) {
             return num as BigNumber;
         }
@@ -24,11 +24,11 @@ export const utils = {
         // @ts-ignore
         if (_.isString(num) && (num.indexOf('0x') === 0 || num.indexOf('-0x') === 0)) {
             // @ts-ignore
-            return new BigNumber(num.replace('0x', ''), 16);
+            return new B.BigNumber(num.replace('0x', ''), 16);
         }
 
         const baseTen = 10;
-        return new BigNumber((num as number).toString(baseTen), baseTen);
+        return new B.BigNumber((num as number).toString(baseTen), baseTen);
     },
     encodeAmountAsHexString(value: string | number | BigNumber): string {
         const valueBigNumber = utils.convertAmountToBigNumber(value);
@@ -42,7 +42,7 @@ export const utils = {
             throw new Error(`Given input ${value} is not a number.`);
         }
 
-        const valueBigNumber = new BigNumber(value);
+        const valueBigNumber = new B.BigNumber(value);
         const hexBase = 16;
         const result = valueBigNumber.toString(hexBase);
 

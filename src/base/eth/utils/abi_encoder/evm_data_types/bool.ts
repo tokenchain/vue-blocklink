@@ -1,12 +1,12 @@
-import { DataItem, SolidityTypes } from '../../../types';
+import {DataItem, SolidityTypes} from '../../../types';
 import * as ethUtil from 'ethereumjs-util';
 import * as _ from 'lodash';
 
-import { BigNumber } from '../../configured_bignumber';
-import { DataTypeFactory } from '../abstract_data_types/interfaces';
-import { AbstractBlobDataType } from '../abstract_data_types/types/blob';
-import { RawCalldata } from '../calldata/raw_calldata';
-import { constants } from '../utils/constants';
+import {B} from '../../configured_bignumber';
+import {DataTypeFactory} from '../abstract_data_types/interfaces';
+import {AbstractBlobDataType} from '../abstract_data_types/types/blob';
+import {RawCalldata} from '../calldata/raw_calldata';
+import {constants} from '../utils/constants';
 
 export class BoolDataType extends AbstractBlobDataType {
     private static readonly _SIZE_KNOWN_AT_COMPILE_TIME: boolean = true;
@@ -38,7 +38,7 @@ export class BoolDataType extends AbstractBlobDataType {
         const valueBuf = calldata.popWord();
         const valueHex = ethUtil.bufferToHex(valueBuf);
         // Hack @hysz: there are some cases where `false` is encoded as 0x instead of 0x0.
-        const valueNumber = valueHex === '0x' ? new BigNumber(0) : new BigNumber(valueHex, constants.HEX_BASE);
+        const valueNumber = valueHex === '0x' ? new B.BigNumber(0) : new B.BigNumber(valueHex, constants.HEX_BASE);
         if (!(valueNumber.isEqualTo(0) || valueNumber.isEqualTo(1))) {
             throw new Error(`Failed to decode boolean. Expected 0x0 or 0x1, got ${valueHex}`);
         }
@@ -55,5 +55,6 @@ export class BoolDataType extends AbstractBlobDataType {
     public getSignatureType(): string {
         return SolidityTypes.Bool;
     }
+
     /* tslint:enable prefer-function-over-method */
 }

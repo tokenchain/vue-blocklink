@@ -1,4 +1,4 @@
-import { BigNumber } from './configured_bignumber';
+import { BigNumber, B } from './configured_bignumber';
 
 const MAX_DIGITS_IN_UNSIGNED_256_INT = 78;
 
@@ -9,8 +9,8 @@ const MAX_DIGITS_IN_UNSIGNED_256_INT = 78;
 export function generatePseudoRandom256BitNumber(): BigNumber {
     // BigNumber.random returns a pseudo-random number between 0 & 1 with a passed in number of decimal places.
     // Source: https://mikemcl.github.io/bignumber.js/#random
-    const randomNumber = BigNumber.random(MAX_DIGITS_IN_UNSIGNED_256_INT);
-    const factor = new BigNumber(10).pow(MAX_DIGITS_IN_UNSIGNED_256_INT - 1);
+    const randomNumber = B.BigNumber.random(MAX_DIGITS_IN_UNSIGNED_256_INT);
+    const factor = new B.BigNumber(10).pow(MAX_DIGITS_IN_UNSIGNED_256_INT - 1);
     const randomNumberScaledTo256Bits = randomNumber.times(factor).integerValue();
     return randomNumberScaledTo256Bits;
 }

@@ -5,7 +5,7 @@ import * as _ from 'lodash';
 import {inspect} from 'util';
 
 import * as AbiEncoder from './abi_encoder';
-import {BigNumber} from './configured_bignumber';
+import {BigNumber,B} from './configured_bignumber';
 
 // tslint:disable: max-classes-per-file no-unnecessary-type-assertion
 
@@ -543,7 +543,7 @@ function checkArgEquality(type: string, lhs: ArgTypes, rhs: ArgTypes): boolean {
         // tslint:enable: no-magic-numbers
     }
     // tslint:disable-next-line
-    return new BigNumber((lhs as any) || 0).eq(rhs as any);
+    return new B.BigNumber((lhs as any) || 0).eq(rhs as any);
 }
 
 function normalizeAddress(addr: string): string {

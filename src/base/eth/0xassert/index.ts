@@ -1,5 +1,5 @@
-import { SchemaValidator } from '../schemas';
-import { addressUtils, BigNumber, logUtils } from '../utils';
+import {SchemaValidator} from '../schemas';
+import {addressUtils, BigNumber, B, logUtils} from '../utils';
 import * as _ from 'lodash';
 import * as validUrl from 'valid-url';
 
@@ -7,11 +7,11 @@ const HEX_REGEX = /^0x[0-9A-F]*$/i;
 const schemaValidator = new SchemaValidator();
 export const assert = {
     isBigNumber(variableName: string, value: BigNumber): void {
-        const isBigNumber = BigNumber.isBigNumber(value);
+        const isBigNumber = B.BigNumber.isBigNumber(value);
         assert.assert(isBigNumber, assert.typeAssertionMessage(variableName, 'BigNumber', value));
     },
     isNumberLike(variableName: string, value: BigNumber | number): void {
-        const isBigNumber = BigNumber.isBigNumber(value);
+        const isBigNumber = B.BigNumber.isBigNumber(value);
         const isNumber = typeof value === 'number';
         assert.assert(isBigNumber || isNumber, assert.typeAssertionMessage(variableName, 'BigNumber | number', value));
     },
@@ -66,7 +66,7 @@ export const assert = {
             return;
         } else {
             assert.assert(
-                BigNumber.isBigNumber(value),
+                B.BigNumber.isBigNumber(value),
                 assert.typeAssertionMessage(variableName, 'number or BigNumber', value),
             );
         }

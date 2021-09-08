@@ -6,7 +6,7 @@ import {schemas} from './validations';
 import {
     AbiEncoder,
     abiUtils,
-    BigNumber,
+    B,
     decodeBytesAsRevertError,
     decodeThrownErrorAsRevertError,
     providerUtils,
@@ -214,7 +214,7 @@ export class BaseContract extends EventEmitter {
     }
 
     protected static _bigNumberToString(_type: string, value: any): any {
-        return BigNumber.isBigNumber(value) ? value.toString() : value;
+        return B.BigNumber.isBigNumber(value) ? value.toString() : value;
     }
 
     protected static _lookupConstructorAbi(abi: ContractAbi): ConstructorAbi {

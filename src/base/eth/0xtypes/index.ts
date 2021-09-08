@@ -1,6 +1,6 @@
 // tslint:disable:max-file-line-count
 
-import { BigNumber } from 'bignumber.js';
+import {BigNumber} from 'bignumber.js';
 import {
     ContractAbi,
     ContractChains,
@@ -732,6 +732,7 @@ export interface CustomType {
     comment?: string;
     children?: CustomTypeChild[];
 }
+
 export interface GeneratedDocJson {
     version: string;
     metadata: Metadata;

@@ -1,7 +1,7 @@
 import {AbiDefinition, AbiType, ContractAbi, DataItem, MethodAbi} from '../types';
 import * as _ from 'lodash';
 
-import {BigNumber} from './configured_bignumber';
+import {BigNumber, B} from './configured_bignumber';
 
 type ParamName = null | string | NestedParamName;
 
@@ -106,7 +106,7 @@ function isAbiDataEqual(name_p: ParamName, type: string, x: any, y: any): boolea
         // we convert to lowercase before comparing.
         return _.isEqual(_.toLower(x), _.toLower(y));
     } else if (_.startsWith(type, 'uint') || _.startsWith(type, 'int')) {
-        return new BigNumber(x).eq(new BigNumber(y));
+        return new B.BigNumber(x).eq(new B.BigNumber(y));
     }
     return _.isEqual(x, y);
 }

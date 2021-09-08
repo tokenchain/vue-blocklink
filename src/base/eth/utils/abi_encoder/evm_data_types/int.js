@@ -1,5 +1,5 @@
 import { SolidityTypes } from '../../../types';
-import { BigNumber } from '../../configured_bignumber';
+import { B } from '../../configured_bignumber';
 import { AbstractBlobDataType } from '../abstract_data_types/types/blob';
 import { constants } from '../utils/constants';
 import * as EncoderMath from '../utils/math';
@@ -50,12 +50,12 @@ IntDataType._MATCHER = RegExp('^int(8|16|24|32|40|48|56|64|72|80|88|96|104|112|1
 IntDataType._SIZE_KNOWN_AT_COMPILE_TIME = true;
 IntDataType._MAX_WIDTH = 256;
 IntDataType._DEFAULT_WIDTH = IntDataType._MAX_WIDTH;
-IntDataType._DEFAULT_VALUE = new BigNumber(0);
+IntDataType._DEFAULT_VALUE = new B.BigNumber(0);
 IntDataType._WIDTH_TO_MIN_VALUE = Object.assign({}, ...[...new Array(32)].map((_x, i) => {
     const width = (i + 1) * 8;
-    return { [width]: new BigNumber(2).exponentiatedBy(width - 1).times(-1) };
+    return { [width]: new B.BigNumber(2).exponentiatedBy(width - 1).times(-1) };
 }));
 IntDataType._WIDTH_TO_MAX_VALUE = Object.assign({}, ...[...new Array(32)].map((_x, i) => {
     const width = (i + 1) * 8;
-    return { [width]: new BigNumber(2).exponentiatedBy(width - 1).minus(1) };
+    return { [width]: new B.BigNumber(2).exponentiatedBy(width - 1).minus(1) };
 }));

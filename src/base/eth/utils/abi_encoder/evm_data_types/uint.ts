@@ -1,7 +1,7 @@
 import { DataItem, SolidityTypes } from '../../../types';
 import * as _ from 'lodash';
 
-import { BigNumber } from '../../configured_bignumber';
+import { BigNumber, B } from '../../configured_bignumber';
 import { DataTypeFactory } from '../abstract_data_types/interfaces';
 import { AbstractBlobDataType } from '../abstract_data_types/types/blob';
 import { RawCalldata } from '../calldata/raw_calldata';
@@ -16,13 +16,13 @@ export class UIntDataType extends AbstractBlobDataType {
     private static readonly _SIZE_KNOWN_AT_COMPILE_TIME: boolean = true;
     private static readonly _MAX_WIDTH: number = 256;
     private static readonly _DEFAULT_WIDTH: number = UIntDataType._MAX_WIDTH;
-    private static readonly _MIN_VALUE = new BigNumber(0);
-    private static readonly _DEFAULT_VALUE = new BigNumber(0);
+    private static readonly _MIN_VALUE = new B.BigNumber(0);
+    private static readonly _DEFAULT_VALUE = new B.BigNumber(0);
     private static readonly _WIDTH_TO_MAX_VALUE = Object.assign(
         {},
         ...[...new Array(32)].map((_x, i) => {
             const width = (i + 1) * 8;
-            return { [width]: new BigNumber(2).exponentiatedBy(width).minus(1) };
+            return { [width]: new B.BigNumber(2).exponentiatedBy(width).minus(1) };
         }),
     );
     private readonly _width: number;

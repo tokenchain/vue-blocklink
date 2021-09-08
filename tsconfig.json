@@ -84,7 +84,6 @@
     "./src/base/eth/schemas/orderbook_request_schema.json",
     "./src/base/eth/schemas/orders_request_opts_schema.json",
     "./src/base/eth/schemas/paged_request_opts_schema.json",
-    "./src/base/eth/schemas/order_config_request_schema.json",
-    "./src/base/eth/schemas/exchange_proxy_meta_transaction_schema"
+    "./src/base/eth/schemas/order_config_request_schema.json"
   ]
 }

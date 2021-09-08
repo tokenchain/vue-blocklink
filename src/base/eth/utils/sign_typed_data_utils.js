@@ -1,6 +1,6 @@
 import * as ethUtil from 'ethereumjs-util';
 import * as ethers from 'ethers';
-import { BigNumber } from './configured_bignumber';
+import { B } from './configured_bignumber';
 export const signTypedDataUtils = {
     generateTypedDataHash(typedData) {
         return ethUtil.keccak256(Buffer.concat([
@@ -80,10 +80,10 @@ export const signTypedDataUtils = {
     _normalizeValue(type, value) {
         const STRING_BASE = 10;
         if (type === 'uint256') {
-            if (BigNumber.isBigNumber(value)) {
+            if (B.BigNumber.isBigNumber(value)) {
                 return value.toString(STRING_BASE);
             }
-            return new BigNumber(value).toString(STRING_BASE);
+            return new B.BigNumber(value).toString(STRING_BASE);
         }
         return value;
     },

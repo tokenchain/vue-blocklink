@@ -1,4 +1,3 @@
-
 import { Ori20Contract } from "./ori20";
 import CoinDetail from "./CoinDetail";
 import ethUtil from "ethereumjs-util";
@@ -64,33 +63,14 @@ export default class BlockWrap {
         const send_amount = new BigNumber(amount);
         await contract.transfer(toaddress, send_amount);
     }
-    convertAddress(address, fromFormat, toFormat) {
-        if (fromFormat == toFormat) {
-            throw "From and To address formats are equal";
-        }
-        switch (toFormat) {
-            case "hex":
-                switch (fromFormat) {
-                    case "base58":
-                    case "eth":
-                        return "0x" + this.ethereumCore.address.toHex(address);
-                }
-                break;
-            case "base58":
-            case "eth":
-                switch (fromFormat) {
-                    case "hex":
-                        if (!Address.isHexAddress(address)) {
-                            throw "Invalid hex address";
-                        }
-                        if (address.startsWith("0x")) {
-                            address = address.substr(2);
-                        }
-                        return this.ethereumCore.address.fromHex(address);
-                }
-                break;
-        }
-        throw "Invalid address formats";
+    keccak256(data) {
+        return this.w3.utils.keccak256(data);
+    }
+    sha(data) {
+        return this.w3.utils.soliditySha3(data);
+    }
+    async balance() {
+        return await this.w3.eth.getBalance(this.getAccountAddress());
     }
     async getCoinPlatform() {
         return await this.w3.eth.getBalance(this.getAccountAddress());
@@ -121,7 +101,8 @@ export default class BlockWrap {
             this.tokens[erc20_address] = detail;
         }
         else {
-            const abbalance = await contract.balanceOf(address);
+            const b = await contract.balanceOf(address);
+            this.tokens[erc20_address].setHolder(address, b);
         }
         return this.tokens[erc20_address];
     }

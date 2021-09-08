@@ -2,7 +2,7 @@ import { Web3Wrapper } from './0xw3w';
 import { EventEmitter } from "eventemitter3";
 import { assert } from './0xassert';
 import { schemas } from './validations';
-import { AbiEncoder, abiUtils, BigNumber, decodeBytesAsRevertError, decodeThrownErrorAsRevertError, providerUtils, StringRevertError, } from './utils';
+import { AbiEncoder, abiUtils, B, decodeBytesAsRevertError, decodeThrownErrorAsRevertError, providerUtils, StringRevertError, } from './utils';
 import * as util from 'ethereumjs-util';
 import VM from '@ethereumjs/vm';
 import * as _ from "lodash";
@@ -133,7 +133,7 @@ export class BaseContract extends EventEmitter {
         return type === 'address' ? value.toLowerCase() : value;
     }
     static _bigNumberToString(_type, value) {
-        return BigNumber.isBigNumber(value) ? value.toString() : value;
+        return B.BigNumber.isBigNumber(value) ? value.toString() : value;
     }
     static _lookupConstructorAbi(abi) {
         const constructorAbiIfExists = abi.find((abiDefinition) => abiDefinition.type === AbiType.Constructor);

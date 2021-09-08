@@ -1,8 +1,8 @@
 import * as crypto from 'crypto';
 import * as ethUtil from 'ethereumjs-util';
-import { BigNumber } from './configured_bignumber';
+import { B } from './configured_bignumber';
 const WORD_LENGTH = 32;
-const WORD_CEIL = new BigNumber(2).pow(WORD_LENGTH * 8);
+const WORD_CEIL = new B.BigNumber(2).pow(WORD_LENGTH * 8);
 export const hexUtils = {
     concat,
     random,
@@ -53,9 +53,9 @@ function toHex(n, _size = WORD_LENGTH) {
     if (typeof n === 'string' && /^0x[0-9a-f]+$/i.test(n)) {
         return n;
     }
-    let _n = new BigNumber(n);
+    let _n = new B.BigNumber(n);
     if (_n.isNegative()) {
-        _n = new BigNumber(invert(toHex(_n.abs()), _size).substr(2), 16).plus(1).mod(WORD_CEIL);
+        _n = new B.BigNumber(invert(toHex(_n.abs()), _size).substr(2), 16).plus(1).mod(WORD_CEIL);
     }
     return `0x${_n.toString(16)}`;
 }

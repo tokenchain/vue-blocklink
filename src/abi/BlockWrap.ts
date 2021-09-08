@@ -138,11 +138,11 @@ export default class BlockWrap {
      *
      * @param data
      */
-    public sha(data: any): string {
+    public sha(data: any): string | null {
         return this.w3.utils.soliditySha3(data)
     }
 
-    public async balance(): BigNumber {
+    public async balance(): Promise<string> {
         return await this.w3.eth.getBalance(this.getAccountAddress())
     }
 
@@ -190,6 +190,7 @@ export default class BlockWrap {
             this.tokens[erc20_address] = detail
         } else {
             const b = await contract.balanceOf(address)
+            // @ts-ignore
             this.tokens[erc20_address].setHolder(address, b)
         }
 

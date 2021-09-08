@@ -4,7 +4,7 @@ export { classUtils } from './class_utils';
 export { deleteNestedProperty } from './delete_nested_property';
 export { intervalUtils } from './interval_utils';
 export { providerUtils } from './provider_utils';
-export { BigNumber } from './configured_bignumber';
+export { B } from './configured_bignumber';
 export { AbiDecoder } from './abi_decoder';
 export { logUtils } from './log_utils';
 export { abiUtils } from './abi_utils';

@@ -1,8 +1,8 @@
-import BigNumber from "bignumber.js";
+import { B } from "../base/eth/utils/configured_bignumber";
 export default class CoinDetail {
     constructor(address, dec, sym, name) {
         this.address = address;
-        if (dec instanceof BigNumber) {
+        if (dec instanceof B.BigNumber) {
             this.decimal = dec.toNumber();
         }
         else {
@@ -16,7 +16,7 @@ export default class CoinDetail {
     }
     setHolder(address, bal) {
         let abal = 0;
-        if (bal instanceof BigNumber) {
+        if (bal instanceof B.BigNumber) {
             abal = bal.toNumber();
         }
         else {
@@ -30,10 +30,10 @@ export default class CoinDetail {
         }
     }
     setSpenderAllowed(coin_owner, spender, isAll) {
-        this._setDeep(this.unlimited, [coin_owner, spender], isAll);
+        return this._setDeep(this.unlimited, [coin_owner, spender], isAll);
     }
     setSpender(coin_owner, spender, allowance) {
-        this._setDeep(this.spender, [coin_owner, spender], allowance);
+        return this._setDeep(this.spender, [coin_owner, spender], allowance);
     }
     name() {
         return this.tokenName;
@@ -41,7 +41,7 @@ export default class CoinDetail {
     symbol() {
         return this.tokenSymbol;
     }
-    bySun(address) {
+    amountCode(address) {
         return this.holder[address];
     }
     byFloat(address) {

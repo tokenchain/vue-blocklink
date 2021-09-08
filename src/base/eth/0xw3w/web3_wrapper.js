@@ -1,6 +1,7 @@
 import { assert } from '../0xassert';
 import { schemas } from '../validations';
-import { AbiDecoder, addressUtils, BigNumber, intervalUtils, promisify, providerUtils } from '../utils';
+import { AbiDecoder, addressUtils, intervalUtils, promisify, providerUtils } from '../utils';
+import { B } from '../utils/configured_bignumber';
 import { BlockParamLiteral, } from '../types';
 import * as _ from 'lodash';
 import { marshaller } from './marshaller';
@@ -26,13 +27,13 @@ export class Web3Wrapper {
     static toUnitAmount(amount, decimals) {
         assert.isValidBaseUnitAmount('amount', amount);
         assert.isNumber('decimals', decimals);
-        const aUnit = new BigNumber(BASE_TEN).pow(decimals);
+        const aUnit = new B.BigNumber(BASE_TEN).pow(decimals);
         const unit = amount.div(aUnit);
         return unit;
     }
     static toBaseUnitAmount(amount, decimals) {
         assert.isNumber('decimals', decimals);
-        const unit = new BigNumber(BASE_TEN).pow(decimals);
+        const unit = new B.BigNumber(BASE_TEN).pow(decimals);
         const baseUnitAmount = unit.times(amount);
         const hasDecimals = baseUnitAmount.decimalPlaces() !== 0;
         if (hasDecimals) {
@@ -144,7 +145,7 @@ export class Web3Wrapper {
             method: 'eth_getBalance',
             params: [encodedOwner, marshalledDefaultBlock],
         });
-        return new BigNumber(balanceInWei);
+        return new B.BigNumber(balanceInWei);
     }
     async doesContractExistAtAddressAsync(address) {
         assert.isETHAddressHex('address', address);

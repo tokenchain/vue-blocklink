@@ -1,12 +1,12 @@
 import * as crypto from 'crypto';
 import * as ethUtil from 'ethereumjs-util';
-import {BigNumber} from './configured_bignumber';
+import {BigNumber,B} from './configured_bignumber';
 import {Numberish} from './types';
 
 // tslint:disable:custom-no-magic-numbers
 
 const WORD_LENGTH = 32;
-const WORD_CEIL = new BigNumber(2).pow(WORD_LENGTH * 8);
+const WORD_CEIL = new B.BigNumber(2).pow(WORD_LENGTH * 8);
 
 export const hexUtils = {
     concat,
@@ -97,11 +97,11 @@ function toHex(n: Numberish | Buffer, _size: number = WORD_LENGTH): string {
         // Already a hex.
         return n;
     }
-    let _n = new BigNumber(n);
+    let _n = new B.BigNumber(n);
     if (_n.isNegative()) {
         // Perform two's-complement.
         // prettier-ignore
-        _n = new BigNumber(
+        _n = new B.BigNumber(
             invert(
                 toHex(_n.abs()),
                 _size,

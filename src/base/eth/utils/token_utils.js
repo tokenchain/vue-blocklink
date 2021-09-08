@@ -1,7 +1,7 @@
-import { BigNumber } from './configured_bignumber';
+import { B } from './configured_bignumber';
 export function fromTokenUnitAmount(units, decimals = 18) {
-    return new BigNumber(units).times(new BigNumber(10).pow(decimals)).integerValue();
+    return new B.BigNumber(units).times(new B.BigNumber(10).pow(decimals)).integerValue();
 }
 export function toTokenUnitAmount(weis, decimals = 18) {
-    return new BigNumber(weis).div(new BigNumber(10).pow(decimals));
+    return new B.BigNumber(weis).div(new B.BigNumber(10).pow(decimals));
 }

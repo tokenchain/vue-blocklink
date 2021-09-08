@@ -1,7 +1,7 @@
 import * as ethUtil from 'ethereumjs-util';
 import * as _ from 'lodash';
 
-import {BigNumber} from '../../configured_bignumber';
+import {BigNumber, B} from '../../configured_bignumber';
 import {constants} from '../utils/constants';
 
 function sanityCheckBigNumberRange(
@@ -9,7 +9,7 @@ function sanityCheckBigNumberRange(
     minValue: BigNumber,
     maxValue: BigNumber,
 ): void {
-    const value = new BigNumber(value_, 10);
+    const value = new B.BigNumber(value_, 10);
     if (value.isGreaterThan(maxValue)) {
         throw new Error(`Tried to assign value of ${value}, which exceeds max value of ${maxValue}`);
     } else if (value.isLessThan(minValue)) {
@@ -29,7 +29,7 @@ function bigNumberToPaddedBuffer(value: BigNumber): Buffer {
  * @return ABI Encoded value
  */
 export function encodeNumericValue(value_: BigNumber | string | number): Buffer {
-    const value = new BigNumber(value_, 10);
+    const value = new B.BigNumber(value_, 10);
     // Case 1/2: value is non-negative
     if (value.isGreaterThanOrEqualTo(0)) {
         const encodedPositiveValue = bigNumberToPaddedBuffer(value);
@@ -44,7 +44,7 @@ export function encodeNumericValue(value_: BigNumber | string | number): Buffer 
     _.each(valueBin, (bit: string) => {
         invertedValueBin += bit === '1' ? '0' : '1';
     });
-    const invertedValue = new BigNumber(invertedValueBin, constants.BIN_BASE);
+    const invertedValue = new B.BigNumber(invertedValueBin, constants.BIN_BASE);
     // Step 3/3: Add 1 to inverted value
     const negativeValue = invertedValue.plus(1);
     const encodedValue = bigNumberToPaddedBuffer(negativeValue);
@@ -76,7 +76,7 @@ export function safeEncodeNumericValue(
 export function decodeNumericValue(encodedValue: Buffer, minValue: BigNumber): BigNumber {
     const valueHex = ethUtil.bufferToHex(encodedValue);
     // Case 1/3: value is definitely non-negative because of numeric boundaries
-    const value = new BigNumber(valueHex, constants.HEX_BASE);
+    const value = new B.BigNumber(valueHex, constants.HEX_BASE);
     if (!minValue.isLessThan(0)) {
         return value;
     }
@@ -92,7 +92,7 @@ export function decodeNumericValue(encodedValue: Buffer, minValue: BigNumber): B
     _.each(valueBin, (bit: string) => {
         invertedValueBin += bit === '1' ? '0' : '1';
     });
-    const invertedValue = new BigNumber(invertedValueBin, constants.BIN_BASE);
+    const invertedValue = new B.BigNumber(invertedValueBin, constants.BIN_BASE);
     // Step 2/3: Add 1 to inverted value
     // The result is the two's-complement representation of the input value.
     const positiveValue = invertedValue.plus(1);

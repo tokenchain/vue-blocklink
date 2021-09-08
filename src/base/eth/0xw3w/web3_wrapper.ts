@@ -1,6 +1,9 @@
 import {assert} from '../0xassert';
 import {schemas} from '../validations';
-import {AbiDecoder, addressUtils, BigNumber, intervalUtils, promisify, providerUtils} from '../utils';
+import {AbiDecoder, addressUtils, intervalUtils, promisify, providerUtils} from '../utils';
+
+import {BigNumber, B} from '../utils/configured_bignumber';
+
 import {
     BlockParam,
     BlockParamLiteral,
@@ -80,7 +83,7 @@ export class Web3Wrapper {
     public static toUnitAmount(amount: BigNumber, decimals: number): BigNumber {
         assert.isValidBaseUnitAmount('amount', amount);
         assert.isNumber('decimals', decimals);
-        const aUnit = new BigNumber(BASE_TEN).pow(decimals);
+        const aUnit = new B.BigNumber(BASE_TEN).pow(decimals);
         const unit = amount.div(aUnit);
         return unit;
     }
@@ -95,7 +98,7 @@ export class Web3Wrapper {
      */
     public static toBaseUnitAmount(amount: BigNumber | number, decimals: number): BigNumber {
         assert.isNumber('decimals', decimals);
-        const unit = new BigNumber(BASE_TEN).pow(decimals);
+        const unit = new B.BigNumber(BASE_TEN).pow(decimals);
         const baseUnitAmount = unit.times(amount);
         const hasDecimals = baseUnitAmount.decimalPlaces() !== 0;
         if (hasDecimals) {
@@ -294,7 +297,7 @@ export class Web3Wrapper {
             params: [encodedOwner, marshalledDefaultBlock],
         });
         // Rewrap in a new BigNumber
-        return new BigNumber(balanceInWei);
+        return new B.BigNumber(balanceInWei);
     }
 
     /**

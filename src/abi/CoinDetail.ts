@@ -1,5 +1,5 @@
 import {Balancer, Spending, Web3ERC20Token, Unlimited} from "../base/eth/types"
-import {BigNumber} from "../base/eth/utils/configured_bignumber"
+import {BigNumber, B} from "../base/eth/utils/configured_bignumber"
 
 
 export default class CoinDetail implements Web3ERC20Token {
@@ -13,7 +13,7 @@ export default class CoinDetail implements Web3ERC20Token {
 
     constructor(address: string, dec: any, sym: string, name: string) {
         this.address = address
-        if (dec instanceof BigNumber) {
+        if (dec instanceof B.BigNumber) {
             this.decimal = dec.toNumber()
         } else {
             this.decimal = dec
@@ -25,9 +25,9 @@ export default class CoinDetail implements Web3ERC20Token {
         this.spender = {}
     }
 
-    setHolder(address: string, bal: any) {
+    public setHolder(address: string, bal: any): void {
         let abal = 0
-        if (bal instanceof BigNumber) {
+        if (bal instanceof B.BigNumber) {
             abal = bal.toNumber()
         } else {
             abal = bal
@@ -39,31 +39,31 @@ export default class CoinDetail implements Web3ERC20Token {
         }
     }
 
-    setSpenderAllowed(coin_owner: string, spender: string, isAll: boolean) {
-        this._setDeep(this.unlimited, [coin_owner, spender], isAll)
+    public setSpenderAllowed(coin_owner: string, spender: string, isAll: boolean): boolean {
+        return this._setDeep(this.unlimited, [coin_owner, spender], isAll)
     }
 
-    setSpender(coin_owner: string, spender: string, allowance: number) {
-        this._setDeep(this.spender, [coin_owner, spender], allowance)
+    public setSpender(coin_owner: string, spender: string, allowance: number): boolean {
+        return this._setDeep(this.spender, [coin_owner, spender], allowance)
     }
 
-    name(): string {
+    public name(): string {
         return this.tokenName
     }
 
-    symbol(): string {
+    public symbol(): string {
         return this.tokenSymbol
     }
 
-    amountCode(address: string): number {
+    public amountCode(address: string): number {
         return this.holder[address]
     }
 
-    byFloat(address: string): number {
+    public byFloat(address: string): number {
         return this.holder[address] / this.decimal
     }
 
-    showAllowance(coin_owner: string, spender: string): number {
+    public showAllowance(coin_owner: string, spender: string): number {
         if (this.spender.hasOwnProperty(coin_owner)) {
             if (this.spender[coin_owner].hasOwnProperty(spender)) {
                 return this.spender[coin_owner][spender]
@@ -72,7 +72,7 @@ export default class CoinDetail implements Web3ERC20Token {
         return 0
     }
 
-    showAllowed(coin_owner: string, spender: string): boolean {
+    public showAllowed(coin_owner: string, spender: string): boolean {
         if (this.unlimited.hasOwnProperty(coin_owner)) {
             if (this.unlimited[coin_owner].hasOwnProperty(spender)) {
                 return this.unlimited[coin_owner][spender]
@@ -91,7 +91,7 @@ export default class CoinDetail implements Web3ERC20Token {
      * @param {!mixed} value - The value you want to set it to.
      * @param {boolean} setrecursively - If true, will set value of non-existing path as well.
      */
-    _setDeep(obj: object, path: any, value: number | string | boolean, setrecursively = false): boolean {
+    private _setDeep(obj: object, path: any, value: number | string | boolean, setrecursively = false): boolean {
         /*       path.reduce((a, b, level) => {
                    if (setrecursively && typeof a[b] === "undefined" && level !== path.length) {
                        a[b] = {};

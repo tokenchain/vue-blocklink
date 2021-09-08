@@ -1,5 +1,5 @@
 import { SolidityTypes } from '../../../types';
-import { BigNumber } from '../../configured_bignumber';
+import { B } from '../../configured_bignumber';
 import { AbstractBlobDataType } from '../abstract_data_types/types/blob';
 import { constants } from '../utils/constants';
 import * as EncoderMath from '../utils/math';
@@ -49,9 +49,9 @@ UIntDataType._MATCHER = RegExp('^uint(8|16|24|32|40|48|56|64|72|80|88|96|104|112
 UIntDataType._SIZE_KNOWN_AT_COMPILE_TIME = true;
 UIntDataType._MAX_WIDTH = 256;
 UIntDataType._DEFAULT_WIDTH = UIntDataType._MAX_WIDTH;
-UIntDataType._MIN_VALUE = new BigNumber(0);
-UIntDataType._DEFAULT_VALUE = new BigNumber(0);
+UIntDataType._MIN_VALUE = new B.BigNumber(0);
+UIntDataType._DEFAULT_VALUE = new B.BigNumber(0);
 UIntDataType._WIDTH_TO_MAX_VALUE = Object.assign({}, ...[...new Array(32)].map((_x, i) => {
     const width = (i + 1) * 8;
-    return { [width]: new BigNumber(2).exponentiatedBy(width).minus(1) };
+    return { [width]: new B.BigNumber(2).exponentiatedBy(width).minus(1) };
 }));

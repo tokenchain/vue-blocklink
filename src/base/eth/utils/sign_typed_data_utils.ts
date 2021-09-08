@@ -1,9 +1,9 @@
-import { EIP712Object, EIP712ObjectValue, EIP712TypedData, EIP712Types } from '../0xtypes';
+import {EIP712Object, EIP712ObjectValue, EIP712TypedData, EIP712Types} from '../0xtypes';
 import * as ethUtil from 'ethereumjs-util';
 import * as ethers from 'ethers';
 import * as _ from 'lodash';
 
-import { BigNumber } from './configured_bignumber';
+import {BigNumber, B} from './configured_bignumber';
 
 export const signTypedDataUtils = {
     /**
@@ -43,10 +43,10 @@ export const signTypedDataUtils = {
             // to eliminate code duplication. At the moment, there isn't a good way to do that because of cyclic-dependencies.
             {
                 EIP712Domain: [
-                    { name: 'name', type: 'string' },
-                    { name: 'version', type: 'string' },
-                    { name: 'chainId', type: 'uint256' },
-                    { name: 'verifyingContract', type: 'address' },
+                    {name: 'name', type: 'string'},
+                    {name: 'version', type: 'string'},
+                    {name: 'chainId', type: 'uint256'},
+                    {name: 'verifyingContract', type: 'address'},
                 ],
             },
         );
@@ -71,7 +71,7 @@ export const signTypedDataUtils = {
         deps = [primaryType].concat(deps.sort());
         let result = '';
         for (const dep of deps) {
-            result += `${dep}(${types[dep].map(({ name, type }) => `${type} ${name}`).join(',')})`;
+            result += `${dep}(${types[dep].map(({name, type}) => `${type} ${name}`).join(',')})`;
         }
         return result;
     },
@@ -108,10 +108,10 @@ export const signTypedDataUtils = {
     _normalizeValue(type: string, value: any): EIP712ObjectValue {
         const STRING_BASE = 10;
         if (type === 'uint256') {
-            if (BigNumber.isBigNumber(value)) {
+            if (B.BigNumber.isBigNumber(value)) {
                 return value.toString(STRING_BASE);
             }
-            return new BigNumber(value).toString(STRING_BASE);
+            return new B.BigNumber(value).toString(STRING_BASE);
         }
         return value;
     },

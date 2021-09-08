@@ -3,7 +3,7 @@ import {DataItem} from '../../../../types';
 import * as ethUtil from 'ethereumjs-util';
 import * as _ from 'lodash';
 
-import {BigNumber} from '../../../configured_bignumber';
+import {B} from '../../../configured_bignumber';
 import {SetCalldataBlock} from '../../calldata/blocks/set';
 import {CalldataBlock} from '../../calldata/calldata_block';
 import {RawCalldata} from '../../calldata/raw_calldata';
@@ -56,7 +56,7 @@ export abstract class AbstractSetDataType extends DataType {
         if (this._isArray && this._arrayLength === undefined) {
             const arrayLengthBuf = calldata.popWord();
             const arrayLengthHex = ethUtil.bufferToHex(arrayLengthBuf);
-            const arrayLength = new BigNumber(arrayLengthHex, constants.HEX_BASE);
+            const arrayLength = new B.BigNumber(arrayLengthHex, constants.HEX_BASE);
             [members] = this._createMembersWithLength(this.getDataItem(), arrayLength.toNumber());
         }
         // Create a new scope in the calldata, before descending into the members of this set.

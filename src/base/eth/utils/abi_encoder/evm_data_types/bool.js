@@ -1,6 +1,6 @@
 import { SolidityTypes } from '../../../types';
 import * as ethUtil from 'ethereumjs-util';
-import { BigNumber } from '../../configured_bignumber';
+import { B } from '../../configured_bignumber';
 import { AbstractBlobDataType } from '../abstract_data_types/types/blob';
 import { constants } from '../utils/constants';
 export class BoolDataType extends AbstractBlobDataType {
@@ -21,7 +21,7 @@ export class BoolDataType extends AbstractBlobDataType {
     decodeValue(calldata) {
         const valueBuf = calldata.popWord();
         const valueHex = ethUtil.bufferToHex(valueBuf);
-        const valueNumber = valueHex === '0x' ? new BigNumber(0) : new BigNumber(valueHex, constants.HEX_BASE);
+        const valueNumber = valueHex === '0x' ? new B.BigNumber(0) : new B.BigNumber(valueHex, constants.HEX_BASE);
         if (!(valueNumber.isEqualTo(0) || valueNumber.isEqualTo(1))) {
             throw new Error(`Failed to decode boolean. Expected 0x0 or 0x1, got ${valueHex}`);
         }
