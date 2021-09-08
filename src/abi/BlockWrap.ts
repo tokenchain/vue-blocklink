@@ -1,4 +1,3 @@
-import {Address} from "../base/Address"
 import {Ori20Contract} from "./ori20";
 import type {
     WebLinkTokenMap, Web3ERC20Token, WatchAssetParams, AddEthereumChainParameter, TransactionReceipt
@@ -8,9 +7,9 @@ import CoinDetail from "./CoinDetail";
 import ethUtil from "ethereumjs-util";
 import sigUtil from "eth-sig-util";
 import Web3 from "web3";
-
 import {Utils} from 'web3-utils';
 import {PromiEvent, TransactionConfig} from 'web3-core';
+import {BigNumber} from "../base/eth/utils";
 
 /**
  * BlockWrap extension interaction functionality
@@ -127,44 +126,12 @@ export default class BlockWrap {
         await contract.transfer(toaddress, send_amount);
     }
 
-    /**
-     * Converts Tron address from one format to another.
-     *
-     * @param {String, Number} address Address to convert
-     * @param {String} fromFormat From format string
-     * @param {String} toFormat To format string
-     */
-    convertAddress(address, fromFormat: string, toFormat: string): string {
-        if (fromFormat == toFormat) {
-            throw "From and To address formats are equal"
-        }
+    public keccak256(data: any): string {
+        return this.w3.utils.keccak256(data)
+    }
 
-        switch (toFormat) {
-            case "hex":
-                switch (fromFormat) {
-                    case "base58":
-                    case "eth":
-                        return "0x" + this.ethereumCore.address.toHex(address)
-                }
-                break
-            case "base58":
-            case "eth":
-                switch (fromFormat) {
-                    case "hex":
-                        if (!Address.isHexAddress(address)) {
-                            throw "Invalid hex address"
-                        }
-
-                        if (address.startsWith("0x")) {
-                            address = address.substr(2)
-                        }
-
-                        return this.ethereumCore.address.fromHex(address)
-                }
-                break
-        }
-
-        throw "Invalid address formats"
+    public sha(data: any): string {
+        return this.w3.utils.soliditySha3(data)
     }
 
     /**

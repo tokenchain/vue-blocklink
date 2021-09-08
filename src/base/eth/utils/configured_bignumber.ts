@@ -1,5 +1,6 @@
-import * as BigNumber from 'bignumber.js';
-type BN = BigNumber.BigNumber
+import * as B from 'bignumber.js';
+
+declare type BigNumber = B.BigNumber
 BigNumber.config({
     // By default BigNumber's `toString` method converts to exponential notation if the value has
     // more then 20 digits. We want to avoid this behavior, so we set EXPONENTIAL_AT to a high number
@@ -40,4 +41,4 @@ if (isNode) {
 (orig => (BigNumber.config = (..._args: any[]) => orig({})))(BigNumber.config);
 BigNumber.set = BigNumber.config;
 
-export {BigNumber, BN};
+export {BigNumber};

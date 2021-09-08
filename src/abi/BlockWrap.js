@@ -1,4 +1,4 @@
-import { Address } from "../base/Address";
+
 import { Ori20Contract } from "./ori20";
 import CoinDetail from "./CoinDetail";
 import ethUtil from "ethereumjs-util";
