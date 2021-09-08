@@ -3,7 +3,6 @@ import * as AJV from 'ajv'; // namespace and constructor
 import {Ajv} from 'ajv'; // interface
 // @ts-ignore
 import lodash from 'lodash'
-
 const values = lodash.values
 import {schemas} from './validations';
 

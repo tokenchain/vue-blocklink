@@ -1,8 +1,8 @@
-import {explainNetworkById} from "../utils/ethereumnetworks";
 import BlockWrap from "../abi/BlockWrap"
-import Detection from "@metamask/detect-provider"
 import MetaMaskOnboarding from '@metamask/onboarding';
 import Web3 from "web3";
+import DetectionFunc from "@metamask/detect-provider"
+import {ExplainNetworkById} from "../utils/ethereumnetworks";
 
 export default {
     data() {
@@ -19,7 +19,6 @@ export default {
             stateLog: null,
             isMetamaskInterfaced: false,
             onboarding: false,
-            type: "INIT",
             w3: false,
             MetamaskMsg: {
                 LOAD_METAMASK_WALLET_ERROR: 'Loading metamask error, please try later',
@@ -57,7 +56,7 @@ export default {
         async checkWeb3MetaMask() {
             if (window) {
                 if (!this.ethereum) {
-                    const provider = await Detection()
+                    const provider = await DetectionFunc()
                     if (provider) {
                         const chainId = await provider.request({
                             method: 'eth_chainId'
@@ -229,7 +228,7 @@ export default {
         async checkNetWork() {
             const network_id = await this.w3.eth.net.getId()
             this.netID = network_id
-            const {name, network, networkId} = explainNetworkById(network_id)
+            const {name, network, networkId} = ExplainNetworkById(network_id)
             if (this.blockLink) {
                 console.log(`Now it is connected to ${name} ${network}`)
             }
@@ -241,9 +240,6 @@ export default {
                 this.checkError("METAMASK_SWITCH_NET")
                 return false;
             }
-        },
-        Log(msg, type = "") {
-            this.$emit("onComplete");
         },
         registerOnBoard() {
             if (MetaMaskOnboarding.isMetaMaskInstalled()) {

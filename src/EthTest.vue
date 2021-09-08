@@ -40,8 +40,6 @@ export default {
     }
   },
   mounted() {
-
-
     this.$nextTick(() => {
       this.$on("notify_block_not_install", () => {
         this.metamaskInstalled = false

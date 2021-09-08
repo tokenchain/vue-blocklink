@@ -1285,7 +1285,7 @@ const networks = [
     }
 ]
 
-function explainNetworkById(netID) {
+function ExplainNetworkById(netID) {
     const id = parseInt(netID)
     const k = networks.findIndex((x) => x.networkId === id)
     if (k > -1) {
@@ -1300,5 +1300,5 @@ function explainNetworkById(netID) {
  */
 
 export {
-    explainNetworkById
+    ExplainNetworkById
 }
