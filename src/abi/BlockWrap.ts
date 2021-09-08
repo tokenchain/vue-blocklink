@@ -189,8 +189,8 @@ export default class BlockWrap {
             detail.setHolder(address, a)
             this.tokens[erc20_address] = detail
         } else {
-            const abbalance = await contract.balanceOf(address)
-            // this.tokens[erc20_address].setHolder(address, txtUnit(apbalance))
+            const b = await contract.balanceOf(address)
+            this.tokens[erc20_address].setHolder(address, b)
         }
 
         // @ts-ignore
@@ -199,7 +199,7 @@ export default class BlockWrap {
 
     async getThirdTokenBalanceSun(address: string, erc20_address: string): Promise<number> {
         const conver = await this.getThirdTokenBalance(address, erc20_address)
-        return conver.bySun(address)
+        return conver.amountCode(address)
     }
 
     async getThirdTokenBalanceFloat(address: string, erc20_address: string): Promise<number> {

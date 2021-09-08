@@ -55,7 +55,7 @@ export default class CoinDetail implements Web3ERC20Token {
         return this.tokenSymbol
     }
 
-    bySun(address: string): number {
+    amountCode(address: string): number {
         return this.holder[address]
     }
 

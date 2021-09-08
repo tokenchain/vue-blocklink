@@ -127,7 +127,7 @@ export default class BlockWrap {
     }
     async getThirdTokenBalanceSun(address, erc20_address) {
         const conver = await this.getThirdTokenBalance(address, erc20_address);
-        return conver.bySun(address);
+        return conver.amountCode(address);
     }
     async getThirdTokenBalanceFloat(address, erc20_address) {
         const conver = await this.getThirdTokenBalance(address, erc20_address);
