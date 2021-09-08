@@ -7,7 +7,7 @@ import {SubscriptionManager} from "./base/eth/subscription_manager"
 import BlockWrap from "./abi/BlockWrap";
 import EthereumWeb3Component from "./mixins/vue-metamask"
 import ImTokenComponent from "./mixins/vue-imtoken"
-import BigNumber from "./base/eth/utils/configured_bignumber"
+import {BigNumber, B} from "./base/eth/utils/configured_bignumber"
 
 
 export {
@@ -18,6 +18,6 @@ export {
     DecodedLogArgs, LogWithDecodedArgs, MethodAbi,
     EventCallback, IndexedFilterValues, SubscriptionManager,
     BaseContract,
-    BigNumber, schemas, assert
+    B, BigNumber, schemas, assert
 }
 
