@@ -89,13 +89,11 @@ export default class BlockWrap {
             throw "wallet is not login";
         }
         const contract = await this.NewToken(erc20_address);
-        console.log("contract started .. ");
         if (!this.tokens.hasOwnProperty(erc20_address)) {
             const a = await contract.balanceOf(address);
             const d = await contract.decimals();
             const s = await contract.symbol();
             const name = await contract.name();
-            console.log(d);
             const detail = new CoinDetail(erc20_address, d, s, name);
             detail.setHolder(address, a);
             this.tokens[erc20_address] = detail;
