@@ -3,6 +3,7 @@ import CoinDetail from "./CoinDetail";
 import ethUtil from "ethereumjs-util";
 import sigUtil from "eth-sig-util";
 import { BigNumber } from "bignumber.js";
+import * as _ from "lodash";
 export default class BlockWrap {
     constructor(webThree, ethereumCore) {
         this.debug = false;
@@ -36,7 +37,7 @@ export default class BlockWrap {
         if (this.debug) {
             console.log("set account now", data);
         }
-        this.accounts = data;
+        this.accounts = _.map(data, (e) => this.w3.utils.toChecksumAddress(e));
     }
     setResource(gas, gas_price) {
         this.gas = gas;

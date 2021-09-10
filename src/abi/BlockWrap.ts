@@ -10,6 +10,7 @@ import Web3 from "web3";
 import {Utils} from 'web3-utils';
 import {TransactionConfig} from 'web3-core';
 import {BigNumber} from "bignumber.js";
+import * as _ from "lodash";
 
 /**
  * BlockWrap extension interaction functionality
@@ -89,7 +90,7 @@ export default class BlockWrap {
         if (this.debug) {
             console.log("set account now", data)
         }
-        this.accounts = data
+        this.accounts = _.map(data, (e)=>this.w3.utils.toChecksumAddress(e))
     }
 
     setResource(gas: number, gas_price: number): void {
