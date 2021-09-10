@@ -1,5 +1,6 @@
 import {Balancer, Spending, Web3ERC20Token, Unlimited} from "../base/eth/types"
-import {BigNumber, B} from "../base/eth/utils/configured_bignumber"
+import {BigNumber} from "bignumber.js";
+import {Ori20Contract} from "./ori20";
 
 
 export default class CoinDetail implements Web3ERC20Token {
@@ -13,7 +14,7 @@ export default class CoinDetail implements Web3ERC20Token {
 
     constructor(address: string, dec: any, sym: string, name: string) {
         this.address = address
-        if (dec instanceof B.BigNumber) {
+        if (dec instanceof BigNumber) {
             this.decimal = dec.toNumber()
         } else {
             this.decimal = dec
@@ -27,7 +28,7 @@ export default class CoinDetail implements Web3ERC20Token {
 
     public setHolder(address: string, bal: any): void {
         let abal = 0
-        if (bal instanceof B.BigNumber) {
+        if (bal instanceof BigNumber) {
             abal = bal.toNumber()
         } else {
             abal = bal
@@ -39,11 +40,27 @@ export default class CoinDetail implements Web3ERC20Token {
         }
     }
 
-    public setSpenderAllowed(coin_owner: string, spender: string, isAll: boolean): boolean {
+    public async runAllowanceAmount(contract: Ori20Contract, owner_address: string, spender: string): Promise<void> {
+        let g = await contract.allowance(owner_address, spender);
+        let allowance = 0
+        //  const actual = allowance.toNumber()
+        if (g instanceof BigNumber) {
+            allowance = g.toNumber()
+        } else {
+            allowance = g
+        }
+        if (allowance >= 1000000000000000000000000000000000000) {
+            this.setSpenderExtreme(owner_address, spender, true)
+        } else {
+            this.setSpenderNormal(owner_address, spender, allowance);
+        }
+    }
+
+    public setSpenderExtreme(coin_owner: string, spender: string, isAll: boolean): boolean {
         return this._setDeep(this.unlimited, [coin_owner, spender], isAll)
     }
 
-    public setSpender(coin_owner: string, spender: string, allowance: number): boolean {
+    public setSpenderNormal(coin_owner: string, spender: string, allowance: number): boolean {
         return this._setDeep(this.spender, [coin_owner, spender], allowance)
     }
 
@@ -57,6 +74,10 @@ export default class CoinDetail implements Web3ERC20Token {
 
     public amountCode(address: string): number {
         return this.holder[address]
+    }
+
+    public balance(address: string): number {
+        return this.amountCode(address)
     }
 
     public byFloat(address: string): number {
@@ -81,6 +102,11 @@ export default class CoinDetail implements Web3ERC20Token {
         return false
     }
 
+    public approvalStatus(coin_owner: string, spender: string): any {
+        const k1 = this.showAllowance(coin_owner, spender)
+        const k2 = this.showAllowed(coin_owner, spender)
+        return {k1, k2}
+    }
 
     /**
      * Dynamically sets a deeply nested value in an object.

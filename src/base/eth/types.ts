@@ -1,4 +1,5 @@
 import {BigNumber} from "./utils/configured_bignumber"
+import {Ori20Contract} from "../../abi/ori20";
 
 export type JSONRPCErrorCallback = (err: Error | null, result?: JSONRPCResponsePayload) => void;
 
@@ -17,7 +18,9 @@ export interface Unlimited {
 export interface WebLinkTokenMap {
     [contractAddress: string]: Web3ERC20Token;
 }
-
+export interface ContractTokenMap {
+    [contractAddress: string]: Ori20Contract;
+}
 export interface Web3ERC20Token {
     tokenSymbol: string;
     tokenName: string;

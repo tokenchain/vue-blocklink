@@ -41,7 +41,7 @@ export interface ContractInterface {
 
     allowance(owner: string, spender: string,): Promise<BigNumber>
 
-    approve(spender: string, amount: BigNumber,): Promise<boolean>
+    approve(spender: string, amount: BigNumber,): Promise<void>
 
     balanceOf(account: string,): Promise<BigNumber>
 
@@ -129,7 +129,6 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     public static deployedBytecode: string | undefined;
     public static readonly contractName = 'Ori20';
     private readonly _methodABIIndex: { [name: string]: number } = {};
-    private readonly _subscriptionManager: SubscriptionManager<Ori20EventArgs, Ori20Events>;
 
     public static Instance(): (Ori20Contract | any | boolean) {
         if (window && window.hasOwnProperty("__eth_contract_Ori20")) {
@@ -715,7 +714,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async approve(spender: string, amount: BigNumber,): Promise<boolean> {
+    public async approve(spender: string, amount: BigNumber,): Promise<void> {
         const self = this as any as Ori20Contract;
 
         assert.isString('spender', spender);
@@ -726,7 +725,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
             amount,
         )
 
-        const result = await promizz.send({
+        await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -741,7 +740,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
         }).catch((e) => {
             this.catchErro(e)
         });
-        return result;
+
     };
 
 
@@ -1292,95 +1291,18 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    /**
-     * Subscribe to an event type emitted by the Ori20 contract.
-     * @param eventName The Ori20 contract event you would like to subscribe to.
-     * @param indexFilterValues An object where the keys are indexed args returned by the event and
-     * the value is the value you are interested in. E.g `{maker: aUserAddressHex}`
-     * @param callback Callback that gets called when a log is added/removed
-     * @param isVerbose Enable verbose subscription warnings (e.g recoverable network issues encountered)
-     * @return Subscription token used later to unsubscribe
-     */
-    public subscribe<ArgsType extends Ori20EventArgs>(
-        eventName: Ori20Events,
-        indexFilterValues: IndexedFilterValues,
-        callback: EventCallback<ArgsType>,
-        isVerbose: boolean = false,
-        blockPollingIntervalMs?: number,
-    ): string {
-        assert.doesBelongToStringEnum('eventName', eventName, Ori20Events);
-        assert.doesConformToSchema('indexFilterValues', indexFilterValues, schemas.indexFilterValuesSchema);
-        assert.isFunction('callback', callback);
-        const subscriptionToken = this._subscriptionManager.subscribe<ArgsType>(
-            this._address,
-            eventName,
-            indexFilterValues,
-            Ori20Contract.ABI(),
-            callback,
-            isVerbose,
-            blockPollingIntervalMs,
-        );
-        return subscriptionToken;
-    }
-
-    /**
-     * Cancel a subscription
-     * @param subscriptionToken Subscription token returned by `subscribe()`
-     */
-    public unsubscribe(subscriptionToken: string): void {
-        this._subscriptionManager.unsubscribe(subscriptionToken);
-    }
-
-    /**
-     * Cancels all existing subscriptions
-     */
-    public unsubscribeAll(): void {
-        this._subscriptionManager.unsubscribeAll();
-    }
-
-
-    /**
-     * Gets historical logs without creating a subscription
-     * @param eventName The Ori20 contract event you would like to subscribe to.
-     * @param blockRange Block range to get logs from.
-     * @param indexFilterValues An object where the keys are indexed args returned by the event and
-     * the value is the value you are interested in. E.g `{_from: aUserAddressHex}`
-     * @return Array of logs that match the parameters
-     */
-    public async getLogsAsync<ArgsType extends Ori20EventArgs>(
-        eventName: Ori20Events,
-        blockRange: BlockRange,
-        indexFilterValues: IndexedFilterValues,
-    ): Promise<Array<LogWithDecodedArgs<ArgsType>>> {
-        assert.doesBelongToStringEnum('eventName', eventName, Ori20Events);
-        assert.doesConformToSchema('blockRange', blockRange, schemas.blockRangeSchema);
-        assert.doesConformToSchema('indexFilterValues', indexFilterValues, schemas.indexFilterValuesSchema);
-        const logs = await this._subscriptionManager.getLogsAsync<ArgsType>(
-            this._address,
-            eventName,
-            blockRange,
-            indexFilterValues,
-            Ori20Contract.ABI(),
-        );
-        return logs;
-    }
-
     constructor(
         address: string,
         supportedProvider: provider,
         ww3: Web3
     ) {
         super('Ori20', Ori20Contract.ABI(), address, supportedProvider, ww3);
-        this._subscriptionManager = new SubscriptionManager<Ori20EventArgs, Ori20Events>(
-            Ori20Contract.ABI(),
-            supportedProvider,
-        );
-        Ori20Contract.ABI().forEach((item, index) => {
-            if (item.type === 'function') {
-                const methodAbi = item as MethodAbi;
-                this._methodABIIndex[methodAbi.name] = index;
-            }
-        });
+        /*  Ori20Contract.ABI().forEach((item, index) => {
+              if (item.type === 'function') {
+                  const methodAbi = item as MethodAbi;
+                  this._methodABIIndex[methodAbi.name] = index;
+              }
+          });*/
 
 
     }

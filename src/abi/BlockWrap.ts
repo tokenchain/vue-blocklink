@@ -1,6 +1,6 @@
 import {Ori20Contract} from "./ori20";
 import type {
-    WebLinkTokenMap, Web3ERC20Token, WatchAssetParams, AddEthereumChainParameter, TransactionReceipt
+    WebLinkTokenMap, Web3ERC20Token, WatchAssetParams, AddEthereumChainParameter, TransactionReceipt, ContractTokenMap
 } from "../base/eth/types";
 import {Vue} from "vue/types/vue";
 import CoinDetail from "./CoinDetail";
@@ -9,7 +9,7 @@ import sigUtil from "eth-sig-util";
 import Web3 from "web3";
 import {Utils} from 'web3-utils';
 import {TransactionConfig} from 'web3-core';
-import {BigNumber} from "../base/eth/utils";
+import {BigNumber} from "bignumber.js";
 
 /**
  * BlockWrap extension interaction functionality
@@ -17,6 +17,7 @@ import {BigNumber} from "../base/eth/utils";
 export default class BlockWrap {
     ethereumCore: any
     tokens: WebLinkTokenMap
+    contracts: ContractTokenMap;
     w3: Web3
     debug: boolean = false
     errorHandler: any;
@@ -24,7 +25,7 @@ export default class BlockWrap {
     boardcastHandler: any;
     accounts: Array<string> = [];
     gas: number = 1000000
-    gasPrice: number | string = 20000000000
+    gasPrice: number | string = 21000000000
 
     /**
      * Initiates BlockWrap support object.
@@ -36,6 +37,7 @@ export default class BlockWrap {
         this.ethereumCore = ethereumCore
         this.w3 = webThree as Web3
         this.tokens = {}
+        this.contracts = {}
     }
 
     /**
@@ -84,19 +86,36 @@ export default class BlockWrap {
     }
 
     setAccounts(data): void {
+        if (this.debug) {
+            console.log("set account now", data)
+        }
         this.accounts = data
     }
 
     setResource(gas: number, gas_price: number): void {
         this.gas = gas
         this.gasPrice = gas_price
+
+        //const f = this.w3.utils.toBN(1)
+        //const need = this.w3.utils.toWei(f, "gwei")
+        if (this.debug) {
+           // console.log(need)
+        }
+
+        this._setOtherRrc(gas, gas_price)
+    }
+
+    private _setOtherRrc(gas: number, gas_price: number): void {
+        for (let b in this.contracts) {
+            this.contracts[b].setResource(gas, gas_price)
+        }
     }
 
     haveAccounts(): boolean {
         return this.accounts.length > 0
     }
 
-    NewContract(abi: any[] = [], address: string = ""): any {
+    NewContractFallback(abi: any[] = [], address: string = ""): any {
         const contract = this.w3.eth.Contract
         // @ts-ignore
         contract.setProvider(this.ethereumCore)
@@ -119,11 +138,21 @@ export default class BlockWrap {
         //return receipt;
     }
 
-    async sendToken(amount: any, toaddress: string, erc20_address: string): Promise<void> {
+    public async sendToken(amount: any, toaddress: string, erc20_address: string): Promise<void> {
         const contract = await this.NewToken(erc20_address);
         // @ts-ignore
         const send_amount = new BigNumber(amount);
         await contract.transfer(toaddress, send_amount);
+    }
+
+    public async approveToken(erc20_address: string, spender_address: string, amount_sun: any): Promise<void> {
+        const contract = await this.NewToken(erc20_address);
+        const am = new BigNumber(amount_sun)
+        await contract.approve(spender_address, am)
+    }
+
+    public async getMyTokenBalance(trc20_coin: string): Promise<number> {
+        return await this.getTokenBalanceWei(this.getAccountAddress(), trc20_coin)
     }
 
     /**
@@ -155,16 +184,25 @@ export default class BlockWrap {
         return await this.w3.eth.getBalance(this.getAccountAddress())
     }
 
-    async getCoin(trc20_coin: string): Promise<number> {
-        return await this.getThirdTokenBalanceSun(this.getAccountAddress(), trc20_coin)
-    }
-
-    async getCoinDetail(trc20_coin: string): Promise<CoinDetail> {
-        return await this.getThirdTokenBalance(this.getAccountAddress(), trc20_coin)
+    async getMyCoinDetail(trc20_coin: string): Promise<CoinDetail> {
+        return await this.getCoinDetail(trc20_coin, this.getAccountAddress())
     }
 
     async coinExample(): Promise<CoinDetail> {
-        return await this.getCoinDetail("TXHvwxYbqsDqTCQ9KxNFj4SkuXy7EF2AHR")
+        return await this.getMyCoinDetail("TXHvwxYbqsDqTCQ9KxNFj4SkuXy7EF2AHR")
+    }
+
+    public async initCoinDetail(erc20: string, me: string): Promise<CoinDetail> {
+        const contract = await this.NewToken(erc20)
+        const a = await contract.balanceOf(me)
+        const d = await contract.decimals()
+        const s = await contract.symbol()
+        const name = await contract.name()
+        const detail = new CoinDetail(erc20, d, s, name)
+        detail.setHolder(me, a)
+        this.tokens[erc20] = detail
+        this.contracts[erc20] = contract
+        return detail
     }
 
 
@@ -173,20 +211,19 @@ export default class BlockWrap {
      * @param address
      * @param erc20_address
      */
-    async getThirdTokenBalance(address: string, erc20_address: string): Promise<CoinDetail> {
+    public async getCoinDetail(erc20_address: string, address: string): Promise<CoinDetail> {
         if (!this.isLoggedIn()) {
             throw "wallet is not login"
         }
-        const contract = await this.NewToken(erc20_address)
         if (!this.tokens.hasOwnProperty(erc20_address)) {
-            const a = await contract.balanceOf(address)
-            const d = await contract.decimals()
-            const s = await contract.symbol()
-            const name = await contract.name()
-            const detail = new CoinDetail(erc20_address, d, s, name)
-            detail.setHolder(address, a)
-            this.tokens[erc20_address] = detail
+            // console.log("init coin detail")
+            await this.initCoinDetail(erc20_address, address)
         } else {
+            let contract = this.contracts[erc20_address]
+            if (!contract) {
+                contract = await this.NewToken(erc20_address)
+                this.contracts[erc20_address] = contract
+            }
             const b = await contract.balanceOf(address)
             // @ts-ignore
             this.tokens[erc20_address].setHolder(address, b)
@@ -196,27 +233,30 @@ export default class BlockWrap {
         return this.tokens[erc20_address];
     }
 
-    async getThirdTokenBalanceSun(address: string, erc20_address: string): Promise<number> {
-        const conver = await this.getThirdTokenBalance(address, erc20_address)
-        return conver.amountCode(address)
+    async getContractToken(erc20_address: string): Promise<Ori20Contract> {
+        let contract = this.contracts[erc20_address]
+        if (!contract) {
+            console.log("new contract..")
+            contract = await this.NewToken(erc20_address)
+            this.contracts[erc20_address] = contract
+        }
+        return contract
     }
 
-    async getThirdTokenBalanceFloat(address: string, erc20_address: string): Promise<number> {
-        const conver = await this.getThirdTokenBalance(address, erc20_address)
-        return conver.byFloat(address)
-    }
-
-    /**
-     * to approve prespending TRC20 token on the go..
-     * @param erc20_address
-     * @param spender_address
-     * @param amount_sun
-     * @constructor
-     */
-    async ApproveSpendingToken(erc20_address: string, spender_address: string, amount_sun: number): Promise<boolean> {
-        const token = await this.NewToken(erc20_address)
-        // @ts-ignore
-        return await token.approve(spender_address, BigNumber.from(amount_sun))
+    async getTokenBalanceWei(address: string, erc20_address: string): Promise<number> {
+        if (!this.tokens.hasOwnProperty(erc20_address)) {
+            console.log("1111")
+            const conver = await this.getCoinDetail(erc20_address, address);
+            return conver.amountCode(address);
+        } else {
+            let contract = this.contracts[erc20_address]
+            // tokende.holder[address] = await contract.balanceOf(address)
+            const b = await contract.balanceOf(address)
+            console.log("1122k11")
+            // @ts-ignore
+            this.tokens[erc20_address].setHolder(address, b)
+            return b.toNumber()
+        }
     }
 
     async NewToken(erc20_address: string): Promise<Ori20Contract> {
@@ -236,10 +276,7 @@ export default class BlockWrap {
         return payload.holder[me]
     }
 
-
     eventListener(message: any, vueInstance: Vue) {
-
-
     }
 
     setHandlers(confirm, broadcast, err): void {

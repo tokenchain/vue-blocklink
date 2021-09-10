@@ -1,8 +1,8 @@
-import { B } from "../base/eth/utils/configured_bignumber";
+import { BigNumber } from "bignumber.js";
 export default class CoinDetail {
     constructor(address, dec, sym, name) {
         this.address = address;
-        if (dec instanceof B.BigNumber) {
+        if (dec instanceof BigNumber) {
             this.decimal = dec.toNumber();
         }
         else {
@@ -16,7 +16,7 @@ export default class CoinDetail {
     }
     setHolder(address, bal) {
         let abal = 0;
-        if (bal instanceof B.BigNumber) {
+        if (bal instanceof BigNumber) {
             abal = bal.toNumber();
         }
         else {
@@ -29,10 +29,26 @@ export default class CoinDetail {
             this.holder[address] = abal;
         }
     }
-    setSpenderAllowed(coin_owner, spender, isAll) {
+    async runAllowanceAmount(contract, owner_address, spender) {
+        let g = await contract.allowance(owner_address, spender);
+        let allowance = 0;
+        if (g instanceof BigNumber) {
+            allowance = g.toNumber();
+        }
+        else {
+            allowance = g;
+        }
+        if (allowance >= 1000000000000000000000000000000000000) {
+            this.setSpenderExtreme(owner_address, spender, true);
+        }
+        else {
+            this.setSpenderNormal(owner_address, spender, allowance);
+        }
+    }
+    setSpenderExtreme(coin_owner, spender, isAll) {
         return this._setDeep(this.unlimited, [coin_owner, spender], isAll);
     }
-    setSpender(coin_owner, spender, allowance) {
+    setSpenderNormal(coin_owner, spender, allowance) {
         return this._setDeep(this.spender, [coin_owner, spender], allowance);
     }
     name() {
@@ -43,6 +59,9 @@ export default class CoinDetail {
     }
     amountCode(address) {
         return this.holder[address];
+    }
+    balance(address) {
+        return this.amountCode(address);
     }
     byFloat(address) {
         return this.holder[address] / this.decimal;
@@ -62,6 +81,11 @@ export default class CoinDetail {
             }
         }
         return false;
+    }
+    approvalStatus(coin_owner, spender) {
+        const k1 = this.showAllowance(coin_owner, spender);
+        const k2 = this.showAllowed(coin_owner, spender);
+        return { k1, k2 };
     }
     _setDeep(obj, path, value, setrecursively = false) {
         let properties = Array.isArray(path) ? path : path.split(".");

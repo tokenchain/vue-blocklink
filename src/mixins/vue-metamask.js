@@ -32,7 +32,8 @@ export default {
                 REJECTED_BY_USER: 'The request is rejected by the user.',
                 PARAMETERS_WERE_INVALID: 'the parameter were invalid',
                 INTERNAL_ERROR: 'internal error',
-                USER_DENIED: 'user denied'
+                USER_DENIED: 'user denied',
+                DISCONNECTED: 'disconnected'
             },
             metamask_debug: false
         };
@@ -79,11 +80,13 @@ export default {
                 if (!this.blockLink) {
                     this.blockLink = new BlockWrap(this.w3, this.ethereum)
                     this.isMetamaskInterfaced = true
+                    this.blockLink.setDebug(this.metamask_debug)
                     this.blockLink.setHandlers(
                         this.handleConfirm,
                         this.handleBroadcast,
                         this.handleErrors
                     )
+
                 }
 
                 if (!this.ethereum) {
@@ -164,8 +167,10 @@ export default {
                 if (acc.length > 0) {
                     this.signedInConnection = true
                     this.notify_block_installed()
+                    this.blockLink.setAccounts(acc)
+                } else {
+                    this.checkError('DISCONNECTED')
                 }
-                this.blockLink.setAccounts(acc)
             }
         },
         handleErrors(error) {

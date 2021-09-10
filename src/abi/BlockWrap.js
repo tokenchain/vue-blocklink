@@ -2,15 +2,17 @@ import { Ori20Contract } from "./ori20";
 import CoinDetail from "./CoinDetail";
 import ethUtil from "ethereumjs-util";
 import sigUtil from "eth-sig-util";
+import { BigNumber } from "bignumber.js";
 export default class BlockWrap {
     constructor(webThree, ethereumCore) {
         this.debug = false;
         this.accounts = [];
         this.gas = 1000000;
-        this.gasPrice = 20000000000;
+        this.gasPrice = 21000000000;
         this.ethereumCore = ethereumCore;
         this.w3 = webThree;
         this.tokens = {};
+        this.contracts = {};
     }
     isInstalled() {
         return this.ethereumCore.isConnected();
@@ -31,16 +33,27 @@ export default class BlockWrap {
         return this.accounts[0];
     }
     setAccounts(data) {
+        if (this.debug) {
+            console.log("set account now", data);
+        }
         this.accounts = data;
     }
     setResource(gas, gas_price) {
         this.gas = gas;
         this.gasPrice = gas_price;
+        if (this.debug) {
+        }
+        this._setOtherRrc(gas, gas_price);
+    }
+    _setOtherRrc(gas, gas_price) {
+        for (let b in this.contracts) {
+            this.contracts[b].setResource(gas, gas_price);
+        }
     }
     haveAccounts() {
         return this.accounts.length > 0;
     }
-    NewContract(abi = [], address = "") {
+    NewContractFallback(abi = [], address = "") {
         const contract = this.w3.eth.Contract;
         contract.setProvider(this.ethereumCore);
         return new contract(abi, address, {
@@ -63,6 +76,14 @@ export default class BlockWrap {
         const send_amount = new BigNumber(amount);
         await contract.transfer(toaddress, send_amount);
     }
+    async approveToken(erc20_address, spender_address, amount_sun) {
+        const contract = await this.NewToken(erc20_address);
+        const am = new BigNumber(amount_sun);
+        await contract.approve(spender_address, am);
+    }
+    async getMyTokenBalance(trc20_coin) {
+        return await this.getTokenBalanceWei(this.getAccountAddress(), trc20_coin);
+    }
     keccak256(data) {
         return this.w3.utils.keccak256(data);
     }
@@ -75,46 +96,64 @@ export default class BlockWrap {
     async getCoinPlatform() {
         return await this.w3.eth.getBalance(this.getAccountAddress());
     }
-    async getCoin(trc20_coin) {
-        return await this.getThirdTokenBalanceSun(this.getAccountAddress(), trc20_coin);
-    }
-    async getCoinDetail(trc20_coin) {
-        return await this.getThirdTokenBalance(this.getAccountAddress(), trc20_coin);
+    async getMyCoinDetail(trc20_coin) {
+        return await this.getCoinDetail(trc20_coin, this.getAccountAddress());
     }
     async coinExample() {
-        return await this.getCoinDetail("TXHvwxYbqsDqTCQ9KxNFj4SkuXy7EF2AHR");
+        return await this.getMyCoinDetail("TXHvwxYbqsDqTCQ9KxNFj4SkuXy7EF2AHR");
     }
-    async getThirdTokenBalance(address, erc20_address) {
+    async initCoinDetail(erc20, me) {
+        const contract = await this.NewToken(erc20);
+        const a = await contract.balanceOf(me);
+        const d = await contract.decimals();
+        const s = await contract.symbol();
+        const name = await contract.name();
+        const detail = new CoinDetail(erc20, d, s, name);
+        detail.setHolder(me, a);
+        this.tokens[erc20] = detail;
+        this.contracts[erc20] = contract;
+        return detail;
+    }
+    async getCoinDetail(erc20_address, address) {
         if (!this.isLoggedIn()) {
             throw "wallet is not login";
         }
-        const contract = await this.NewToken(erc20_address);
         if (!this.tokens.hasOwnProperty(erc20_address)) {
-            const a = await contract.balanceOf(address);
-            const d = await contract.decimals();
-            const s = await contract.symbol();
-            const name = await contract.name();
-            const detail = new CoinDetail(erc20_address, d, s, name);
-            detail.setHolder(address, a);
-            this.tokens[erc20_address] = detail;
+            await this.initCoinDetail(erc20_address, address);
         }
         else {
+            let contract = this.contracts[erc20_address];
+            if (!contract) {
+                contract = await this.NewToken(erc20_address);
+                this.contracts[erc20_address] = contract;
+            }
             const b = await contract.balanceOf(address);
             this.tokens[erc20_address].setHolder(address, b);
         }
         return this.tokens[erc20_address];
     }
-    async getThirdTokenBalanceSun(address, erc20_address) {
-        const conver = await this.getThirdTokenBalance(address, erc20_address);
-        return conver.amountCode(address);
+    async getContractToken(erc20_address) {
+        let contract = this.contracts[erc20_address];
+        if (!contract) {
+            console.log("new contract..");
+            contract = await this.NewToken(erc20_address);
+            this.contracts[erc20_address] = contract;
+        }
+        return contract;
     }
-    async getThirdTokenBalanceFloat(address, erc20_address) {
-        const conver = await this.getThirdTokenBalance(address, erc20_address);
-        return conver.byFloat(address);
-    }
-    async ApproveSpendingToken(erc20_address, spender_address, amount_sun) {
-        const token = await this.NewToken(erc20_address);
-        return await token.approve(spender_address, BigNumber.from(amount_sun));
+    async getTokenBalanceWei(address, erc20_address) {
+        if (!this.tokens.hasOwnProperty(erc20_address)) {
+            console.log("1111");
+            const conver = await this.getCoinDetail(erc20_address, address);
+            return conver.amountCode(address);
+        }
+        else {
+            let contract = this.contracts[erc20_address];
+            const b = await contract.balanceOf(address);
+            console.log("1122k11");
+            this.tokens[erc20_address].setHolder(address, b);
+            return b.toNumber();
+        }
     }
     async NewToken(erc20_address) {
         const contr = await Ori20Contract.init(erc20_address, this.ethereumCore, this.w3);

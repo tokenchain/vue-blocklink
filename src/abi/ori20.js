@@ -1,7 +1,5 @@
 import { assert } from "../base/eth/0xassert";
 import { BaseContract } from "../base/eth/base";
-import { SubscriptionManager } from "../base/eth/subscription_manager";
-import { schemas } from "../base/eth/validations";
 export var Ori20Events;
 (function (Ori20Events) {
     Ori20Events["Approval"] = "Approval";
@@ -13,13 +11,6 @@ export class Ori20Contract extends BaseContract {
     constructor(address, supportedProvider, ww3) {
         super('Ori20', Ori20Contract.ABI(), address, supportedProvider, ww3);
         this._methodABIIndex = {};
-        this._subscriptionManager = new SubscriptionManager(Ori20Contract.ABI(), supportedProvider);
-        Ori20Contract.ABI().forEach((item, index) => {
-            if (item.type === 'function') {
-                const methodAbi = item;
-                this._methodABIIndex[methodAbi.name] = index;
-            }
-        });
     }
     static Instance() {
         if (window && window.hasOwnProperty("__eth_contract_Ori20")) {
@@ -573,7 +564,7 @@ export class Ori20Contract extends BaseContract {
         assert.isString('spender', spender);
         assert.isNumberOrBigNumber('amount', amount);
         const promizz = self._contract.methods.approve(spender, amount);
-        const result = await promizz.send({
+        await promizz.send({
             from: this._blockwrap.getAccountAddress(),
             gas: this.gas,
             gasPrice: this.gasPrice
@@ -588,7 +579,6 @@ export class Ori20Contract extends BaseContract {
         }).catch((e) => {
             this.catchErro(e);
         });
-        return result;
     }
     ;
     async approveGas(spender, amount) {
@@ -1000,25 +990,5 @@ export class Ori20Contract extends BaseContract {
         return gasAmount;
     }
     ;
-    subscribe(eventName, indexFilterValues, callback, isVerbose = false, blockPollingIntervalMs) {
-        assert.doesBelongToStringEnum('eventName', eventName, Ori20Events);
-        assert.doesConformToSchema('indexFilterValues', indexFilterValues, schemas.indexFilterValuesSchema);
-        assert.isFunction('callback', callback);
-        const subscriptionToken = this._subscriptionManager.subscribe(this._address, eventName, indexFilterValues, Ori20Contract.ABI(), callback, isVerbose, blockPollingIntervalMs);
-        return subscriptionToken;
-    }
-    unsubscribe(subscriptionToken) {
-        this._subscriptionManager.unsubscribe(subscriptionToken);
-    }
-    unsubscribeAll() {
-        this._subscriptionManager.unsubscribeAll();
-    }
-    async getLogsAsync(eventName, blockRange, indexFilterValues) {
-        assert.doesBelongToStringEnum('eventName', eventName, Ori20Events);
-        assert.doesConformToSchema('blockRange', blockRange, schemas.blockRangeSchema);
-        assert.doesConformToSchema('indexFilterValues', indexFilterValues, schemas.indexFilterValuesSchema);
-        const logs = await this._subscriptionManager.getLogsAsync(this._address, eventName, blockRange, indexFilterValues, Ori20Contract.ABI());
-        return logs;
-    }
 }
 Ori20Contract.contractName = 'Ori20';
