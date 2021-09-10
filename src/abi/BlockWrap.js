@@ -135,7 +135,9 @@ export default class BlockWrap {
     async getContractToken(erc20_address) {
         let contract = this.contracts[erc20_address];
         if (!contract) {
-            console.log("new contract..");
+            if (this.debug) {
+                console.log("new contract token ...");
+            }
             contract = await this.NewToken(erc20_address);
             this.contracts[erc20_address] = contract;
         }
@@ -143,14 +145,12 @@ export default class BlockWrap {
     }
     async getTokenBalanceWei(address, erc20_address) {
         if (!this.tokens.hasOwnProperty(erc20_address)) {
-            console.log("1111");
             const conver = await this.getCoinDetail(erc20_address, address);
             return conver.amountCode(address);
         }
         else {
             let contract = this.contracts[erc20_address];
             const b = await contract.balanceOf(address);
-            console.log("1122k11");
             this.tokens[erc20_address].setHolder(address, b);
             return b.toNumber();
         }

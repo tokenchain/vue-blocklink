@@ -7,15 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EthTest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/EthTest.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/CoinDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/CoinDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/CoinDetail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/CoinDetail.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/ori20.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/ori20.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mixins/vue-metamask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/vue-metamask.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +124,8 @@
       <workItem from="1631118882592" duration="299000" />
       <workItem from="1631199462245" duration="44000" />
       <workItem from="1631207012491" duration="2000" />
-      <workItem from="1631211858367" duration="9475000" />
+      <workItem from="1631211858367" duration="9665000" />
+      <workItem from="1631254588208" duration="36000" />
     </task>
     <servers />
   </component>
