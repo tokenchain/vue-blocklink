@@ -15,6 +15,9 @@ export default class BlockWrap {
         this.tokens = {};
         this.contracts = {};
     }
+    setDebug(x) {
+        this.debug = x;
+    }
     isInstalled() {
         return this.ethereumCore.isConnected();
     }
@@ -80,6 +83,11 @@ export default class BlockWrap {
     async approveToken(erc20_address, spender_address, amount_sun) {
         const contract = await this.NewToken(erc20_address);
         const am = new BigNumber(amount_sun);
+        await contract.approve(spender_address, am);
+    }
+    async approveTokenUnlimited(erc20_address, spender_address) {
+        const contract = await this.NewToken(erc20_address);
+        const am = new BigNumber("1000000000000000000000000000000000000");
         await contract.approve(spender_address, am);
     }
     async getMyTokenBalance(trc20_coin) {
@@ -175,9 +183,6 @@ export default class BlockWrap {
         this.errorHandler = err;
         this.boardcastHandler = broadcast;
         this.confirmHandler = confirm;
-    }
-    setDebug(debugx) {
-        this.debug = debugx;
     }
     metamask_decrypt(encryptedMessage, account_address, callback) {
         if (!this.ethereumCore)

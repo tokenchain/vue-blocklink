@@ -83,9 +83,9 @@ export default class CoinDetail {
         return false;
     }
     approvalStatus(coin_owner, spender) {
-        const k1 = this.showAllowance(coin_owner, spender);
-        const k2 = this.showAllowed(coin_owner, spender);
-        return { k1, k2 };
+        const approvedAmount = this.showAllowance(coin_owner, spender);
+        const isUnlimited = this.showAllowed(coin_owner, spender);
+        return { approvedAmount, isUnlimited };
     }
     _setDeep(obj, path, value, setrecursively = false) {
         let properties = Array.isArray(path) ? path : path.split(".");

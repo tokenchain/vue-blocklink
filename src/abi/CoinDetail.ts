@@ -103,9 +103,9 @@ export default class CoinDetail implements Web3ERC20Token {
     }
 
     public approvalStatus(coin_owner: string, spender: string): any {
-        const k1 = this.showAllowance(coin_owner, spender)
-        const k2 = this.showAllowed(coin_owner, spender)
-        return {k1, k2}
+        const approvedAmount = this.showAllowance(coin_owner, spender)
+        const isUnlimited = this.showAllowed(coin_owner, spender)
+        return {approvedAmount, isUnlimited}
     }
 
     /**

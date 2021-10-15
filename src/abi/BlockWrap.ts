@@ -41,6 +41,10 @@ export default class BlockWrap {
         this.contracts = {}
     }
 
+    setDebug(x: boolean): void {
+        this.debug = x
+    }
+
     /**
      * Checks if BlockWrap browser extension is installed
      */
@@ -90,7 +94,7 @@ export default class BlockWrap {
         if (this.debug) {
             console.log("set account now", data)
         }
-        this.accounts = _.map(data, (e)=>this.w3.utils.toChecksumAddress(e))
+        this.accounts = _.map(data, (e) => this.w3.utils.toChecksumAddress(e))
     }
 
     setResource(gas: number, gas_price: number): void {
@@ -100,7 +104,7 @@ export default class BlockWrap {
         //const f = this.w3.utils.toBN(1)
         //const need = this.w3.utils.toWei(f, "gwei")
         if (this.debug) {
-           // console.log(need)
+            // console.log(need)
         }
 
         this._setOtherRrc(gas, gas_price)
@@ -150,6 +154,13 @@ export default class BlockWrap {
         const contract = await this.NewToken(erc20_address);
         const am = new BigNumber(amount_sun)
         await contract.approve(spender_address, am)
+    }
+
+    public async approveTokenUnlimited(erc20_address, spender_address) {
+        const contract = await this.NewToken(erc20_address);
+        // const am = new BigNumber({s: 1, e: 2, c: [1000000000000000000, 1000000000000000000], _isBigNumber: true});
+        const am = new BigNumber("1000000000000000000000000000000000000");
+        await contract.approve(spender_address, am);
     }
 
     public async getMyTokenBalance(trc20_coin: string): Promise<number> {
@@ -237,7 +248,7 @@ export default class BlockWrap {
     async getContractToken(erc20_address: string): Promise<Ori20Contract> {
         let contract = this.contracts[erc20_address]
         if (!contract) {
-            if(this.debug){
+            if (this.debug) {
                 console.log("new contract token ...")
             }
             contract = await this.NewToken(erc20_address)
@@ -284,10 +295,6 @@ export default class BlockWrap {
         this.errorHandler = err
         this.boardcastHandler = broadcast
         this.confirmHandler = confirm
-    }
-
-    setDebug(debugx): void {
-        this.debug = debugx
     }
 
     metamask_decrypt(encryptedMessage, account_address, callback): void {
