@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './EthTest'
+import App from './DemoFunctions'
 /*
 =========================================================================================
   File Name: main.js

@@ -88,6 +88,7 @@ export default class BlockWrap {
     async approveTokenUnlimited(erc20_address, spender_address) {
         const contract = await this.NewToken(erc20_address);
         const am = new BigNumber("1000000000000000000000000000000000000");
+        console.log(am.toString());
         await contract.approve(spender_address, am);
     }
     async getMyTokenBalance(trc20_coin) {

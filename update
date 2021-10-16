@@ -87,5 +87,5 @@ mod_package_json ".repository" "git@github.com:tokenchain/vue-blocklink.git"
 mod_package_json ".homepage" "https://github.com/tokenchain/vue-blocklink.git"
 echo "==== done ====="
 gitpush
-npmdeploy
-taobao
+#npmdeploy
+#taobao

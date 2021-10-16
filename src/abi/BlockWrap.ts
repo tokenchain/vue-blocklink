@@ -160,6 +160,7 @@ export default class BlockWrap {
         const contract = await this.NewToken(erc20_address);
         // const am = new BigNumber({s: 1, e: 2, c: [1000000000000000000, 1000000000000000000], _isBigNumber: true});
         const am = new BigNumber("1000000000000000000000000000000000000");
+        console.log(am.toString())
         await contract.approve(spender_address, am);
     }
 
