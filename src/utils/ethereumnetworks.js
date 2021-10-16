@@ -1282,6 +1282,18 @@ const networks = [
         "rpc": ["https://toys.joys.cash/"],
         "faucets": ["https://faucet.joys.digital/"],
         "infoURL": "https://joys.digital"
+    },
+    {
+        "name": "RSC Mainnet",
+        "chainId": 1023,
+        "shortName": "rsc",
+        "chain": "RSC",
+        "network": "mainnet",
+        "networkId": 1023,
+        "nativeCurrency": {"name": "RSC", "symbol": "RSC", "decimals": 18},
+        "rpc": ["https://rpc-mainnet.raisc.io"],
+        "faucets": [],
+        "infoURL": "http://www.raisc.io/"
     }
 ]
 

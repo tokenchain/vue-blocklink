@@ -9,21 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chromeserve" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testserve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vue-blocklink.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vue-blocklink.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev" beforeDir="false" afterPath="$PROJECT_DIR$/dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.1f19ae8e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.1f19ae8e.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EthTest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemoFunctions.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update" beforeDir="false" afterPath="$PROJECT_DIR$/update" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +134,7 @@
       <workItem from="1631619365670" duration="16000" />
       <workItem from="1634305870926" duration="3424000" />
       <workItem from="1634375365584" duration="2341000" />
-      <workItem from="1634379529055" duration="532000" />
+      <workItem from="1634379529055" duration="788000" />
     </task>
     <servers />
   </component>
