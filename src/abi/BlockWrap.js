@@ -2,7 +2,7 @@ import { Ori20Contract } from "./ori20";
 import CoinDetail from "./CoinDetail";
 import ethUtil from "ethereumjs-util";
 import sigUtil from "eth-sig-util";
-import { BigNumber } from "bignumber.js";
+import BN from 'bn.js';
 import * as _ from "lodash";
 export default class BlockWrap {
     constructor(webThree, ethereumCore) {
@@ -77,19 +77,21 @@ export default class BlockWrap {
     }
     async sendToken(amount, toaddress, erc20_address) {
         const contract = await this.NewToken(erc20_address);
-        const send_amount = new BigNumber(amount);
+        const send_amount = new BN(amount);
         await contract.transfer(toaddress, send_amount);
     }
     async approveToken(erc20_address, spender_address, amount_sun) {
         const contract = await this.NewToken(erc20_address);
-        const am = new BigNumber(amount_sun);
+        const am = this.w3.utils.toBN(amount_sun);
         await contract.approve(spender_address, am);
     }
     async approveTokenUnlimited(erc20_address, spender_address) {
         const contract = await this.NewToken(erc20_address);
-        const am = new BigNumber("1000000000000000000000000000000000000");
-        console.log(am.toString());
-        await contract.approve(spender_address, am);
+        let amc = "1000000000000000000000000";
+        const am = this.w3.utils.toBN(amc);
+        console.log(am);
+        let val = am;
+        await contract.approve(spender_address, val);
     }
     async getMyTokenBalance(trc20_coin) {
         return await this.getTokenBalanceWei(this.getAccountAddress(), trc20_coin);

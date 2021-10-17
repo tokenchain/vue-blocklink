@@ -1,7 +1,7 @@
 import {Balancer, Spending, Web3ERC20Token, Unlimited} from "../base/eth/types"
 import {BigNumber} from "bignumber.js";
 import {Ori20Contract} from "./ori20";
-
+import BN from 'bn.js'
 
 export default class CoinDetail implements Web3ERC20Token {
     address: string;
@@ -45,6 +45,8 @@ export default class CoinDetail implements Web3ERC20Token {
         let allowance = 0
         //  const actual = allowance.toNumber()
         if (g instanceof BigNumber) {
+            allowance = g.toNumber()
+        } else if (g instanceof BN) {
             allowance = g.toNumber()
         } else {
             allowance = g

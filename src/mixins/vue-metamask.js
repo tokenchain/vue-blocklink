@@ -176,6 +176,8 @@ export default {
         handleErrors(error) {
             if (error.code === 4001) {
                 // EIP-1193 userRejectedRequest error
+                // If this happens, the user rejected the connection request.
+                // console.log('Please connect to MetaMask.');
                 this.checkError("USER_DENIED")
             } else if (error.code === -32002) {
                 console.log('Please connection to sign in confirmation.');

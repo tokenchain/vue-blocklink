@@ -2,6 +2,7 @@ import {SchemaValidator} from '../schemas';
 import {addressUtils, BigNumber, B, logUtils} from '../utils';
 import * as _ from 'lodash';
 import * as validUrl from 'valid-url';
+import BN from "bn.js"
 
 const HEX_REGEX = /^0x[0-9A-F]*$/i;
 const schemaValidator = new SchemaValidator();
@@ -65,9 +66,32 @@ export const assert = {
         if (_.isFinite(value)) {
             return;
         } else {
+            let finalbignum = false
+            if (typeof value === "object") {
+                if (B.BigNumber.isBigNumber(value)) {
+                    finalbignum = true
+                }
+                if (Object(value).hasOwnProperty("_isBigNumber")) {
+                    if (value._isBigNumber === true) {
+                        finalbignum = true
+                    }
+                }
+                if (Object(value).hasOwnProperty("words")) {
+                    finalbignum = true
+                }
+                if (Object(value).hasOwnProperty("s") && Object(value).hasOwnProperty("e") && Object(value).hasOwnProperty("c")) {
+                    finalbignum = true
+                }
+                if (value instanceof B.BigNumber) {
+                    finalbignum = true
+                }
+                if (value instanceof BN) {
+                    finalbignum = true
+                }
+            }
             assert.assert(
-                B.BigNumber.isBigNumber(value),
-                assert.typeAssertionMessage(variableName, 'number or BigNumber', value),
+                finalbignum,
+                assert.typeAssertionMessage(variableName, 'number or BigNumber or BN', value),
             );
         }
     },

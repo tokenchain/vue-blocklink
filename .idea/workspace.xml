@@ -10,7 +10,22 @@
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build" beforeDir="false" afterPath="$PROJECT_DIR$/build" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev" beforeDir="false" afterPath="$PROJECT_DIR$/dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.6d7898b2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.6d7898b2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.e27f49ee.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.e27f49ee.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/CoinDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/CoinDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/CoinDetail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/CoinDetail.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/ori20.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/eth/0xassert/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/0xassert/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/eth/0xassert/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/0xassert/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mixins/vue-metamask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/vue-metamask.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +149,10 @@
       <workItem from="1631619365670" duration="16000" />
       <workItem from="1634305870926" duration="3424000" />
       <workItem from="1634375365584" duration="2341000" />
-      <workItem from="1634379529055" duration="788000" />
+      <workItem from="1634379529055" duration="1860000" />
+      <workItem from="1634389667539" duration="1368000" />
+      <workItem from="1634392164422" duration="3926000" />
+      <workItem from="1634493107837" duration="1723000" />
     </task>
     <servers />
   </component>
@@ -271,14 +289,30 @@
       <screen x="43" y="25" width="1493" height="935" />
     </state>
     <state x="614" y="280" key="FileChooserDialogImpl/43.25.1493.935@43.25.1493.935" timestamp="1629623722649" />
+    <state width="1368" height="177" key="GridCell.Tab.0.bottom" timestamp="1634391856044">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state width="1368" height="177" key="GridCell.Tab.0.bottom/43.25.1493.935@43.25.1493.935" timestamp="1634391856044" />
+    <state width="1368" height="177" key="GridCell.Tab.0.center" timestamp="1634391856043">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state width="1368" height="177" key="GridCell.Tab.0.center/43.25.1493.935@43.25.1493.935" timestamp="1634391856043" />
+    <state width="1368" height="177" key="GridCell.Tab.0.left" timestamp="1634391856043">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state width="1368" height="177" key="GridCell.Tab.0.left/43.25.1493.935@43.25.1493.935" timestamp="1634391856043" />
+    <state width="1368" height="177" key="GridCell.Tab.0.right" timestamp="1634391856044">
+      <screen x="43" y="25" width="1493" height="935" />
+    </state>
+    <state width="1368" height="177" key="GridCell.Tab.0.right/43.25.1493.935@43.25.1493.935" timestamp="1634391856044" />
     <state x="309" y="116" key="SettingsEditor" timestamp="1634377347240">
       <screen x="43" y="25" width="1493" height="935" />
     </state>
     <state x="309" y="116" key="SettingsEditor/43.25.1493.935@43.25.1493.935" timestamp="1634377347240" />
-    <state x="528" y="247" width="597" height="548" key="find.popup" timestamp="1634307067467">
+    <state x="528" y="247" width="597" height="548" key="find.popup" timestamp="1634456525568">
       <screen x="43" y="25" width="1493" height="935" />
     </state>
-    <state x="528" y="247" width="597" height="548" key="find.popup/43.25.1493.935@43.25.1493.935" timestamp="1634307067467" />
+    <state x="528" y="247" width="597" height="548" key="find.popup/43.25.1493.935@43.25.1493.935" timestamp="1634456525568" />
     <state x="850" y="229" width="670" height="676" key="search.everywhere.popup" timestamp="1631253410386">
       <screen x="43" y="25" width="1493" height="935" />
     </state>

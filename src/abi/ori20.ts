@@ -5,7 +5,8 @@
 // tslint:disable:no-unused-variable
 
 import * as ethers from 'ethers';
-import {BigNumber} from 'bignumber.js'
+// import {BigNumber} from 'bignumber.js'
+import BN from 'bn.js'
 import {assert} from "../base/eth/0xassert";
 import {BlockRange, DecodedLogArgs, LogWithDecodedArgs, MethodAbi} from "../base/eth/types";
 import {BaseContract} from "../base/eth/base";
@@ -39,31 +40,31 @@ export interface ContractInterface {
 
     addMinter(account: string,): Promise<void>
 
-    allowance(owner: string, spender: string,): Promise<BigNumber>
+    allowance(owner: string, spender: string,): Promise<BN>
 
-    approve(spender: string, amount: BigNumber,): Promise<void>
+    approve(spender: string, amount: BN,): Promise<void>
 
-    balanceOf(account: string,): Promise<BigNumber>
+    balanceOf(account: string,): Promise<BN>
 
-    burn(amount: BigNumber,): Promise<void>
+    burn(amount: BN,): Promise<void>
 
-    burnFrom(account: string, amount: BigNumber,): Promise<void>
+    burnFrom(account: string, amount: BN,): Promise<void>
 
-    cap(): Promise<BigNumber>
+    cap(): Promise<BN>
 
-    decimals(): Promise<BigNumber>
+    decimals(): Promise<BN>
 
-    decreaseAllowance(spender: string, subtractedValue: BigNumber,): Promise<boolean>
+    decreaseAllowance(spender: string, subtractedValue: BN,): Promise<boolean>
 
-    getDecimals(): Promise<BigNumber>
+    getDecimals(): Promise<BN>
 
     gov(): Promise<string>
 
-    increaseAllowance(spender: string, addedValue: BigNumber,): Promise<boolean>
+    increaseAllowance(spender: string, addedValue: BN,): Promise<boolean>
 
     isMinter(account: string,): Promise<boolean>
 
-    mint(account: string, amount: BigNumber,): Promise<boolean>
+    mint(account: string, amount: BN,): Promise<boolean>
 
     name(): Promise<string>
 
@@ -77,11 +78,11 @@ export interface ContractInterface {
 
     tokenSymbol(): Promise<string>
 
-    totalSupply(): Promise<BigNumber>
+    totalSupply(): Promise<BN>
 
-    transfer(recipient: string, amount: BigNumber,): Promise<boolean>
+    transfer(recipient: string, amount: BN,): Promise<boolean>
 
-    transferFrom(sender: string, recipient: string, amount: BigNumber,): Promise<boolean>
+    transferFrom(sender: string, recipient: string, amount: BN,): Promise<boolean>
 }
 
 export type Ori20EventArgs =
@@ -100,7 +101,7 @@ export enum Ori20Events {
 export interface Ori20ApprovalEventArgs extends DecodedLogArgs {
     owner: string;
     spender: string;
-    value: BigNumber;
+    value: BN;
 }
 
 export interface Ori20MinterAddedEventArgs extends DecodedLogArgs {
@@ -114,7 +115,7 @@ export interface Ori20MinterRemovedEventArgs extends DecodedLogArgs {
 export interface Ori20TransferEventArgs extends DecodedLogArgs {
     from: string;
     to: string;
-    value: BigNumber;
+    value: BN;
 }
 
 
@@ -691,7 +692,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async allowance(owner: string, spender: string,): Promise<BigNumber> {
+    public async allowance(owner: string, spender: string,): Promise<BN> {
         const self = this as any as Ori20Contract;
 
         assert.isString('owner', owner);
@@ -714,7 +715,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async approve(spender: string, amount: BigNumber,): Promise<void> {
+    public async approve(spender: string, amount: any): Promise<void> {
         const self = this as any as Ori20Contract;
 
         assert.isString('spender', spender);
@@ -744,14 +745,14 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async approveGas(spender: string, amount: BigNumber,): Promise<number> {
+    public async approveGas(spender: string, amount: BN,): Promise<number> {
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.approve(spender, amount,).estimateGas();
         return gasAmount;
     };
 
 
-    public async balanceOf(account: string,): Promise<BigNumber> {
+    public async balanceOf(account: string,): Promise<BN> {
         const self = this as any as Ori20Contract;
 
         assert.isString('account', account);
@@ -772,7 +773,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async burn(amount: BigNumber,): Promise<void> {
+    public async burn(amount: BN,): Promise<void> {
         const self = this as any as Ori20Contract;
 
         assert.isNumberOrBigNumber('amount', amount);
@@ -800,14 +801,14 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async burnGas(amount: BigNumber,): Promise<number> {
+    public async burnGas(amount: BN,): Promise<number> {
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.burn(amount,).estimateGas();
         return gasAmount;
     };
 
 
-    public async burnFrom(account: string, amount: BigNumber,): Promise<void> {
+    public async burnFrom(account: string, amount: BN,): Promise<void> {
         const self = this as any as Ori20Contract;
 
         assert.isString('account', account);
@@ -837,14 +838,14 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async burnFromGas(account: string, amount: BigNumber,): Promise<number> {
+    public async burnFromGas(account: string, amount: BN,): Promise<number> {
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.burnFrom(account, amount,).estimateGas();
         return gasAmount;
     };
 
 
-    public async cap(): Promise<BigNumber> {
+    public async cap(): Promise<BN> {
         const self = this as any as Ori20Contract;
 
 
@@ -863,7 +864,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async decimals(): Promise<BigNumber> {
+    public async decimals(): Promise<BN> {
         const self = this as any as Ori20Contract;
 
 
@@ -882,7 +883,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async decreaseAllowance(spender: string, subtractedValue: BigNumber,): Promise<boolean> {
+    public async decreaseAllowance(spender: string, subtractedValue: BN,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
         assert.isString('spender', spender);
@@ -912,14 +913,14 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async decreaseAllowanceGas(spender: string, subtractedValue: BigNumber,): Promise<number> {
+    public async decreaseAllowanceGas(spender: string, subtractedValue: BN,): Promise<number> {
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.decreaseAllowance(spender, subtractedValue,).estimateGas();
         return gasAmount;
     };
 
 
-    public async getDecimals(): Promise<BigNumber> {
+    public async getDecimals(): Promise<BN> {
         const self = this as any as Ori20Contract;
 
 
@@ -957,7 +958,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async increaseAllowance(spender: string, addedValue: BigNumber,): Promise<boolean> {
+    public async increaseAllowance(spender: string, addedValue: BN,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
         assert.isString('spender', spender);
@@ -987,7 +988,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async increaseAllowanceGas(spender: string, addedValue: BigNumber,): Promise<number> {
+    public async increaseAllowanceGas(spender: string, addedValue: BN,): Promise<number> {
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.increaseAllowance(spender, addedValue,).estimateGas();
         return gasAmount;
@@ -1015,7 +1016,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async mint(account: string, amount: BigNumber,): Promise<boolean> {
+    public async mint(account: string, amount: BN,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
         assert.isString('account', account);
@@ -1045,7 +1046,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async mintGas(account: string, amount: BigNumber,): Promise<number> {
+    public async mintGas(account: string, amount: BN,): Promise<number> {
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.mint(account, amount,).estimateGas();
         return gasAmount;
@@ -1196,7 +1197,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async totalSupply(): Promise<BigNumber> {
+    public async totalSupply(): Promise<BN> {
         const self = this as any as Ori20Contract;
 
 
@@ -1215,7 +1216,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async transfer(recipient: string, amount: BigNumber,): Promise<boolean> {
+    public async transfer(recipient: string, amount: BN,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
         assert.isString('recipient', recipient);
@@ -1245,14 +1246,14 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async transferGas(recipient: string, amount: BigNumber,): Promise<number> {
+    public async transferGas(recipient: string, amount: BN,): Promise<number> {
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.transfer(recipient, amount,).estimateGas();
         return gasAmount;
     };
 
 
-    public async transferFrom(sender: string, recipient: string, amount: BigNumber,): Promise<boolean> {
+    public async transferFrom(sender: string, recipient: string, amount: BN,): Promise<boolean> {
         const self = this as any as Ori20Contract;
 
         assert.isString('sender', sender);
@@ -1284,7 +1285,7 @@ export class Ori20Contract extends BaseContract implements ContractInterface {
     };
 
 
-    public async transferFromGas(sender: string, recipient: string, amount: BigNumber,): Promise<number> {
+    public async transferFromGas(sender: string, recipient: string, amount: BN,): Promise<number> {
         const self = this as any as Ori20Contract;
         const gasAmount = await self._contract.methods.transferFrom(sender, recipient, amount,).estimateGas();
         return gasAmount;

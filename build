@@ -4,3 +4,6 @@ npm run nuxtbuild-demo
 #parcel test/entry/index.html --no-source-maps
 cd dist
 puer
+
+
+#npm run nuxtbuild-serv

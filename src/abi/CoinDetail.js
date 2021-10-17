@@ -1,4 +1,5 @@
 import { BigNumber } from "bignumber.js";
+import BN from 'bn.js';
 export default class CoinDetail {
     constructor(address, dec, sym, name) {
         this.address = address;
@@ -33,6 +34,9 @@ export default class CoinDetail {
         let g = await contract.allowance(owner_address, spender);
         let allowance = 0;
         if (g instanceof BigNumber) {
+            allowance = g.toNumber();
+        }
+        else if (g instanceof BN) {
             allowance = g.toNumber();
         }
         else {

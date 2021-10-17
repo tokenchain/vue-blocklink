@@ -9,7 +9,7 @@ import sigUtil from "eth-sig-util";
 import Web3 from "web3";
 import {Utils} from 'web3-utils';
 import {TransactionConfig} from 'web3-core';
-import {BigNumber} from "bignumber.js";
+import BN from 'bn.js'
 import * as _ from "lodash";
 
 /**
@@ -146,22 +146,29 @@ export default class BlockWrap {
     public async sendToken(amount: any, toaddress: string, erc20_address: string): Promise<void> {
         const contract = await this.NewToken(erc20_address);
         // @ts-ignore
-        const send_amount = new BigNumber(amount);
+        const send_amount = new BN(amount);
         await contract.transfer(toaddress, send_amount);
     }
 
     public async approveToken(erc20_address: string, spender_address: string, amount_sun: any): Promise<void> {
         const contract = await this.NewToken(erc20_address);
-        const am = new BigNumber(amount_sun)
+        //const am = new BigNumber(amount_sun)
+        const am = this.w3.utils.toBN(amount_sun)
         await contract.approve(spender_address, am)
     }
 
-    public async approveTokenUnlimited(erc20_address, spender_address) {
+    public async approveTokenUnlimited(erc20_address: string, spender_address: string) {
         const contract = await this.NewToken(erc20_address);
         // const am = new BigNumber({s: 1, e: 2, c: [1000000000000000000, 1000000000000000000], _isBigNumber: true});
-        const am = new BigNumber("1000000000000000000000000000000000000");
-        console.log(am.toString())
-        await contract.approve(spender_address, am);
+        // const am = new BigNumber("1234567891200000000000000000000000000");
+        // const am = new BN("1000");
+        // console.log(am)
+        let amc = "1000000000000000000000000"
+        // const val = this.w3.utils.toWei(am, 'ether')
+        const am = this.w3.utils.toBN(amc)
+        console.log(am)
+        let val = am
+        await contract.approve(spender_address, val);
     }
 
     public async getMyTokenBalance(trc20_coin: string): Promise<number> {

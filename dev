@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
 export NODE_OPTIONS=--max_old_space_size=8096
+#how to use it
+# https://cli.vuejs.org/guide/cli-service.html#using-the-binary
 npm run dev
 #parcel test/entry/index.html --no-source-maps
