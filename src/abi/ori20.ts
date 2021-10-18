@@ -32,7 +32,6 @@ import {
 
 import {Utils, AbiItem} from 'web3-utils';
 import {EventCallback, IndexedFilterValues} from "../base/eth/0xtypes";
-import {schemas} from "../base/eth/validations";
 import Web3 from "web3";
 
 // tslint:enable:no-unused-variable

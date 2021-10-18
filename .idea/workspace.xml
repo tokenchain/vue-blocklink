@@ -10,22 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build" beforeDir="false" afterPath="$PROJECT_DIR$/build" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev" beforeDir="false" afterPath="$PROJECT_DIR$/dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.6d7898b2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.6d7898b2.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.e27f49ee.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.e27f49ee.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/CoinDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/CoinDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/CoinDetail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/CoinDetail.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/ori20.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/0xassert/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/0xassert/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/0xassert/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/0xassert/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mixins/vue-metamask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/vue-metamask.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +136,10 @@
       <workItem from="1634379529055" duration="1860000" />
       <workItem from="1634389667539" duration="1368000" />
       <workItem from="1634392164422" duration="3926000" />
-      <workItem from="1634493107837" duration="1723000" />
+      <workItem from="1634493107837" duration="1883000" />
+      <workItem from="1634540856690" duration="607000" />
+      <workItem from="1634544180533" duration="15000" />
+      <workItem from="1634553164247" duration="25000" />
     </task>
     <servers />
   </component>
