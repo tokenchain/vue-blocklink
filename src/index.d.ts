@@ -18,6 +18,7 @@ export {
     DecodedLogArgs, LogWithDecodedArgs, MethodAbi,
     EventCallback, IndexedFilterValues, SubscriptionManager,
     BaseContract,
-    B, BigNumber, schemas, assert
+    B, BigNumber,
+    schemas, assert
 }
 

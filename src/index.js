@@ -9,6 +9,7 @@ import {
 import {BaseContract} from "./base/eth/base"
 import {assert} from "./base/eth/0xassert"
 import {schemas} from "./base/eth/validations"
+import {SubscriptionManager} from "./base/eth/subscription_manager"
 
 export {
     BlockWrap,
@@ -16,6 +17,7 @@ export {
     EthereumWeb3Component,
     BigNumber,
     BaseContract,
+    SubscriptionManager,
     fromTokenUnitAmount,
     toTokenUnitAmount,
     assert, schemas

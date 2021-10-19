@@ -84,12 +84,6 @@ export interface ContractInterface {
     transferFrom(sender: string, recipient: string, amount: BN,): Promise<boolean>
 }
 
-export type Ori20EventArgs =
-    | Ori20ApprovalEventArgs
-    | Ori20MinterAddedEventArgs
-    | Ori20MinterRemovedEventArgs
-    | Ori20TransferEventArgs;
-
 export enum Ori20Events {
     Approval = 'Approval',
     MinterAdded = 'MinterAdded',
@@ -116,6 +110,12 @@ export interface Ori20TransferEventArgs extends DecodedLogArgs {
     to: string;
     value: BN;
 }
+
+export type Ori20EventArgs =
+    | Ori20ApprovalEventArgs
+    | Ori20MinterAddedEventArgs
+    | Ori20MinterRemovedEventArgs
+    | Ori20TransferEventArgs;
 
 
 /* istanbul ignore next */
