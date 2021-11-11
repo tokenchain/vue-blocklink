@@ -322,3 +322,4 @@ export class BaseContract extends EventEmitter {
         return abiEncodedArguments;
     }
 }
+//# sourceMappingURL=base0x.js.map

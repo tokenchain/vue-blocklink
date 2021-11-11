@@ -52,3 +52,4 @@ const types = [Uint256BinOpError, Uint96BinOpError, Uint64BinOpError, Uint256Dow
 for (const type of types) {
     RevertError.registerType(type);
 }
+//# sourceMappingURL=safe_math_revert_errors.js.map

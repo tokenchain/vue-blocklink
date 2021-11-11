@@ -18,3 +18,4 @@ const types = [OnlyCallableBySelfError, IllegalReentrancyError];
 for (const type of types) {
     RevertError.registerType(type);
 }
+//# sourceMappingURL=common_revert_errors.js.map

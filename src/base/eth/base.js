@@ -72,3 +72,4 @@ export class BaseContract extends EventEmitter {
         return this._receiptListFailure;
     }
 }
+//# sourceMappingURL=base.js.map

@@ -24,11 +24,13 @@ This project will also support the future networks
  * Basic coins from some custom addressses
 
 ### vue mixin Events:
- * notify_evm_not_install
- * notify_evm_installed
- * notify_evm_node_change
- * notify_evm_account_set
- * notify_evm_initialization
+ * notify_block_not_install
+ * notify_account_changed
+ * notify_block_installed
+ * notify_node_change
+ * notify_metamask_not_install
+ * notify_metamask_stop_on_board
+ * notify_metamask_start_on_board
 
 ### mixin support imtoken wallet api events:
  * imtoken_on_detect

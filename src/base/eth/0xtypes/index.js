@@ -216,3 +216,4 @@ export var OrderTransferResults;
     OrderTransferResults[OrderTransferResults["MakerFeeAssetDataFailed"] = 3] = "MakerFeeAssetDataFailed";
     OrderTransferResults[OrderTransferResults["TransfersSuccessful"] = 4] = "TransfersSuccessful";
 })(OrderTransferResults || (OrderTransferResults = {}));
+//# sourceMappingURL=index.js.map

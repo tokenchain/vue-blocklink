@@ -42,3 +42,4 @@ export class StringDataType extends AbstractBlobDataType {
 }
 StringDataType._SIZE_KNOWN_AT_COMPILE_TIME = false;
 StringDataType._DEFAULT_VALUE = '';
+//# sourceMappingURL=string.js.map

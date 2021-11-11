@@ -21,3 +21,4 @@ export class AbstractBlobDataType extends DataType {
         return this._sizeKnownAtCompileTime;
     }
 }
+//# sourceMappingURL=blob.js.map

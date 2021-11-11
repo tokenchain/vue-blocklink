@@ -6,3 +6,4 @@ export function generatePseudoRandom256BitNumber() {
     const randomNumberScaledTo256Bits = randomNumber.times(factor).integerValue();
     return randomNumberScaledTo256Bits;
 }
+//# sourceMappingURL=random.js.map

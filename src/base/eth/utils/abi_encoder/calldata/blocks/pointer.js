@@ -44,3 +44,4 @@ PointerCalldataBlock.RAW_DATA_START = Buffer.from('<');
 PointerCalldataBlock.RAW_DATA_END = Buffer.from('>');
 PointerCalldataBlock._DEPENDENT_PAYLOAD_SIZE_IN_BYTES = 32;
 PointerCalldataBlock._EMPTY_HEADER_SIZE = 0;
+//# sourceMappingURL=pointer.js.map

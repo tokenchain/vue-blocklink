@@ -14,3 +14,4 @@ export const deleteNestedProperty = (obj, propPath) => {
         delete _obj[propPathParts.pop()];
     }
 };
+//# sourceMappingURL=delete_nested_property.js.map

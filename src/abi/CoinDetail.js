@@ -104,3 +104,4 @@ export default class CoinDetail {
         }
     }
 }
+//# sourceMappingURL=CoinDetail.js.map

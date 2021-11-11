@@ -21,3 +21,4 @@ const types = [SignatureValidationError];
 for (const type of types) {
     RevertError.registerType(type);
 }
+//# sourceMappingURL=signature_validator_revert_errors.js.map

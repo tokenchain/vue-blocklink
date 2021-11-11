@@ -9,11 +9,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils/safemath.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/urltool.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/ori20.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.d60dbff1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.d60dbff1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datavuex/eth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/com_watchdog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mixins/vue-metamask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/vue-metamask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +31,7 @@
       <list>
         <option value="tsconfig.json" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -147,7 +154,12 @@
       <workItem from="1634554903827" duration="167000" />
       <workItem from="1634616712422" duration="782000" />
       <workItem from="1634619206334" duration="116000" />
-      <workItem from="1634622807575" duration="75000" />
+      <workItem from="1634622807575" duration="151000" />
+      <workItem from="1634633849423" duration="1333000" />
+      <workItem from="1634640658155" duration="1110000" />
+      <workItem from="1635757503589" duration="447000" />
+      <workItem from="1636045978379" duration="679000" />
+      <workItem from="1636607249644" duration="2206000" />
     </task>
     <servers />
   </component>
@@ -242,6 +254,95 @@
         <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata_block.js" />
         <option value="$PROJECT_DIR$/src/base/eth/utils/token_utils.js" />
         <option value="$PROJECT_DIR$/src/base/eth/utils/promisify.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xtypes/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-forwarder/revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange/revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata_block.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/iterator.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/raw_calldata.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/pointer.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/blob.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/set.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/mixin_weth_utils_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/lib_asset_data_transfer_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/signature_parser.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/math.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/rules.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/queue.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/pointer.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/blob.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/set.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/interfaces.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/data_type.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/meta_transaction_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/simple_function_registry_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/signature_validator_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/common_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/spender_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/wallet_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/liquidity_provider_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/transform_erc20_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/ownable_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/proxy_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/array.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/int.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/address.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/pointer.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/web3_wrapper.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/types.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/error_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_decoder.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/filter_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/hex_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/constants.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/delete_nested_property.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/types.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/promisify.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/class_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/token_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/log_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/random.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/address_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_error.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/provider_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_address_array_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/safe_math_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/reentrancy_guard_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/ownable_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/authorizable_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_bytes_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/broker/revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/staking_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/fixed_math_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/coordinator/revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-libs/lib_math_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/subscription_manager.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/validations.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/schemas.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/types.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xassert/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/abi/CoinDetail.d.ts" />
+        <option value="$PROJECT_DIR$/src/abi/ori20.d.ts" />
+        <option value="$PROJECT_DIR$/src/abi/BlockWrap.d.ts" />
       </list>
     </option>
   </component>
@@ -304,10 +405,10 @@
       <screen x="43" y="25" width="1493" height="935" />
     </state>
     <state x="309" y="116" key="SettingsEditor/43.25.1493.935@43.25.1493.935" timestamp="1634377347240" />
-    <state x="528" y="247" width="597" height="548" key="find.popup" timestamp="1634617015659">
+    <state x="528" y="247" width="597" height="548" key="find.popup" timestamp="1634633856018">
       <screen x="43" y="25" width="1493" height="935" />
     </state>
-    <state x="528" y="247" width="597" height="548" key="find.popup/43.25.1493.935@43.25.1493.935" timestamp="1634617015659" />
+    <state x="528" y="247" width="597" height="548" key="find.popup/43.25.1493.935@43.25.1493.935" timestamp="1634633856018" />
     <state x="850" y="229" width="670" height="676" key="search.everywhere.popup" timestamp="1631253410386">
       <screen x="43" y="25" width="1493" height="935" />
     </state>

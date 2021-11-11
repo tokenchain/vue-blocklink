@@ -183,3 +183,4 @@ export var SolidityTypes;
     SolidityTypes["Uint8"] = "uint8";
     SolidityTypes["Uint"] = "uint";
 })(SolidityTypes || (SolidityTypes = {}));
+//# sourceMappingURL=types.js.map

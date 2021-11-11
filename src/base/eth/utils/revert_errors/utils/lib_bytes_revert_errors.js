@@ -20,3 +20,4 @@ export class InvalidByteOperationError extends RevertError {
     }
 }
 RevertError.registerType(InvalidByteOperationError);
+//# sourceMappingURL=lib_bytes_revert_errors.js.map

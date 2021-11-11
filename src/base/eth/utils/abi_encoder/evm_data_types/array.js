@@ -60,3 +60,4 @@ export class ArrayDataType extends AbstractSetDataType {
     }
 }
 ArrayDataType._MATCHER = RegExp('^(.+)\\[([0-9]*)\\]$');
+//# sourceMappingURL=array.js.map

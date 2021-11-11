@@ -13,3 +13,4 @@ export class BlobCalldataBlock extends CalldataBlock {
         return this._blob;
     }
 }
+//# sourceMappingURL=blob.js.map

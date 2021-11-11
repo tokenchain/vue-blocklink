@@ -29,3 +29,4 @@ export class SchemaValidator {
         return this._validator.validate(schema, JSON.parse(JSON.stringify(instance)));
     }
 }
+//# sourceMappingURL=schemas.js.map

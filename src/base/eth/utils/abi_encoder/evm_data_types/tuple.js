@@ -26,3 +26,4 @@ export class TupleDataType extends AbstractSetDataType {
         return detailedSignature;
     }
 }
+//# sourceMappingURL=tuple.js.map

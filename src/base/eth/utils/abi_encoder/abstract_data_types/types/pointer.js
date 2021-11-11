@@ -34,3 +34,4 @@ export class AbstractPointerDataType extends DataType {
         return true;
     }
 }
+//# sourceMappingURL=pointer.js.map

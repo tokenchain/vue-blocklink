@@ -1,5 +1,5 @@
 import BlockWrap from "../abi/BlockWrap"
-import MetaMaskOnboarding from '@metamask/onboarding';
+import MetaMaskOnboarding from "@metamask/onboarding";
 import Web3 from "web3";
 import DetectionFunc from "@metamask/detect-provider"
 import {ExplainNetworkById} from "../utils/ethereumnetworks";
@@ -21,19 +21,19 @@ export default {
             onboarding: false,
             w3: false,
             MetamaskMsg: {
-                LOAD_METAMASK_WALLET_ERROR: 'Loading metamask error, please try later',
-                EMPTY_METAMASK_ACCOUNT: 'Please log in to your metamask to continue with this app.',
-                NETWORK_ERROR: 'The connection is abnormal, please try again',
-                METAMASK_NOT_INSTALL_OR_DISCONNECTED: 'Please install metamask for this application',
-                METAMASK_TEST_NET: 'Currently not in the main network.',
-                METAMASK_MAIN_NET: 'Currently Main network',
-                METAMASK_SWITCH_NET: 'Please switch this net to',
-                USER_DENIED_ACCOUNT_AUTHORIZATION: 'User denied account authorization',
-                REJECTED_BY_USER: 'The request is rejected by the user.',
-                PARAMETERS_WERE_INVALID: 'the parameter were invalid',
-                INTERNAL_ERROR: 'internal error',
-                USER_DENIED: 'user denied',
-                DISCONNECTED: 'disconnected'
+                LOAD_METAMASK_WALLET_ERROR: "Loading metamask error, please try later",
+                EMPTY_METAMASK_ACCOUNT: "Please log in to your metamask to continue with this app.",
+                NETWORK_ERROR: "The connection is abnormal, please try again",
+                METAMASK_NOT_INSTALL_OR_DISCONNECTED: "Please install metamask for this application",
+                METAMASK_TEST_NET: "Currently not in the main network.",
+                METAMASK_MAIN_NET: "Currently Main network",
+                METAMASK_SWITCH_NET: "Please switch this net to",
+                USER_DENIED_ACCOUNT_AUTHORIZATION: "User denied account authorization",
+                REJECTED_BY_USER: "The request is rejected by the user.",
+                PARAMETERS_WERE_INVALID: "the parameter were invalid",
+                INTERNAL_ERROR: "internal error",
+                USER_DENIED: "user denied",
+                DISCONNECTED: "disconnected"
             },
             metamask_debug: false
         };
@@ -60,7 +60,7 @@ export default {
                     const provider = await DetectionFunc()
                     if (provider) {
                         const chainId = await provider.request({
-                            method: 'eth_chainId'
+                            method: "eth_chainId"
                         })
                         this.ethereum = window.ethereum
                         const W3epp = new Web3(window.ethereum);
@@ -68,6 +68,9 @@ export default {
                         window.web3 = W3epp
                         this.netID = chainId
                         clearInterval(this.Web3Interval)
+                    } else {
+                        this.checkError("METAMASK_NOT_INSTALL_OR_DISCONNECTED")
+                        this.$emit("notify_metamask_not_install")
                     }
                 }
 
@@ -75,18 +78,6 @@ export default {
                     if (!this.ethereum) {
                         clearInterval(this.Web3Interval)
                     }
-                }
-
-                if (!this.blockLink) {
-                    this.blockLink = new BlockWrap(this.w3, this.ethereum)
-                    this.isMetamaskInterfaced = true
-                    this.blockLink.setDebug(this.metamask_debug)
-                    this.blockLink.setHandlers(
-                        this.handleConfirm,
-                        this.handleBroadcast,
-                        this.handleErrors
-                    )
-
                 }
 
                 if (!this.ethereum) {
@@ -97,16 +88,29 @@ export default {
                         await this.checkNetWork();
                         this.sign_in()
                     } else {
-                        window.addEventListener('ethereum#initialized', this.checkWeb3MetaMask, {
+                        window.addEventListener("ethereum#initialized", this.checkWeb3MetaMask, {
                             once: true,
                         });
                         setTimeout(this.checkWeb3MetaMask, 3000); // 3 seconds
                     }
+                    this.init_blockwrap()
                 }
             }
         },
+        init_blockwrap() {
+            if (!this.blockLink) {
+                this.blockLink = new BlockWrap(this.w3, this.ethereum)
+                this.isMetamaskInterfaced = true
+                this.blockLink.setDebug(this.metamask_debug)
+                this.blockLink.setHandlers(
+                    this.handleConfirm,
+                    this.handleBroadcast,
+                    this.handleErrors
+                )
+            }
+        },
         monitor() {
-            this.ethereum.on('accountsChanged', (accounts) => {
+            this.ethereum.on("accountsChanged", (accounts) => {
                 // Handle the new accounts, or lack thereof.
                 // "accounts" will always be an array, but it can be empty.
                 if (accounts.length === 0) {
@@ -117,7 +121,7 @@ export default {
                     this.notify_account_changed(accounts)
                 }
             });
-            this.ethereum.on('chainChanged', (chainId) => {
+            this.ethereum.on("chainChanged", (chainId) => {
                 // Handle the new chain.
                 // Correctly handling chain changes can be complicated.
                 // We recommend reloading the page unless you have good reason not to.
@@ -125,12 +129,12 @@ export default {
                 this.$emit("notify_node_change")
                 window.location.reload();
             });
-            this.ethereum.on('connect', (connectInfo) => {
+            this.ethereum.on("connect", (connectInfo) => {
                 console.log(connectInfo)
                 console.log("on connect")
                 //this.notify_block_installed()
             });
-            this.ethereum.on('disconnect', (error) => {
+            this.ethereum.on("disconnect", (error) => {
                 if (error.code === 4001) {
                     this.checkError("REJECTED_BY_USER")
                 } else if (error.code === -32602) {
@@ -141,7 +145,7 @@ export default {
                     console.log("on disconnect")
                 }
             });
-            this.ethereum.on('message', (message) => {
+            this.ethereum.on("message", (message) => {
                 /*    interface ProviderMessage {
                         type: string;
                         data: unknown;
@@ -158,7 +162,7 @@ export default {
         sign_in() {
             //start the account registrations
             this.ethereum
-                .request({method: 'eth_requestAccounts'})
+                .request({method: "eth_requestAccounts"})
                 .then(this.handleAccountsChanged)
                 .catch(this.handleErrors);
         },
@@ -169,7 +173,7 @@ export default {
                     this.notify_block_installed()
                     this.blockLink.setAccounts(acc)
                 } else {
-                    this.checkError('DISCONNECTED')
+                    this.checkError("DISCONNECTED")
                 }
             }
         },
@@ -177,10 +181,10 @@ export default {
             if (error.code === 4001) {
                 // EIP-1193 userRejectedRequest error
                 // If this happens, the user rejected the connection request.
-                // console.log('Please connect to MetaMask.');
+                // console.log("Please connect to MetaMask.");
                 this.checkError("USER_DENIED")
             } else if (error.code === -32002) {
-                console.log('Please connection to sign in confirmation.');
+                console.log("Please connection to sign in confirmation.");
             } else {
                 console.error(error);
             }
@@ -193,7 +197,7 @@ export default {
         },
         handleConfirm(confirmation_num) {
             if (confirmation_num === 3) {
-                console.log(`success confirmed`)
+                console.log("success confirmed")
             }
         },
         async checkAccounts() {
@@ -214,16 +218,16 @@ export default {
         async metamask_switch_chain(chainID) {
             try {
                 await this.ethereum.request({
-                    method: 'wallet_switchEthereumChain',
-                    params: [{chainId: '0xf00'}],
+                    method: "wallet_switchEthereumChain",
+                    params: [{chainId: "0xf00"}],
                 });
             } catch (switchError) {
                 // This error code indicates that the chain has not been added to MetaMask.
                 if (switchError.code === 4902) {
                     try {
                         await this.ethereum.request({
-                            method: 'wallet_addEthereumChain',
-                            params: [{chainId: '0xf00', rpcUrl: 'https://...' /* ... */}],
+                            method: "wallet_addEthereumChain",
+                            params: [{chainId: "0xf00", rpcUrl: "https://..." /* ... */}],
                         });
                     } catch (addError) {
                         // handle "add" error
@@ -252,9 +256,11 @@ export default {
             if (MetaMaskOnboarding.isMetaMaskInstalled()) {
                 this.onboarding.stopOnboarding();
                 console.log("stop on board")
+                this.$emit("notify_metamask_stop_on_board")
             } else {
                 this.onboarding.startOnboarding();
                 console.log("start on board")
+                this.$emit("notify_metamask_start_on_board")
             }
         },
     },

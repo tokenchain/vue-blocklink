@@ -43,3 +43,4 @@ const types = [
 for (const type of types) {
     RevertError.registerType(type);
 }
+//# sourceMappingURL=revert_errors.js.map

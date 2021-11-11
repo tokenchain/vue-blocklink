@@ -37,3 +37,4 @@ export class BoolDataType extends AbstractBlobDataType {
 }
 BoolDataType._SIZE_KNOWN_AT_COMPILE_TIME = true;
 BoolDataType._DEFAULT_VALUE = false;
+//# sourceMappingURL=bool.js.map

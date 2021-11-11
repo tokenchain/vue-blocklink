@@ -3,3 +3,4 @@ export { marshaller } from './marshaller';
 export { AbiDecoder } from '../utils';
 export { BlockParamLiteral, OpCode } from '../types';
 export { Web3WrapperErrors, NodeType } from './types';
+//# sourceMappingURL=index.js.map
