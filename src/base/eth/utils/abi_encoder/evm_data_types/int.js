@@ -59,4 +59,3 @@ IntDataType._WIDTH_TO_MAX_VALUE = Object.assign({}, ...[...new Array(32)].map((_
     const width = (i + 1) * 8;
     return { [width]: new B.BigNumber(2).exponentiatedBy(width - 1).minus(1) };
 }));
-//# sourceMappingURL=int.js.map

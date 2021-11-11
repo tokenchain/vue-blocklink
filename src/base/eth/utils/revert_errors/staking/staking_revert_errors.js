@@ -157,4 +157,3 @@ const types = [
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=staking_revert_errors.js.map

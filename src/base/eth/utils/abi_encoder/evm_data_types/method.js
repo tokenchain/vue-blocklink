@@ -75,4 +75,3 @@ export class MethodDataType extends AbstractSetDataType {
         return selector;
     }
 }
-//# sourceMappingURL=method.js.map

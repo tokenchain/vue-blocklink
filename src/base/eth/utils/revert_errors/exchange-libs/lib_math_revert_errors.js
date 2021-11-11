@@ -17,4 +17,3 @@ const types = [DivisionByZeroError, RoundingError];
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=lib_math_revert_errors.js.map

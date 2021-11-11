@@ -63,4 +63,3 @@ export function safeDecodeNumericValue(encodedValue, minValue, maxValue) {
     sanityCheckBigNumberRange(value, minValue, maxValue);
     return value;
 }
-//# sourceMappingURL=math.js.map

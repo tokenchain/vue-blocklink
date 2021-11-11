@@ -19,4 +19,3 @@ const types = [MigrateCallFailedError, OnlyOwnerError];
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=ownable_revert_errors.js.map

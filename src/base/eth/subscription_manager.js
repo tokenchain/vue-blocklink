@@ -130,4 +130,3 @@ export class SubscriptionManager {
         }
     }
 }
-//# sourceMappingURL=subscription_manager.js.map

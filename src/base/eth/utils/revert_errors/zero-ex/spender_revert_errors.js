@@ -14,4 +14,3 @@ const types = [SpenderERC20TransferFromFailedError];
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=spender_revert_errors.js.map

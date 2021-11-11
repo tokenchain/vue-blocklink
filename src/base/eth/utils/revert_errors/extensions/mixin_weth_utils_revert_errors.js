@@ -28,4 +28,3 @@ const types = [InsufficientEthForFeeError, DefaultFunctionWethContractOnlyError,
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=mixin_weth_utils_revert_errors.js.map

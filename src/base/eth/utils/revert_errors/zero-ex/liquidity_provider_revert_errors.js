@@ -23,4 +23,3 @@ const types = [LiquidityProviderIncompleteSellError, NoLiquidityProviderForMarke
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=liquidity_provider_revert_errors.js.map

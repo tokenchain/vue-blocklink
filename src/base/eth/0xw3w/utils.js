@@ -44,4 +44,3 @@ export const utils = {
         return ((_.isString(hex) || _.isNumber(hex)) && /^(-)?0x[0-9a-f]*$/i.test(_.isNumber(hex) ? hex.toString() : hex));
     },
 };
-//# sourceMappingURL=utils.js.map

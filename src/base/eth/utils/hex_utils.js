@@ -74,4 +74,3 @@ export function stripHexPrefix(str) {
     }
     return isHexPrefixed(str) ? str.slice(2) : str;
 }
-//# sourceMappingURL=hex_utils.js.map

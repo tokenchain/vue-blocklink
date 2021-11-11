@@ -992,4 +992,3 @@ export class Ori20Contract extends BaseContract {
     ;
 }
 Ori20Contract.contractName = 'Ori20';
-//# sourceMappingURL=ori20.js.map

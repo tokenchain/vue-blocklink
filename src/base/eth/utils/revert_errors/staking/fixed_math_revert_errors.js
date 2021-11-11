@@ -40,4 +40,3 @@ const types = [SignedValueError, UnsignedValueError, BinOpError];
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=fixed_math_revert_errors.js.map

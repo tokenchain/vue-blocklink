@@ -60,4 +60,3 @@ export function generateDataItemFromSignature(signature) {
     }
     return parseNode(node);
 }
-//# sourceMappingURL=signature_parser.js.map

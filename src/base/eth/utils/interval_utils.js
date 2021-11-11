@@ -36,4 +36,3 @@ export const intervalUtils = {
         clearInterval(intervalId);
     },
 };
-//# sourceMappingURL=interval_utils.js.map

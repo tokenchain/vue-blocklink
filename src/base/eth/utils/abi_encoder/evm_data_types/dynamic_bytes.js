@@ -55,4 +55,3 @@ export class DynamicBytesDataType extends AbstractBlobDataType {
 }
 DynamicBytesDataType._SIZE_KNOWN_AT_COMPILE_TIME = false;
 DynamicBytesDataType._DEFAULT_VALUE = '0x';
-//# sourceMappingURL=dynamic_bytes.js.map

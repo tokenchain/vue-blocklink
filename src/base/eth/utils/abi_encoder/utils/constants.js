@@ -15,4 +15,3 @@ export const constants = {
     NUMBER_OF_BYTES_IN_UINT8: 8,
     NUMBER_OF_BYTES_IN_INT8: 8,
 };
-//# sourceMappingURL=constants.js.map

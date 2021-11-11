@@ -16,4 +16,3 @@ export class PointerDataType extends AbstractPointerDataType {
         return defaultValue;
     }
 }
-//# sourceMappingURL=pointer.js.map

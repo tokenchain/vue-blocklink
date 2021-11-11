@@ -94,4 +94,3 @@ export const signTypedDataUtils = {
         return ethUtil.keccak256(ethUtil.toBuffer(signTypedDataUtils._encodeData(primaryType, data, types)));
     },
 };
-//# sourceMappingURL=sign_typed_data_utils.js.map

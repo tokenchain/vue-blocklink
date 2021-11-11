@@ -34,4 +34,3 @@ const types = [BootstrapCallFailedError, InvalidBootstrapCallerError, InvalidDie
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=proxy_revert_errors.js.map

@@ -145,4 +145,3 @@ const types = [
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=transform_erc20_revert_errors.js.map

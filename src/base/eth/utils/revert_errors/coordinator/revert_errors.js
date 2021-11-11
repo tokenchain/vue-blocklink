@@ -37,4 +37,3 @@ const types = [SignatureError, InvalidOriginError, ApprovalExpiredError, Invalid
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=revert_errors.js.map

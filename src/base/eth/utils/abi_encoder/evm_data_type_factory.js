@@ -173,4 +173,3 @@ function consolidateDataItemsIntoArray(input) {
     }
     return dataItems;
 }
-//# sourceMappingURL=evm_data_type_factory.js.map

@@ -55,4 +55,3 @@ UIntDataType._WIDTH_TO_MAX_VALUE = Object.assign({}, ...[...new Array(32)].map((
     const width = (i + 1) * 8;
     return { [width]: new B.BigNumber(2).exponentiatedBy(width).minus(1) };
 }));
-//# sourceMappingURL=uint.js.map

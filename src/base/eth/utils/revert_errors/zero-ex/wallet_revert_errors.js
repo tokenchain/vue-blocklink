@@ -24,4 +24,3 @@ const types = [WalletExecuteCallFailedError, WalletExecuteDelegateCallFailedErro
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=wallet_revert_errors.js.map

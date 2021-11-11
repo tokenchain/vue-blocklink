@@ -360,4 +360,3 @@ function toSelector(abi) {
         .toString('hex'));
 }
 RevertError.registerType(StringRevertError);
-//# sourceMappingURL=revert_error.js.map

@@ -1,5 +1,5 @@
 import BlockWrap from "./abi/BlockWrap";
-import CountDown from "./abi/CountDown";
+import {CountDown} from "./abi/CountDown";
 import CoinDetail from "./abi/CoinDetail";
 import EthereumWeb3Component from "./mixins/vue-metamask"
 import ImTokenComponent from "./mixins/vue-imtoken"

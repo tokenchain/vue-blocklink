@@ -31,4 +31,3 @@ export const ZeroExRevertErrors = {
     SignatureValidator: require('./revert_errors/zero-ex/signature_validator_revert_errors'),
     LiquidityProvider: require('./revert_errors/zero-ex/liquidity_provider_revert_errors'),
 };
-//# sourceMappingURL=index.js.map

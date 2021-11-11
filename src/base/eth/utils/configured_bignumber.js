@@ -6,4 +6,3 @@ B.BigNumber.config({
 (orig => (B.BigNumber.config = (..._args) => orig({})))(B.BigNumber.config);
 B.BigNumber.set = B.BigNumber.config;
 export { B };
-//# sourceMappingURL=configured_bignumber.js.map

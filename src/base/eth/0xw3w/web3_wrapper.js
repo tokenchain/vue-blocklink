@@ -462,4 +462,3 @@ export class Web3Wrapper {
         }
     }
 }
-//# sourceMappingURL=web3_wrapper.js.map

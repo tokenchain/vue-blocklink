@@ -11,4 +11,3 @@ const types = [NotInRollbackHistoryError];
 for (const type of types) {
     RevertError.registerType(type);
 }
-//# sourceMappingURL=simple_function_registry_revert_errors.js.map

@@ -7,4 +7,3 @@ export var NodeType;
     NodeType["Geth"] = "GETH";
     NodeType["Ganache"] = "GANACHE";
 })(NodeType || (NodeType = {}));
-//# sourceMappingURL=types.js.map

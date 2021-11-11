@@ -31,4 +31,3 @@ export class Queue {
         return this._store.length >= 0 ? this._store[0] : undefined;
     }
 }
-//# sourceMappingURL=queue.js.map

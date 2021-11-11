@@ -134,4 +134,3 @@ export class Calldata {
         return hexValue;
     }
 }
-//# sourceMappingURL=calldata.js.map

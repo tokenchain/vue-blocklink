@@ -49,4 +49,3 @@ export class CountDown {
         }, 1000);
     }
 }
-//# sourceMappingURL=CountDown.js.map

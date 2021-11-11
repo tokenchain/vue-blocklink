@@ -243,4 +243,3 @@ export default class BlockWrap {
             .catch(this.errorHandler);
     }
 }
-//# sourceMappingURL=BlockWrap.js.map

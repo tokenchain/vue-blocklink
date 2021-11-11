@@ -3,4 +3,3 @@ export const errorUtils = {
         return new Error(`Unexpected switch value: ${value} encountered for ${name}`);
     },
 };
-//# sourceMappingURL=error_utils.js.map
