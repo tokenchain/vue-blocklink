@@ -1290,10 +1290,10 @@ const networks = [
         "chain": "RSC",
         "network": "mainnet",
         "networkId": 1023,
-        "nativeCurrency": {"name": "RSC", "symbol": "RSC", "decimals": 18},
+        "nativeCurrency": {"name": "Rae Stone Coin", "symbol": "RSC", "decimals": 18},
         "rpc": ["https://rpc-mainnet.raisc.io"],
         "faucets": [],
-        "infoURL": "http://www.raisc.io/"
+        "infoURL": "https://www.raisc.io/"
     }
 ]
 
@@ -1306,11 +1306,23 @@ function ExplainNetworkById(netID) {
     return {}
 }
 
+function GetMetaNetConfig(netID) {
+    const f = ExplainNetworkById(netID)
+    return {
+        chainId: String(f.chainId),
+        chainName: f.name,
+        nativeCurrency: f.nativeCurrency,
+        blockExplorerUrls: [f.infoURL],
+        rpcUrls: f.rpc
+    }
+}
+
 /**
  * please keep update by the website: https://chainid.network/chains.json
  *
  */
 
 export {
-    ExplainNetworkById
+    ExplainNetworkById,
+    GetMetaNetConfig
 }

@@ -15,6 +15,7 @@ import {schemas} from "./base/eth/validations"
 import {SubscriptionManager} from "./base/eth/subscription_manager"
 import {getStoredItemInt, getStoredItemStr} from "./utils/urltool"
 import safemath from "./utils/safemath";
+import {GetMetaNetConfig, ExplainNetworkById} from "./utils/ethereumnetworks";
 
 export {
     BlockWrap,
@@ -30,6 +31,8 @@ export {
     toTokenUnitAmount,
     getStoredItemInt,
     getStoredItemStr,
+    GetMetaNetConfig,
+    ExplainNetworkById,
     safemath,
     assert, schemas
 }

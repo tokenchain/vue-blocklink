@@ -353,11 +353,28 @@ export default class BlockWrap {
     }
 
 
+    ensureChainParameterPatch(conf: AddEthereumChainParameter): AddEthereumChainParameter {
+        const ishex = this.w3Utils().isHexStrict(conf.chainId)
+        let conf2 = conf
+        if (!ishex) {
+            const chainID = this.w3Utils().toHex(conf.chainId)
+            conf2 = Object.assign({}, conf, {
+                chainId: chainID
+            });
+            console.log(chainID)
+        }
+
+        console.log(conf)
+        console.log(conf2)
+        return conf2
+    }
+
     metamask_add_chain(chain_conf: AddEthereumChainParameter): void {
+        const conf = this.ensureChainParameterPatch(chain_conf)
         this.ethereumCore
             .request({
                 method: 'wallet_addEthereumChain',
-                params: chain_conf,
+                params: [conf],
             })
             .then((success) => {
                 if (success) {
@@ -369,5 +386,28 @@ export default class BlockWrap {
                 }
             })
             .catch(this.errorHandler)
+    }
+
+    async metamask_detect_chain_process_flow(conf: AddEthereumChainParameter): Promise<void> {
+        const conf2 = this.ensureChainParameterPatch(conf)
+        try {
+            await this.ethereumCore.request({
+                method: "wallet_switchEthereumChain",
+                params: [{chainId: conf2.chainId}],
+            });
+        } catch (switchError) {
+            if (switchError.code === 4902) {
+                try {
+                    await this.ethereumCore.request({
+                        method: "wallet_addEthereumChain",
+                        params: [conf2],
+                    });
+                } catch (addError) {
+                    this.errorHandler(addError)
+                }
+            } else {
+                this.errorHandler(switchError)
+            }
+        }
     }
 }

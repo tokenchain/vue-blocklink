@@ -12,6 +12,8 @@ import ImTokenComponent from "./mixins/vue-imtoken"
 import {BigNumber, B} from "./base/eth/utils/configured_bignumber"
 import {getStoredItemInt, getStoredItemStr} from "./utils/urltool"
 import safemath from "./utils/safemath";
+import {GetMetaNetConfig, ExplainNetworkById} from "./utils/ethereumnetworks";
+
 
 export {
     BlockWrap,
@@ -25,6 +27,10 @@ export {
     BaseContract,
     B, BigNumber,
     schemas, assert,
-    safemath, getStoredItemInt, getStoredItemStr
+    safemath,
+    getStoredItemInt,
+    getStoredItemStr,
+    GetMetaNetConfig,
+    ExplainNetworkById
 }
 

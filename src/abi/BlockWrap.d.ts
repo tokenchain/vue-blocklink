@@ -52,6 +52,8 @@ export default class BlockWrap {
     metamask_decrypt(encryptedMessage: any, account_address: any, callback: any): void;
     metamask_message_sign(encryptionPublicKey: any, message: any): string;
     metamask_add_token(token_conf: WatchAssetParams): void;
+    ensureChainParameterPatch(conf: AddEthereumChainParameter): AddEthereumChainParameter;
     metamask_add_chain(chain_conf: AddEthereumChainParameter): void;
+    metamask_detect_chain_process_flow(conf: AddEthereumChainParameter): Promise<void>;
 }
 //# sourceMappingURL=BlockWrap.d.ts.map

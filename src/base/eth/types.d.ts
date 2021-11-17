@@ -34,8 +34,10 @@ export interface WatchAssetParams {
         image: string;
     };
 }
-export interface AddEthereumChainParameter {
+export interface SwitchEthereumChainParameter {
     chainId: string;
+}
+export interface AddEthereumChainParameter extends SwitchEthereumChainParameter {
     blockExplorerUrls?: string[];
     chainName?: string;
     iconUrls?: string[];

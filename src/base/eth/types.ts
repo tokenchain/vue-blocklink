@@ -18,9 +18,11 @@ export interface Unlimited {
 export interface WebLinkTokenMap {
     [contractAddress: string]: Web3ERC20Token;
 }
+
 export interface ContractTokenMap {
     [contractAddress: string]: Ori20Contract;
 }
+
 export interface Web3ERC20Token {
     tokenSymbol: string;
     tokenName: string;
@@ -41,8 +43,11 @@ export interface WatchAssetParams {
     };
 }
 
-export interface AddEthereumChainParameter {
-    chainId: string;
+export interface SwitchEthereumChainParameter {
+    chainId: string; // A 0x-prefixed hexadecimal string
+}
+
+export interface AddEthereumChainParameter extends SwitchEthereumChainParameter {
     blockExplorerUrls?: string[];
     chainName?: string;
     iconUrls?: string[];

@@ -215,31 +215,10 @@ export default {
                 this.handleErrors(e)
             }
         },
-        async metamask_switch_chain(chainID) {
-            try {
-                await this.ethereum.request({
-                    method: "wallet_switchEthereumChain",
-                    params: [{chainId: "0xf00"}],
-                });
-            } catch (switchError) {
-                // This error code indicates that the chain has not been added to MetaMask.
-                if (switchError.code === 4902) {
-                    try {
-                        await this.ethereum.request({
-                            method: "wallet_addEthereumChain",
-                            params: [{chainId: "0xf00", rpcUrl: "https://..." /* ... */}],
-                        });
-                    } catch (addError) {
-                        // handle "add" error
-                    }
-                }
-                // handle other "switch" errors
-            }
-        },
         async checkNetWork() {
             const network_id = await this.w3.eth.net.getId()
             this.netID = network_id
-            const {name, network, networkId} = ExplainNetworkById(network_id)
+            const {name, network} = ExplainNetworkById(network_id)
             if (this.blockLink) {
                 console.log(`Now it is connected to ${name} ${network}`)
             }

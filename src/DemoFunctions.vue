@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <button @click="connect_matamask" :disabled="signedInConnection">CONNECT</button>
+    <p>{{ status_connection }}</p>
     <p>BlockAcon Metamask is installed {{ metamaskInstalled }} {{ detected_x }}</p>
     <p>version 0.2.101</p>
     <p>
@@ -41,6 +42,7 @@
 </template>
 <script>
 import metamask from "./mixins/vue-metamask"
+import {GetMetaNetConfig} from "./utils/ethereumnetworks"
 
 export default {
   name: "app",
@@ -50,6 +52,7 @@ export default {
     return {
       detected_x: 0,
       my_address: "",
+      status_connection: "",
       coin_bal_ysl: 0,
       coin_bal_usd: 0,
       eth_bal: 0,
@@ -78,30 +81,62 @@ export default {
           image: 'http://placekitten.com/200/300', // A string url of the token logo
         }
       },
-      agent_contract: "0x6a18b9A2fb67B6D0301f71327d2055BaC3ec055E"
+      agent_contract: "0x6a18b9A2fb67B6D0301f71327d2055BaC3ec055E",
+      networkConf: {
+        chainId: "1023",
+        chainName: "RSC Mainnet",
+        // iconUrls?: string[];
+        nativeCurrency: {
+          name: "Rae Stone Coin",
+          symbol: "RSC",
+          decimals: 18
+        },
+        blockExplorerUrls: ["https://www.raisc.io"],
+        rpcUrls: ["https://rpc-mainnet.raisc.io"]
+      }
     }
   },
   mounted() {
     this.$nextTick(() => {
       this.$on("notify_block_not_install", () => {
         this.metamaskInstalled = false
-        console.log("Detect done - NOT INSTALL 🔔️")
+        this.status_connection = "Detect done - NOT INSTALL 🔔️"
+        console.log(this.status_connection)
       })
       this.$on("notify_block_installed", () => {
         this.metamaskInstalled = true
-        console.log("Detect done INSTALLED 🔔️")
-        setInterval(() => {
-          this.initData()
-        }, 3500)
+        this.status_connection = "Detect done INSTALLED 🔔️"
+        console.log(this.status_connection)
+        //check network
+        this.checkNetwork().then(() => {
+          setInterval(() => {
+            //connect contract
+            this.status_connection = "data jump:: " + this.netID
+            this.initData()
+          }, 3500)
+        })
       })
 
       this.$on("notify_account_changed", () => {
         console.log("detect done rns account changed 🔔️")
       })
-
     })
   },
   methods: {
+    async checkNetwork() {
+      if (this.netID === parseInt("1023")) {
+        setTimeout(async () => {
+          await this.initData()
+        }, 3000)
+      } else {
+        //only from hardcode
+        // await this.blockLink.metamask_detect_chain_process_flow(this.networkConf)
+        console.log(GetMetaNetConfig("1023"))
+        await this.blockLink.metamask_detect_chain_process_flow(
+            GetMetaNetConfig("1023")
+        )
+      }
+    },
     async initData() {
       if (!this.blockLink) return
       //gas limit / gas price
