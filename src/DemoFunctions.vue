@@ -124,16 +124,16 @@ export default {
   },
   methods: {
     async checkNetwork() {
-      if (this.netID === parseInt("1023")) {
+      if (this.netID === parseInt("3")) {
         setTimeout(async () => {
           await this.initData()
         }, 3000)
       } else {
         //only from hardcode
         // await this.blockLink.metamask_detect_chain_process_flow(this.networkConf)
-        console.log(GetMetaNetConfig("1023"))
+        console.log(GetMetaNetConfig("3"))
         await this.blockLink.metamask_detect_chain_process_flow(
-            GetMetaNetConfig("1023")
+            GetMetaNetConfig("3")
         )
       }
     },

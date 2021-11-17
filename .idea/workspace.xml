@@ -9,22 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.c7b1c11d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.c7b1c11d.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DemoFunctions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemoFunctions.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/types.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/types.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/types.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mixins/vue-metamask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/vue-metamask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +151,7 @@
       <workItem from="1636045978379" duration="679000" />
       <workItem from="1636607249644" duration="2420000" />
       <workItem from="1636611007365" duration="443000" />
-      <workItem from="1637157958041" duration="5142000" />
+      <workItem from="1637157958041" duration="5332000" />
     </task>
     <servers />
   </component>
