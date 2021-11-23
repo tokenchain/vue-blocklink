@@ -19,9 +19,9 @@ const networks = [
         "network": "mainnet",
         "networkId": 10,
         "nativeCurrency": {"name": "Ether", "symbol": "OETH", "decimals": 18},
-        "rpc": [],
+        "rpc": ["https://mainnet.optimism.io/"],
         "faucets": [],
-        "infoURL": "https://optimism.io"
+        "infoURL": "https://optimistic.etherscan.io/"
     },
     {
         "name": "xDAI Chain",
@@ -744,16 +744,16 @@ const networks = [
         "infoURL": "https://kovan-testnet.github.io/website"
     },
     {
-        "name": "Optimistic Ethereum Testnet Goerli",
-        "chainId": 420,
-        "shortName": "ogor",
+        "name": "Optimistic Ethereum Testnet",
+        "chainId": 69,
+        "shortName": "kovan",
         "chain": "ETH",
-        "network": "goerli",
-        "networkId": 420,
-        "nativeCurrency": {"name": "Görli Ether", "symbol": "GOR", "decimals": 18},
-        "rpc": [],
+        "network": "testnet",
+        "networkId": 69,
+        "nativeCurrency": {"name": "kovan Ether", "symbol": "ETH", "decimals": 18},
+        "rpc": ["https://kovan.optimism.io/"],
         "faucets": [],
-        "infoURL": "https://optimism.io"
+        "infoURL": "https://kovan-optimistic.etherscan.io/"
     },
     {
         "name": "pegglecoin",
@@ -1224,16 +1224,28 @@ const networks = [
         "infoURL": "https://bloxberg.org"
     },
     {
-        "name": "Ubiq Network Testnet",
-        "chainId": 9,
-        "shortName": "tubq",
-        "chain": "UBQ",
+        "name": "Avalanche Mainnet",
+        "chainId": 43114,
+        "shortName": "avalanche",
+        "chain": "avalanche",
         "network": "mainnet",
-        "networkId": 2,
-        "nativeCurrency": {"name": "Ubiq Testnet Ether", "symbol": "TUBQ", "decimals": 18},
-        "rpc": [],
+        "networkId": 43114,
+        "nativeCurrency": {"name": "AVAX Coin", "symbol": "AVAX", "decimals": 18},
+        "rpc": ["https://api.avax.network/ext/bc/C/rpc"],
         "faucets": [],
-        "infoURL": "https://ethersocial.org"
+        "infoURL": "https://snowtrace.io"
+    },
+    {
+        "name": "Avalanche Testnet",
+        "chainId": 43113,
+        "shortName": "fuji",
+        "chain": "fuji",
+        "network": "testnet",
+        "networkId": 43113,
+        "nativeCurrency": {"name": "AVAX Coin", "symbol": "AVAX", "decimals": 18},
+        "rpc": ["https://api.avax-test.network/ext/bc/C/rpc"],
+        "faucets": ["https://faucet.avax-test.network/ ", "https://faucets.chain.link/fuji"],
+        "infoURL": "https://testnet.snowtrace.io/"
     },
     {
         "name": "Binance Smart Chain Testnet",

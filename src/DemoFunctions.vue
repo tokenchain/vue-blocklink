@@ -131,7 +131,6 @@ export default {
       } else {
         //only from hardcode
         // await this.blockLink.metamask_detect_chain_process_flow(this.networkConf)
-        console.log(GetMetaNetConfig("3"))
         await this.blockLink.metamask_detect_chain_process_flow(
             GetMetaNetConfig("3")
         )

@@ -9,7 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DemoFunctions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemoFunctions.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,6 +154,11 @@
       <workItem from="1636607249644" duration="2420000" />
       <workItem from="1636611007365" duration="443000" />
       <workItem from="1637157958041" duration="5332000" />
+      <workItem from="1637164905450" duration="411000" />
+      <workItem from="1637314889902" duration="312000" />
+      <workItem from="1637323073395" duration="222000" />
+      <workItem from="1637563503273" duration="146000" />
+      <workItem from="1637665788412" duration="1307000" />
     </task>
     <servers />
   </component>
