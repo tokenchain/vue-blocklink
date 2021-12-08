@@ -10,7 +10,15 @@ import CoinDetail from "./abi/CoinDetail";
 import EthereumWeb3Component from "./mixins/vue-metamask"
 import ImTokenComponent from "./mixins/vue-imtoken"
 import {BigNumber, B} from "./base/eth/utils/configured_bignumber"
-import {getStoredItemInt, getStoredItemStr} from "./utils/urltool"
+import {
+    getStoredItemInt,
+    getStoredItemStr,
+    clone,
+    formatProposal,
+    formatProposals,
+    jsonParse,
+    shorten
+} from "./utils/urltool"
 import safemath from "./utils/safemath";
 import {GetMetaNetConfig, ExplainNetworkById} from "./utils/ethereumnetworks";
 
@@ -30,6 +38,7 @@ export {
     safemath,
     getStoredItemInt,
     getStoredItemStr,
+    clone, formatProposal, formatProposals, jsonParse, shorten,
     GetMetaNetConfig,
     ExplainNetworkById
 }

@@ -13,7 +13,15 @@ import {BaseContract} from "./base/eth/base"
 import {assert} from "./base/eth/0xassert"
 import {schemas} from "./base/eth/validations"
 import {SubscriptionManager} from "./base/eth/subscription_manager"
-import {getStoredItemInt, getStoredItemStr} from "./utils/urltool"
+import {
+    getStoredItemInt,
+    getStoredItemStr,
+    clone,
+    formatProposal,
+    formatProposals,
+    jsonParse,
+    shorten
+} from "./utils/urltool"
 import safemath from "./utils/safemath";
 import {GetMetaNetConfig, ExplainNetworkById} from "./utils/ethereumnetworks";
 
@@ -31,6 +39,7 @@ export {
     toTokenUnitAmount,
     getStoredItemInt,
     getStoredItemStr,
+    clone, formatProposal, formatProposals, jsonParse, shorten,
     GetMetaNetConfig,
     ExplainNetworkById,
     safemath,
