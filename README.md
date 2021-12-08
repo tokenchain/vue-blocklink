@@ -31,6 +31,7 @@ This project will also support the future networks
  * notify_metamask_not_install
  * notify_metamask_stop_on_board
  * notify_metamask_start_on_board
+ * notify_block_generation
 
 ### mixin support imtoken wallet api events:
  * imtoken_on_detect
@@ -39,3 +40,7 @@ This project will also support the future networks
 
 ### Support metamask operation API:
  * will work on more api supports
+
+
+#### ws provider added.
+

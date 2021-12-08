@@ -2,12 +2,14 @@ import BlockWrap from "../abi/BlockWrap"
 import MetaMaskOnboarding from "@metamask/onboarding";
 import Web3 from "web3";
 import DetectionFunc from "@metamask/detect-provider"
-import {ExplainNetworkById} from "../utils/ethereumnetworks";
+import {ExplainNetworkById, GetMetaNetConfig} from "../utils/ethereumnetworks";
+import {WebSocketProvider} from '@ethersproject/providers';
 
 export default {
     data() {
         return {
             ethereum: false,
+            wsProvider: false,
             blockLink: false,
             signedInConnection: false,
             MetaMaskId: "1",  // main net netID
@@ -222,6 +224,25 @@ export default {
             if (this.blockLink) {
                 console.log(`Now it is connected to ${name} ${network}`)
             }
+            const {rpcUrls} = GetMetaNetConfig(network_id)
+            rpcUrls.forEach((url, i) => {
+                if (url.substring(0, 2) === "ws") {
+                    this.wsProvider = new WebSocketProvider(url)
+                    return false
+                }
+                if (url.substring(0, 3) === "wss") {
+                    this.wsProvider = new WebSocketProvider(url)
+                    return false
+                }
+            })
+            if (this.wsProvider !== false) {
+                this.wsHandler(this.wsProvider)
+            }
+        },
+        wsHandler(ws_provider) {
+            ws_provider.on("block", blocknumber => {
+                this.$emit("notify_block_generation", blocknumber)
+            })
         },
         checkRequiredNetwork(network_Id) {
             if (network_Id === parseInt(this.netID)) {
