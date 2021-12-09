@@ -359,12 +359,13 @@ export default class BlockWrap {
         if (!ishex) {
             const chainID = this.w3Utils().toHex(conf.chainId)
             conf2 = Object.assign({}, conf, {
-                chainId: chainID
+                chainId: chainID,
+                iconUrls: ["https://i.pinimg.com/564x/3c/ee/90/3cee90ab71e45757b8f0250b79a76bd0.jpg"]
             });
             console.log(chainID)
         }
 
-        console.log(conf)
+        // console.log(conf)
         console.log(conf2)
         return conf2
     }

@@ -2,7 +2,7 @@ import { BigNumber } from '../utils';
 export declare const utils: {
     convertHexToNumber(value: string): number;
     convertHexToNumberOrNull(hex: string | null): number | null;
-    convertAmountToBigNumber(value: string | number | BigNumber): BigNumber;
+    convertAmountToBigNumber(value: string | number | BigNumber): any;
     encodeAmountAsHexString(value: string | number | BigNumber): string;
     numberToHex(value: number): string;
     isHexStrict(hex: string | number): boolean;

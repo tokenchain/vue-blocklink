@@ -1,8 +1,8 @@
 import { BigNumber } from '../utils';
 export declare const assert: {
-    isBigNumber(variableName: string, value: BigNumber): void;
+    isBigNumber(variableName: string, value: any): void;
     isNumberLike(variableName: string, value: BigNumber | number): void;
-    isValidBaseUnitAmount(variableName: string, value: BigNumber): void;
+    isValidBaseUnitAmount(variableName: string, value: any): void;
     isString(variableName: string, value: string): void;
     isFunction(variableName: string, value: any): void;
     isHexString(variableName: string, value: string): void;
