@@ -38,4 +38,4 @@ EOF
 }
 
 DIST_VERCEL=$HOME/Documents/ci/imtoken
-deploy_vercel_folder "DybUeTOa2gCSDtJS4XN1b3KP" "prj_bVihbCXZ2LTrPh4YOIQcT0aQxwUd"
+#

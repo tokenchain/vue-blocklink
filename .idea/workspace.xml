@@ -9,42 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/openip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DemoDetectionSwitchImtoken.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/wallet.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chromeserve" beforeDir="false" afterPath="$PROJECT_DIR$/chromeserve" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/app.baa42896.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.99738d08.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.99738d08.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.7148939b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.7148939b.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/ori20.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/ori20.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/ori20.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/ori20.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/0xassert/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/0xassert/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/0xassert/index.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/0xassert/index.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/0xw3w/utils.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/0xw3w/utils.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/0xw3w/utils.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/0xw3w/utils.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/types.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/types.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/types.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mixins/vue-metamask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/vue-metamask.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +163,7 @@
       <workItem from="1637695220126" duration="303000" />
       <workItem from="1638946416930" duration="2970000" />
       <workItem from="1638961165667" duration="103000" />
-      <workItem from="1639024705732" duration="15934000" />
+      <workItem from="1639024705732" duration="16617000" />
     </task>
     <servers />
   </component>
