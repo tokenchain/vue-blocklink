@@ -8,7 +8,9 @@ import * as ethers from 'ethers';
 // import {BigNumber} from 'bignumber.js'
 import BN from 'bn.js'
 import {assert} from "../base/eth/0xassert";
+//DO NOT CHANGE THIS LINE
 import {BlockRange, DecodedLogArgs, LogWithDecodedArgs, MethodAbi} from "../base/eth/types";
+//DO NOT CHANGE THIS LINE
 import {BaseContract} from "../base/eth/base";
 import {
     BatchRequest,

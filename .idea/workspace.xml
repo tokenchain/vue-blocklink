@@ -9,10 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/chromeserve" beforeDir="false" afterPath="$PROJECT_DIR$/chromeserve" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/ori20.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/abi/ori20.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/ori20.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/abi/ori20.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/ori20.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +164,7 @@
       <workItem from="1638946416930" duration="2970000" />
       <workItem from="1638961165667" duration="103000" />
       <workItem from="1639024705732" duration="16661000" />
-      <workItem from="1639195752369" duration="915000" />
+      <workItem from="1639195752369" duration="992000" />
     </task>
     <servers />
   </component>
