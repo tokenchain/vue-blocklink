@@ -4,7 +4,7 @@ import Web3 from "web3";
 import DetectionFunc from "@metamask/detect-provider"
 import {ExplainNetworkById, GetMetaNetConfig} from "../utils/ethereumnetworks";
 import {WebSocketProvider, Web3Provider} from '@ethersproject/providers';
-import {WalletSupport} from "@/base/wallet";
+import {WalletSupport} from "../base/wallet";
 
 export default {
     data() {
