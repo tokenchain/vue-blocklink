@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import App from './DemoFunctions'
+// import App from './DemoFunctions'
+import App from './DemoDetectionSwitchImtoken'
 /*
 =========================================================================================
   File Name: main.js

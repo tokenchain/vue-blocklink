@@ -1,0 +1,62 @@
+declare namespace _default {
+    export { shuffle };
+    export { Base64 };
+    export { PI };
+    export { cos };
+    export { sin };
+    export { abs };
+    export { sqrt };
+    export { pow };
+    export { round };
+    export { random };
+    export { atan2 };
+    export { HALF_PI };
+    export { TAU };
+    export { TO_RAD };
+    export { floor };
+    export { rand };
+    export { randIn };
+    export { randRange };
+    export { fadeIn };
+    export { fadeInOut };
+    export { fadeOut };
+    export { dist };
+    export { angle };
+    export { lerp };
+}
+export default _default;
+declare function shuffle(array: any): any;
+declare function Base64(): void;
+declare class Base64 {
+    _keyStr: string;
+    encode: (input: any) => string;
+    encodeIgnoreUtf8: (inputBytes: any) => string;
+    decode: (input: any) => any;
+    decodeToByteArray: (input: any) => any;
+    _out2ByteArray: (utftext: any) => any[];
+    _utf8_encode: (string: any) => string;
+    _utf8_decode: (utftext: any) => string;
+}
+declare const PI: number;
+declare const cos: (x: number) => number;
+declare const sin: (x: number) => number;
+declare const abs: (x: number) => number;
+declare const sqrt: (x: number) => number;
+declare const pow: (x: number, y: number) => number;
+declare const round: (x: number) => number;
+declare const random: () => number;
+declare const atan2: (y: number, x: number) => number;
+declare const HALF_PI: number;
+declare const TAU: number;
+declare const TO_RAD: number;
+declare function floor(n: any): number;
+declare function rand(n: any): number;
+declare function randIn(min: any, max: any): any;
+declare function randRange(n: any): number;
+declare function fadeIn(t: any, m: any): number;
+declare function fadeInOut(t: any, m: any): number;
+declare function fadeOut(t: any, m: any): number;
+declare function dist(x1: any, y1: any, x2: any, y2: any): number;
+declare function angle(x1: any, y1: any, x2: any, y2: any): number;
+declare function lerp(n1: any, n2: any, speed: any): number;
+//# sourceMappingURL=safemath.d.ts.map

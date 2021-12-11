@@ -1,5 +1,6 @@
 import { Ori20Contract } from "./ori20";
-import type { WebLinkTokenMap, Web3ERC20Token, WatchAssetParams, AddEthereumChainParameter, TransactionReceipt, ContractTokenMap } from "../base/eth/types";
+import type { AddEthereumChainParameter, ContractTokenMap, TransactionReceipt, WatchAssetParams, Web3ERC20Token, WebLinkTokenMap } from "../base/eth/types";
+import { WalletSupport } from "../base/wallet";
 import { Vue } from "vue/types/vue";
 import CoinDetail from "./CoinDetail";
 import Web3 from "web3";
@@ -16,8 +17,10 @@ export default class BlockWrap {
     accounts: Array<string>;
     gas: number;
     gasPrice: number | string;
+    wallet: WalletSupport;
     constructor(webThree: any, ethereumCore: any);
     setDebug(x: boolean): void;
+    setWallet(wallet_connect: WalletSupport): void;
     isInstalled(): boolean;
     isLoggedIn(): boolean;
     isAddress(test: any): boolean;

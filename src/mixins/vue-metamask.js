@@ -3,7 +3,8 @@ import MetaMaskOnboarding from "@metamask/onboarding";
 import Web3 from "web3";
 import DetectionFunc from "@metamask/detect-provider"
 import {ExplainNetworkById, GetMetaNetConfig} from "../utils/ethereumnetworks";
-import {WebSocketProvider} from '@ethersproject/providers';
+import {WebSocketProvider, Web3Provider} from '@ethersproject/providers';
+import {WalletSupport} from "@/base/wallet";
 
 export default {
     data() {
@@ -12,7 +13,6 @@ export default {
             wsProvider: false,
             blockLink: false,
             signedInConnection: false,
-            MetaMaskId: "1",  // main net netID
             netID: 1,         // user metamask id
             networkId: -1,
             Web3Interval: 0,
@@ -37,7 +37,11 @@ export default {
                 USER_DENIED: "user denied",
                 DISCONNECTED: "disconnected"
             },
-            metamask_debug: false
+            metamask_debug: false,
+            walletSupports: {
+                imtoken: false,
+                metamask: false
+            }
         };
     },
     methods: {
@@ -56,51 +60,82 @@ export default {
         matchChainId(requiredId) {
             return parseInt(this.netID) === parseInt(requiredId)
         },
+        async checkFinalStep() {
+            if (!this.ethereum) {
+                this.checkError("METAMASK_NOT_INSTALL_OR_DISCONNECTED")
+            } else {
+
+                if (this.ethereum.isConnected()) {
+                    //console.log("monitor.")
+                    this.monitor()
+                    //console.log("init blockwrap now.")
+                    this.init_blockwrap()
+                    //console.log("signing in now.")
+                    this.sign_in()
+                    //console.log("check socket in now.")
+                    await this.connect_ws();
+                } else {
+                    console.log("ethereum is not connected yet.")
+                    window.addEventListener("ethereum#initialized", this.checkWeb3MetaMask, {
+                        once: true,
+                    });
+                    setTimeout(this.checkWeb3MetaMask, 3000); // 3 seconds
+                }
+            }
+            clearInterval(this.Web3Interval)
+        },
         async checkWeb3MetaMask() {
+            let chainId, installed = false;
             if (window) {
-                if (!this.ethereum) {
-                    const provider = await DetectionFunc()
-                    if (provider) {
-                        const chainId = await provider.request({
+                try {
+                    if (!this.ethereum) {
+                        //detection for metamask
+                        const provider = await DetectionFunc()
+                        if (provider) {
+                            chainId = await provider.request({
+                                method: "eth_chainId"
+                            })
+                            this.ethereum = window.ethereum
+                            const w3tokenc = new Web3(window.ethereum);
+                            this.w3 = w3tokenc
+                            window.web3 = w3tokenc
+                            this.netID = chainId
+                            installed = true
+                        }
+                    }
+                } catch (e) {
+                }
+
+                try {
+                    if (!this.ethereum && window.hasOwnProperty("ethereum")) {
+                        //detection for imtoken
+                        await window.ethereum.enable()
+                        this.ethereum = window.ethereum
+                        const w3imtoken = new Web3(this.ethereum)
+                        this.w3 = w3imtoken
+                        window.web3 = w3imtoken
+                        const provider = new Web3Provider(window.ethereum)
+                        chainId = await provider.request({
                             method: "eth_chainId"
                         })
-                        this.ethereum = window.ethereum
-                        const W3epp = new Web3(window.ethereum);
-                        this.w3 = W3epp
-                        window.web3 = W3epp
                         this.netID = chainId
-                        clearInterval(this.Web3Interval)
-                    } else {
-                        this.checkError("METAMASK_NOT_INSTALL_OR_DISCONNECTED")
-                        this.$emit("notify_metamask_not_install")
+                        installed = true
                     }
+                } catch (e) {
                 }
 
-                if (window.hasOwnProperty("web3")) {
-                    if (!this.ethereum) {
-                        clearInterval(this.Web3Interval)
-                    }
-                }
-
-                if (!this.ethereum) {
+                if (!installed) {
                     this.checkError("METAMASK_NOT_INSTALL_OR_DISCONNECTED")
+                    this.$emit("notify_metamask_not_install")
                 } else {
-                    if (this.ethereum.isConnected()) {
-                        this.monitor()
-                        await this.checkNetWork();
-                        this.sign_in()
-                    } else {
-                        window.addEventListener("ethereum#initialized", this.checkWeb3MetaMask, {
-                            once: true,
-                        });
-                        setTimeout(this.checkWeb3MetaMask, 3000); // 3 seconds
-                    }
-                    this.init_blockwrap()
+                    await this.checkFinalStep()
                 }
+
             }
         },
         init_blockwrap() {
             if (!this.blockLink) {
+                // console.log(this.w3, this.ethereum)
                 this.blockLink = new BlockWrap(this.w3, this.ethereum)
                 this.isMetamaskInterfaced = true
                 this.blockLink.setDebug(this.metamask_debug)
@@ -109,6 +144,17 @@ export default {
                     this.handleBroadcast,
                     this.handleErrors
                 )
+                this.blockLink.setWallet(WalletSupport.UNKNOWN)
+                if (this.ethereum.hasOwnProperty("isImToken")) {
+                    console.log("imtoken detected.")
+                    this.walletSupports.imtoken = true
+                    this.blockLink.setWallet(WalletSupport.IMTOKEN)
+                }
+                if (this.ethereum.hasOwnProperty("isMetaMask")) {
+                    console.log("metamask detected.")
+                    this.walletSupports.metamask = true
+                    this.blockLink.setWallet(WalletSupport.METAMASK)
+                }
             }
         },
         monitor() {
@@ -217,24 +263,32 @@ export default {
                 this.handleErrors(e)
             }
         },
-        async checkNetWork() {
+        async connect_ws() {
             const network_id = await this.w3.eth.net.getId()
             this.netID = network_id
             const {name, network} = ExplainNetworkById(network_id)
             if (this.blockLink) {
                 console.log(`Now it is connected to ${name} ${network}`)
             }
+            if (this.walletSupports.imtoken) {
+                return
+            }
             const {rpcUrls} = GetMetaNetConfig(network_id)
-            rpcUrls.forEach((url, i) => {
-                if (url.substring(0, 2) === "ws") {
-                    this.wsProvider = new WebSocketProvider(url)
-                    return false
-                }
-                if (url.substring(0, 3) === "wss") {
-                    this.wsProvider = new WebSocketProvider(url)
-                    return false
-                }
-            })
+            try {
+                rpcUrls.forEach((url, i) => {
+                    if (url.substring(0, 2) === "ws") {
+                        this.wsProvider = new WebSocketProvider(url)
+                        return false
+                    }
+                    if (url.substring(0, 3) === "wss") {
+                        this.wsProvider = new WebSocketProvider(url)
+                        return false
+                    }
+                })
+            } catch (e) {
+                console.log("failed in socket connection")
+            }
+
             if (this.wsProvider !== false) {
                 this.wsHandler(this.wsProvider)
             }
@@ -263,11 +317,13 @@ export default {
                 this.$emit("notify_metamask_start_on_board")
             }
         },
-    },
+    }
+    ,
     mounted() {
         this.$nextTick(async () => {
             this.onboarding = new MetaMaskOnboarding();
             await this.checkWeb3MetaMask()
         })
     }
-};
+}
+;

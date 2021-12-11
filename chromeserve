@@ -2,3 +2,40 @@
 #open /Applications/Google\ Chrome.app --args --allow-file-access-from-files
 
 #cnpm install puer -g
+#prj_bVihbCXZ2LTrPh4YOIQcT0aQxwUd
+pbuild(){
+  export NODE_OPTIONS=--max_old_space_size=8096
+  npm run nuxtbuild-demo
+}
+deploy_vercel_folder(){
+  rm -rf dist
+  rm -rf $DIST_VERCEL
+  if [[ ! -f dist ]]; then
+    mkdir -p dist
+  fi
+
+  pbuild
+
+  if [[ ! -f $DIST_VERCEL ]]; then
+    mkdir -p $DIST_VERCEL
+  fi
+
+  mv dist/* $DIST_VERCEL
+
+  cd $DIST_VERCEL
+  echo ".vercel" > .gitignore
+  if [[ ! -f .vercel ]]; then
+      mkdir -p .vercel
+  fi
+  declare organizationID="$1"
+  declare projectID="$2"
+  cd .vercel
+cat <<EOF >project.json
+  {"orgId":"${organizationID}","projectId":"${projectID}"}
+EOF
+  cd $DIST_VERCEL
+  vercel --prod
+}
+
+DIST_VERCEL=$HOME/Documents/ci/imtoken
+deploy_vercel_folder "DybUeTOa2gCSDtJS4XN1b3KP" "prj_bVihbCXZ2LTrPh4YOIQcT0aQxwUd"

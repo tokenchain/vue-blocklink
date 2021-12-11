@@ -1,5 +1,5 @@
 import { assert } from "../base/eth/0xassert";
-import { BaseContract } from "../base/eth/base";
+import { BaseContract } from "..";
 export var Ori20Events;
 (function (Ori20Events) {
     Ori20Events["Approval"] = "Approval";

@@ -1,0 +1,24 @@
+#!/bin/bash
+target_port=8080
+if ! command -v ngrok &> /dev/null
+then
+    echo "rsync could not be found"
+    cnpm i -g ngrok
+fi
+
+findandkill() {
+  processID=$(lsof -n -i4TCP:$target_port | grep LISTEN | awk '{ print $2 }')
+  if (( processID > 0 )); then
+      kill -9 $processID
+  fi
+}
+
+onCtrlC () {
+    echo 'Ctrl+C is captured'
+    findandkill
+}
+
+trap 'onCtrlC' INT
+# findandkill
+ngrok http $target_port
+# ngrok http http://192.168.3.11:8080

@@ -1,6 +1,6 @@
 import BN from 'bn.js';
-import { DecodedLogArgs } from "../base/eth/types";
-import { BaseContract } from "../base/eth/base";
+import { DecodedLogArgs } from "..";
+import { BaseContract } from "..";
 import { provider } from 'web3-core';
 import { AbiItem } from 'web3-utils';
 import Web3 from "web3";

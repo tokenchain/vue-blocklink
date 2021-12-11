@@ -8,9 +8,8 @@ import * as ethers from 'ethers';
 // import {BigNumber} from 'bignumber.js'
 import BN from 'bn.js'
 import {assert} from "../base/eth/0xassert";
-import {BlockRange, DecodedLogArgs, LogWithDecodedArgs, MethodAbi} from "../base/eth/types";
-import {BaseContract} from "../base/eth/base";
-import {SubscriptionManager} from "../base/eth/subscription_manager";
+import {BlockRange, DecodedLogArgs, LogWithDecodedArgs, MethodAbi} from "..";
+import {BaseContract} from "..";
 import {
     BatchRequest,
     Extension,
@@ -31,7 +30,6 @@ import {
 } from 'web3-core';
 
 import {Utils, AbiItem} from 'web3-utils';
-import {EventCallback, IndexedFilterValues} from "../base/eth/0xtypes";
 import Web3 from "web3";
 
 // tslint:enable:no-unused-variable

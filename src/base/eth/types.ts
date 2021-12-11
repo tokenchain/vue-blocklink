@@ -1,4 +1,4 @@
-import {BigNumber} from "./utils/configured_bignumber"
+import {BigNumber} from "./utils"
 import {Ori20Contract} from "../../abi/ori20";
 
 export type JSONRPCErrorCallback = (err: Error | null, result?: JSONRPCResponsePayload) => void;

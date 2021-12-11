@@ -44,3 +44,23 @@ This project will also support the future networks
 
 #### ws provider added.
 
+#### nginx
+
+```
+server {
+  server_name prajin.prakash.com;
+  listen 80;
+  listen [::]:80;
+
+  location / {
+    proxy_pass http://localhost:8080;
+    proxy_http_version 1.1;
+  }
+  location /sockjs-node {
+    proxy_pass http://localhost:8080;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade websocket;
+    proxy_set_header Connection upgrade;
+  }
+}
+```

@@ -1,7 +1,13 @@
 import {Ori20Contract} from "./ori20";
 import type {
-    WebLinkTokenMap, Web3ERC20Token, WatchAssetParams, AddEthereumChainParameter, TransactionReceipt, ContractTokenMap
+    AddEthereumChainParameter,
+    ContractTokenMap,
+    TransactionReceipt,
+    WatchAssetParams,
+    Web3ERC20Token,
+    WebLinkTokenMap
 } from "../base/eth/types";
+import {WalletSupport} from "../base/wallet";
 import {Vue} from "vue/types/vue";
 import CoinDetail from "./CoinDetail";
 import ethUtil from "ethereumjs-util";
@@ -27,6 +33,7 @@ export default class BlockWrap {
     accounts: Array<string> = [];
     gas: number = 1000000
     gasPrice: number | string = 21000000000
+    wallet: WalletSupport
 
     /**
      * Initiates BlockWrap support object.
@@ -43,6 +50,10 @@ export default class BlockWrap {
 
     setDebug(x: boolean): void {
         this.debug = x
+    }
+
+    setWallet(wallet_connect: WalletSupport): void {
+        this.wallet = wallet_connect
     }
 
     /**
@@ -362,11 +373,11 @@ export default class BlockWrap {
                 chainId: chainID,
                 iconUrls: ["https://i.pinimg.com/564x/3c/ee/90/3cee90ab71e45757b8f0250b79a76bd0.jpg"]
             });
-            console.log(chainID)
+            //console.log(chainID)
         }
 
         // console.log(conf)
-        console.log(conf2)
+        //console.log(conf2)
         return conf2
     }
 
@@ -391,24 +402,37 @@ export default class BlockWrap {
 
     async metamask_detect_chain_process_flow(conf: AddEthereumChainParameter): Promise<void> {
         const conf2 = this.ensureChainParameterPatch(conf)
-        try {
-            await this.ethereumCore.request({
-                method: "wallet_switchEthereumChain",
-                params: [{chainId: conf2.chainId}],
-            });
-        } catch (switchError) {
-            if (switchError.code === 4902) {
-                try {
-                    await this.ethereumCore.request({
-                        method: "wallet_addEthereumChain",
-                        params: [conf2],
-                    });
-                } catch (addError) {
-                    this.errorHandler(addError)
+
+        if (this.wallet === WalletSupport.IMTOKEN) {
+            try {
+                await this.ethereumCore.request({
+                    method: "wallet_addEthereumChain",
+                    params: [conf2, this.getAccountAddress()],
+                });
+            } catch (addError) {
+                this.errorHandler(addError)
+            }
+        } else {
+            try {
+                await this.ethereumCore.request({
+                    method: "wallet_switchEthereumChain",
+                    params: [{chainId: conf2.chainId}, this.getAccountAddress()],
+                });
+            } catch (switchError) {
+                if (switchError.code === 4902) {
+                    try {
+                        await this.ethereumCore.request({
+                            method: "wallet_addEthereumChain",
+                            params: [conf2, this.getAccountAddress()],
+                        });
+                    } catch (addError) {
+                        this.errorHandler(addError)
+                    }
+                } else {
+                    this.errorHandler(switchError)
                 }
-            } else {
-                this.errorHandler(switchError)
             }
         }
+
     }
 }
