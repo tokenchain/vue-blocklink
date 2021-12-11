@@ -16,12 +16,7 @@ import {
     LogsOptions,
     PastLogsOptions
 } from 'web3-core';
-import * as net from 'net';
-import {Bzz} from 'web3-bzz';
-import {Eth} from 'web3-eth';
-import {Personal} from 'web3-eth-personal';
-import {Network} from 'web3-net';
-import {Shh} from 'web3-shh';
+import {Contract} from 'web3-eth-contract';
 import {Utils, AbiItem} from 'web3-utils';
 
 import {EventEmitter} from "eventemitter3"
@@ -31,7 +26,7 @@ import BlockWrap from "../../abi/BlockWrap";
 export class BaseContract extends EventEmitter {
 
     // @ts-ignore
-    protected _contract: Eth.Contract;
+    protected _contract: Contract;
     protected __debug: boolean = false;
     public constructorArgs: any[] = [];
     public _deployedBytecodeIfExists?: Buffer;

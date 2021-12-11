@@ -42,8 +42,7 @@ import {
     TxData,
     TxDataPayable,
 } from "./types";
-// @ts-ignore
-import {Eth} from 'web3-eth';
+import {Contract} from 'web3-eth-contract';
 // @ts-ignore
 export {SubscriptionManager} from './subscription_manager';
 
@@ -166,7 +165,7 @@ export class BaseContract extends EventEmitter {
     protected _web3Wrapper: Web3Wrapper;
     protected _encoderOverrides: Partial<EncoderOverrides>;
     // @ts-ignore
-    protected _contract: web3.eth.Contract;
+    protected _contract: Contract;
     protected __debug: boolean = false;
     private _evmIfExists?: VM;
     private _evmAccountIfExists?: Buffer;
