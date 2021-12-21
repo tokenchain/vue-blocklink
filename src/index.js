@@ -43,5 +43,6 @@ export {
     GetMetaNetConfig,
     ExplainNetworkById,
     safemath,
-    assert, schemas
+    assert,
+    schemas
 }
