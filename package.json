@@ -1,6 +1,6 @@
 {
   "name": "vue-blocklink",
-  "version": "0.1.270",
+  "version": "0.1.271",
   "description": "Vue support for the Blockchain Link browser extension",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -92,6 +92,7 @@
     "ethereumjs-util": "^7.1.0",
     "@ethereumjs/vm": "^5.5.2",
     "@ethereumjs/tx": "^3.3.0",
+    "@ethereumjs/blockchain": "^5.5.1",
     "ethers": "^5.0.17",
     "eventemitter3": "^4.0.7",
     "json-to-graphql-query": "^2.0.0",
