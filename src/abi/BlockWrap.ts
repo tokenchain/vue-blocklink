@@ -332,7 +332,61 @@ export default class BlockWrap {
             .catch(this.errorHandler)
     }
 
-    metamask_message_sign(encryptionPublicKey, message): string {
+    async metamask_message_sign_v3(message, resultcb): Promise<void> {
+        await this.w3.eth.personal.sign(
+            this.w3Utils().fromUtf8(message),
+            this.getAccountAddress(),
+            "",
+        ).then((signature) => {
+            resultcb(signature)
+        }).catch(this.errorHandler);
+
+
+        //  await this.ethereumCore.send("eth_requestAccounts");
+        /*     const provider = new Web3Provider(this.ethereumCore);
+             const signer = provider.getSigner();
+             const signature = await signer.signMessage(message);
+             const address = await signer.getAddress();
+             resultcb(address, signature)*/
+    }
+
+    metamask_message_personal_sign(message, resultcb): void {
+        /*
+        const msgParams = JSON.stringify({
+            domain: {
+                // Defining the chain aka Rinkeby testnet or Ethereum Main Net
+                chainId: 1,
+                // Give a user friendly name to the specific contract you are signing for.
+                name: 'Ether Mail',
+                // If name isn't enough add verifying contract to make sure you are establishing contracts with the proper entity
+                verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
+                // Just let's you know the latest version. Definitely make sure the field name is correct.
+                version: '1',
+            },
+
+            // Defining the message signing data content.
+            message: {
+                /!*
+                 - Anything you want. Just a JSON Blob that encodes the data you want to send
+                 - No required fields
+                 - This is DApp Specific
+                 - Be as explicit as possible when building out the message schema.
+                *!/
+                contents: 'Hello, Bob!'
+            },
+        });*/
+        const msg = this.w3Utils().fromUtf8(message)
+        this.ethereumCore
+            .request({
+                method: 'personal_sign',
+                params: [this.getAccountAddress(), msg],
+                from: this.getAccountAddress()
+            }).then((rs) => {
+            resultcb(this.getAccountAddress(), rs)
+        }).catch(this.errorHandler)
+    }
+
+    metamask_encryption(encryptionPublicKey, message): string {
         return ethUtil.bufferToHex(
             Buffer.from(JSON.stringify(
                 sigUtil.encrypt(

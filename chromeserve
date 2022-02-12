@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#open /Applications/Google\ Chrome.app --args --allow-file-access-from-files
 
 #cnpm install puer -g
 #prj_bVihbCXZ2LTrPh4YOIQcT0aQxwUd

@@ -53,7 +53,9 @@ export default class BlockWrap {
     eventListener(message: any, vueInstance: Vue): void;
     setHandlers(confirm: any, broadcast: any, err: any): void;
     metamask_decrypt(encryptedMessage: any, account_address: any, callback: any): void;
-    metamask_message_sign(encryptionPublicKey: any, message: any): string;
+    metamask_message_sign_v3(message: any, resultcb: any): Promise<void>;
+    metamask_message_personal_sign(message: any, resultcb: any): void;
+    metamask_encryption(encryptionPublicKey: any, message: any): string;
     metamask_add_token(token_conf: WatchAssetParams): void;
     ensureChainParameterPatch(conf: AddEthereumChainParameter): AddEthereumChainParameter;
     metamask_add_chain(chain_conf: AddEthereumChainParameter): void;

@@ -16,7 +16,7 @@
     </p>
     <p>Network ID -> {{ netID }}</p>
     <p>My address -> {{ my_address }}</p>
-
+    <p> ===================</p>
     <p> {{ tokens.ysl2.symbol }} Coin: {{ coin_bal_ysl }} {{ tokens.ysl2.symbol }}, dec {{ coin_decimal }}</p>
     <button @click="send_token_trig">SEND TOKEN</button>
     <p> {{ tokens.ysl2.address }}</p>
@@ -31,12 +31,16 @@
       {{ coin_decimal }}</p>
 
     <button @click="approve_coin_2">Approve TOKEN Unlimited</button>
-
     <p> {{ tokens.usdf.address }}</p>
-
+    <p> ===================</p>
     <p>Native-Coin: {{ eth_bal }}</p>
-    <button @click="send_coin_trig">SEND COIN</button>
+    <button @click="send_coin_trig">♞ SEND COIN</button>
 
+    <p> ===================</p>
+    <p>Signature:</p>
+    <p>Message: {{ signing.message }}</p>
+    <button @click="sign_data">✍︎ Signature Sign</button>
+    <p> ===================</p>
     <p>Refresh data</p>
     <button @click="initData">Refresh</button>
     <p> ===================</p>
@@ -69,19 +73,19 @@ export default {
           address: '0x945bD413ee130Bbe5f30bB7dEFc11C82d2bB5d93', // The address that the token is at.
           symbol: 'YSL', // A ticker symbol or shorthand, up to 5 chars.
           decimals: 18, // The number of decimals in the token
-          image: 'http://placekitten.com/200/300', // A string url of the token logo
+          image: 'https://iili.io/0wqS9I.png', // A string url of the token logo
         },
         ysl2: {
           address: '0x1Ff8477Dd18d45d0BA1af6B25DC6470b50A6762D', // The address that the token is at.
           symbol: 'YSL', // A ticker symbol or shorthand, up to 5 chars.
           decimals: 18, // The number of decimals in the token
-          image: 'http://placekitten.com/200/300', // A string url of the token logo
+          image: 'https://iili.io/0wqgwX.md.jpg', // A string url of the token logo
         },
         usdf: {
           address: '0xAd08d31579dd599801e8839db70Bd9C84D2B98e9', // The address that the token is at.
           symbol: 'USDF', // A ticker symbol or shorthand, up to 5 chars.
           decimals: 18, // The number of decimals in the token
-          image: 'http://placekitten.com/200/300', // A string url of the token logo
+          image: 'https://iili.io/0wqD9S.md.webp', // A string url of the token logo
         }
       },
       agent_contract: "0x6a18b9A2fb67B6D0301f71327d2055BaC3ec055E",
@@ -96,6 +100,9 @@ export default {
         },
         blockExplorerUrls: ["https://www.raisc.io"],
         rpcUrls: ["https://rpc-mainnet.raisc.io"]
+      },
+      signing: {
+        message: "this is me and LET ME IN. ..3982829..3424.31.2.1.212221"
       }
     }
   },
@@ -209,6 +216,16 @@ export default {
       if (!!this.blockLink) {
         await this.blockLink.metamask_detect_chain_process_flow(
             GetMetaNetConfig("1023")
+        )
+      }
+    },
+    async sign_data() {
+      if (!!this.blockLink) {
+        await this.blockLink.metamask_message_personal_sign(
+            this.signing.message,
+            (address, res) => {
+              console.log(address, res)
+            }
         )
       }
     },

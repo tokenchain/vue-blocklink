@@ -1,4 +1,4 @@
-const { PI, cos, sin, abs, sqrt, pow, round, random, atan2 } = Math
+const {PI, cos, sin, abs, sqrt, pow, round, random, atan2} = Math
 const HALF_PI = 0.5 * PI
 const TAU = 2 * PI
 const TO_RAD = PI / 180
@@ -57,7 +57,11 @@ function Base64() {
             enc3 = ((chr2 & 15) << 2) | (chr3 >> 6)
             enc4 = chr3 & 63
 
-            if (isNaN(chr2)) { enc3 = enc4 = 64 } else if (isNaN(chr3)) { enc4 = 64 }
+            if (isNaN(chr2)) {
+                enc3 = enc4 = 64
+            } else if (isNaN(chr3)) {
+                enc4 = 64
+            }
 
             output = output +
                 this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
@@ -88,7 +92,11 @@ function Base64() {
             enc3 = ((chr2 & 15) << 2) | (chr3 >> 6)
             enc4 = chr3 & 63
 
-            if (isNaN(chr2)) { enc3 = enc4 = 64 } else if (isNaN(chr3)) { enc4 = 64 }
+            if (isNaN(chr2)) {
+                enc3 = enc4 = 64
+            } else if (isNaN(chr3)) {
+                enc4 = 64
+            }
 
             output = output +
                 this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
@@ -123,9 +131,13 @@ function Base64() {
 
             output = output + String.fromCharCode(chr1)
 
-            if (enc3 != 64) { output = output + String.fromCharCode(chr2) }
+            if (enc3 != 64) {
+                output = output + String.fromCharCode(chr2)
+            }
 
-            if (enc4 != 64) { output = output + String.fromCharCode(chr3) }
+            if (enc4 != 64) {
+                output = output + String.fromCharCode(chr3)
+            }
         }
 
         return this._utf8_decode(output)
@@ -156,9 +168,13 @@ function Base64() {
 
             output = output + String.fromCharCode(chr1)
 
-            if (enc3 != 64) { output = output + String.fromCharCode(chr2) }
+            if (enc3 != 64) {
+                output = output + String.fromCharCode(chr2)
+            }
 
-            if (enc4 != 64) { output = output + String.fromCharCode(chr3) }
+            if (enc4 != 64) {
+                output = output + String.fromCharCode(chr3)
+            }
         }
 
         return this._out2ByteArray(output)
@@ -237,27 +253,27 @@ function toFixedBn(x) {
     if (Math.abs(x) < 1.0) {
         let e = parseInt(x.toString().split('e-')[1]);
         if (e) {
-            x *= Math.pow(10,e-1);
+            x *= Math.pow(10, e - 1);
             x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
         }
     } else {
         let e = parseInt(x.toString().split('+')[1]);
         if (e > 20) {
             e -= 20;
-            x /= Math.pow(10,e);
-            x += (new Array(e+1)).join('0');
+            x /= Math.pow(10, e);
+            x += (new Array(e + 1)).join('0');
         }
     }
     return x;
 }
 
 
-function toWad(x){
+function toWad(x) {
     return toFixedBn(x * 1e18)
 }
 
 
-export default {
+export {
     shuffle,
     Base64,
     PI,

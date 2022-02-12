@@ -1302,7 +1302,7 @@ const networks = [
         "chain": "RSC",
         "network": "mainnet",
         "networkId": 1023,
-        "nativeCurrency": {"name": "Rae Stone Coin", "symbol": "RSC", "decimals": 18},
+        "nativeCurrency": {"name": "Rai Stone Coin", "symbol": "RSC", "decimals": 18},
         "rpc": ["https://rpc-mainnet.raisc.io"],
         "faucets": [],
         "infoURL": "https://www.raisc.io/"

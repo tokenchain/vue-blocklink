@@ -9,7 +9,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chromeserve" beforeDir="false" afterPath="$PROJECT_DIR$/chromeserve" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DemoDetectionSwitchImtoken.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemoDetectionSwitchImtoken.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/safemath.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/safemath.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +179,14 @@
       <workItem from="1640015489064" duration="16000" />
       <workItem from="1640024109101" duration="2000" />
       <workItem from="1640060829559" duration="497000" />
+      <workItem from="1640245051760" duration="13000" />
+      <workItem from="1640252637530" duration="349000" />
+      <workItem from="1641364444490" duration="364000" />
+      <workItem from="1644507735121" duration="6385000" />
+      <workItem from="1644552594465" duration="4000" />
+      <workItem from="1644553565719" duration="651000" />
+      <workItem from="1644559116051" duration="666000" />
+      <workItem from="1644653301040" duration="3506000" />
     </task>
     <servers />
   </component>
@@ -596,10 +611,10 @@
       <screen x="43" y="25" width="1493" height="935" />
     </state>
     <state x="309" y="116" key="SettingsEditor/43.25.1493.935@43.25.1493.935" timestamp="1638946991376" />
-    <state x="546" y="247" width="587" height="548" key="find.popup" timestamp="1639974340074">
+    <state x="546" y="247" width="587" height="548" key="find.popup" timestamp="1640252645204">
       <screen x="69" y="25" width="1467" height="935" />
     </state>
     <state x="528" y="247" width="597" height="548" key="find.popup/43.25.1493.935@43.25.1493.935" timestamp="1639192638827" />
-    <state x="546" y="247" width="587" height="548" key="find.popup/69.25.1467.935@69.25.1467.935" timestamp="1639974340074" />
+    <state x="546" y="247" width="587" height="548" key="find.popup/69.25.1467.935@69.25.1467.935" timestamp="1640252645204" />
   </component>
 </project>

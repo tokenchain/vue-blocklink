@@ -207,7 +207,23 @@ export default class BlockWrap {
         })
             .catch(this.errorHandler);
     }
-    metamask_message_sign(encryptionPublicKey, message) {
+    async metamask_message_sign_v3(message, resultcb) {
+        await this.w3.eth.personal.sign(this.w3Utils().fromUtf8(message), this.getAccountAddress(), "").then((signature) => {
+            resultcb(signature);
+        }).catch(this.errorHandler);
+    }
+    metamask_message_personal_sign(message, resultcb) {
+        const msg = this.w3Utils().fromUtf8(message);
+        this.ethereumCore
+            .request({
+            method: 'personal_sign',
+            params: [this.getAccountAddress(), msg],
+            from: this.getAccountAddress()
+        }).then((rs) => {
+            resultcb(this.getAccountAddress(), rs);
+        }).catch(this.errorHandler);
+    }
+    metamask_encryption(encryptionPublicKey, message) {
         return ethUtil.bufferToHex(Buffer.from(JSON.stringify(sigUtil.encrypt(encryptionPublicKey, { data: message }, 'x25519-xsalsa20-poly1305')), 'utf8'));
     }
     metamask_add_token(token_conf) {
