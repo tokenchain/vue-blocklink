@@ -214,13 +214,14 @@ export default class BlockWrap {
     }
     metamask_message_personal_sign(message, resultcb) {
         const msg = this.w3Utils().fromUtf8(message);
+        const hash = this.w3.eth.accounts.hashMessage(message);
         this.ethereumCore
             .request({
             method: 'personal_sign',
             params: [this.getAccountAddress(), msg],
             from: this.getAccountAddress()
         }).then((rs) => {
-            resultcb(this.getAccountAddress(), rs);
+            resultcb(this.getAccountAddress(), hash, rs);
         }).catch(this.errorHandler);
     }
     metamask_encryption(encryptionPublicKey, message) {
