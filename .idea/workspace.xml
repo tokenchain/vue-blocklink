@@ -10,13 +10,8 @@
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chromeserve" beforeDir="false" afterPath="$PROJECT_DIR$/chromeserve" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DemoDetectionSwitchImtoken.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/DemoDetectionSwitchImtoken.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abi/BlockWrap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/abi/BlockWrap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/safemath.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/safemath.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update" beforeDir="false" afterPath="$PROJECT_DIR$/update" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +181,8 @@
       <workItem from="1644552594465" duration="4000" />
       <workItem from="1644553565719" duration="651000" />
       <workItem from="1644559116051" duration="666000" />
-      <workItem from="1644653301040" duration="3506000" />
+      <workItem from="1644653301040" duration="3670000" />
+      <workItem from="1644661060493" duration="72000" />
     </task>
     <servers />
   </component>

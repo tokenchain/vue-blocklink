@@ -33,6 +33,9 @@ This project will also support the future networks
  * notify_metamask_start_on_board
  * notify_block_generation
 
+### Feature supports
+ * personal signature `personal_sign`
+
 ### mixin support imtoken wallet api events:
  * imtoken_on_detect
  * listen to: set_imtoken_style
