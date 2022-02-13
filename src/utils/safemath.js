@@ -168,11 +168,11 @@ function Base64() {
 
             output = output + String.fromCharCode(chr1)
 
-            if (enc3 != 64) {
+            if (enc3 !== 64) {
                 output = output + String.fromCharCode(chr2)
             }
 
-            if (enc4 != 64) {
+            if (enc4 !== 64) {
                 output = output + String.fromCharCode(chr3)
             }
         }
@@ -247,8 +247,6 @@ function Base64() {
         return string
     }
 }
-
-
 function toFixedBn(x) {
     if (Math.abs(x) < 1.0) {
         let e = parseInt(x.toString().split('e-')[1]);
@@ -266,13 +264,9 @@ function toFixedBn(x) {
     }
     return x;
 }
-
-
 function toWad(x) {
     return toFixedBn(x * 1e18)
 }
-
-
 export {
     shuffle,
     Base64,

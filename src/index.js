@@ -22,7 +22,7 @@ import {
     jsonParse,
     shorten
 } from "./utils/urltool"
-import safemath from "./utils/safemath";
+import * as safemath from "./utils/safemath";
 import {GetMetaNetConfig, ExplainNetworkById} from "./utils/ethereumnetworks";
 
 export {
