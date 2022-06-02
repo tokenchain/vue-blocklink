@@ -1,4 +1,3 @@
-/// <reference types="node" />
 export declare const intervalUtils: {
     setAsyncExcludingInterval(fn: () => Promise<void>, intervalMs: number, onError: (err: Error) => void): NodeJS.Timer;
     clearAsyncExcludingInterval(intervalId: NodeJS.Timer): void;

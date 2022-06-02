@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { DecodingRules, EncodingRules } from './rules';
 export declare const constants: {
     EVM_WORD_WIDTH_IN_BYTES: number;

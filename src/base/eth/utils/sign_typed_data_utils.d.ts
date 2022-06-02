@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { EIP712Object, EIP712ObjectValue, EIP712TypedData, EIP712Types } from '../0xtypes';
 export declare const signTypedDataUtils: {
     generateTypedDataHash(typedData: EIP712TypedData): Buffer;

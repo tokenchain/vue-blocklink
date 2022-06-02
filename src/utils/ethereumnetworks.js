@@ -1306,6 +1306,18 @@ const networks = [
         "rpc": ["https://rpc-mainnet.raisc.io"],
         "faucets": [],
         "infoURL": "https://www.raisc.io/"
+    },
+    {
+        "name": "Oasis Mainnet",
+        "chainId": 26863,
+        "shortName": "oac",
+        "chain": "OAC",
+        "network": "mainnet",
+        "networkId": 26863,
+        "nativeCurrency": {"name": "Oasis", "symbol": "OAC", "decimals": 18},
+        "rpc": ["https://rpc1.oasischain.io"],
+        "faucets": [],
+        "infoURL": "https://scan.oasischain.io/"
     }
 ]
 
