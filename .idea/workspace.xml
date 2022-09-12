@@ -10,6 +10,10 @@
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chromeserve" beforeDir="false" afterPath="$PROJECT_DIR$/chromeserve" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openip" beforeDir="false" afterPath="$PROJECT_DIR$/openip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ethereumnetworks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update" beforeDir="false" afterPath="$PROJECT_DIR$/update" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,11 +38,8 @@
     <bower-package value="" />
     <bower.json value="" />
   </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1tzdtQx6DqH4xmKgr3Ks3qpmKUU" />
   <component name="ProjectViewState">
@@ -47,24 +48,18 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs.jest.jest_package" value="" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="xpath.settings" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/hesdx/Documents/piplines/vue-blocklink",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -76,6 +71,7 @@
   </component>
   <component name="RunManager">
     <configuration name="update.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/update.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
@@ -84,6 +80,9 @@
       <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
       <option name="INTERPRETER_PATH" value="/bin/sh" />
       <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -191,6 +190,10 @@
       <workItem from="1654194552936" duration="590000" />
       <workItem from="1654405622173" duration="18000" />
       <workItem from="1654405727705" duration="3000" />
+      <workItem from="1654423746485" duration="448000" />
+      <workItem from="1654489692530" duration="16000" />
+      <workItem from="1655118459684" duration="2000" />
+      <workItem from="1662980745944" duration="512000" />
     </task>
     <servers />
   </component>
@@ -198,377 +201,374 @@
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/staking_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/wallet_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_utils.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/address.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/set.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/ownable_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/hex_utils.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.js" />
-        <option value="$PROJECT_DIR$/src/abi/CoinDetail.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/interfaces.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_bytes_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/meta_transaction_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/index.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/coordinator/revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xassert/index.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/web3_wrapper.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/liquidity_provider_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_address_array_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/constants.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/transform_erc20_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.d.ts" />
         <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/blob.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/reentrancy_guard_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/pointer.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/array.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/signature_parser.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_decoder.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/address_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/promisify.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/interfaces.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/address.d.ts" />
         <option value="$PROJECT_DIR$/src/base/eth/utils/delete_nested_property.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.js" />
         <option value="$PROJECT_DIR$/src/base/eth/types.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/types.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/array.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange/revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-forwarder/revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/error_utils.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/pointer.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/simple_function_registry_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/lib_asset_data_transfer_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/math.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/rules.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/index.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/signature_parser.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/interval_utils.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/safe_math_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/common_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/authorizable_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_decoder.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/iterator.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/log_utils.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/transform_erc20_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xtypes/index.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/data_type.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/subscription_manager.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/index.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/signature_validator_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/types.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/address_utils.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/fixed_math_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/int.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/set.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/schemas.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/raw_calldata.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-libs/lib_math_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/random.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_error.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/provider_utils.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/class_utils.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/pointer.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/ownable_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/base.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/pointer.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/interfaces.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/ownable_revert_errors.d.ts" />
         <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/proxy_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/blob.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/broker/revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/spender_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/utils.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/pointer.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/mixin_weth_utils_revert_errors.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/queue.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/filter_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/math.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/validations.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/lib_asset_data_transfer_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/web3_wrapper.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/provider_utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/coordinator/revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/liquidity_provider_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/types.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/signature_parser.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/abi/subgraph.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/mixin_weth_utils_revert_errors.d.ts" />
         <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/blob.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_address_array_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/mixin_weth_utils_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.js.map" />
         <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata_block.js" />
         <option value="$PROJECT_DIR$/src/base/eth/utils/token_utils.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/promisify.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xtypes/index.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-forwarder/revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange/revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata_block.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/iterator.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/raw_calldata.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/pointer.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/blob.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/set.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/mixin_weth_utils_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/lib_asset_data_transfer_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/signature_parser.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/math.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/rules.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/queue.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/pointer.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/blob.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/set.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/interfaces.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/data_type.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/meta_transaction_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/simple_function_registry_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/signature_validator_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/common_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/spender_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/wallet_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/liquidity_provider_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/transform_erc20_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/ownable_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/proxy_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/array.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/int.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/address.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/pointer.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/index.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/web3_wrapper.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/index.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/types.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/error_utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_decoder.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/filter_utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/hex_utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/constants.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/delete_nested_property.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/types.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/promisify.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/class_utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/token_utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/log_utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/random.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/index.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/address_utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_error.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/provider_utils.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_address_array_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/safe_math_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/reentrancy_guard_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/ownable_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/authorizable_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_bytes_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/broker/revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/staking_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/fixed_math_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/coordinator/revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-libs/lib_math_revert_errors.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/subscription_manager.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/validations.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/schemas.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/types.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xassert/index.d.ts" />
-        <option value="$PROJECT_DIR$/src/abi/CoinDetail.d.ts" />
-        <option value="$PROJECT_DIR$/src/abi/ori20.d.ts" />
-        <option value="$PROJECT_DIR$/src/abi/BlockWrap.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/fixed_math_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/staking_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/fixed_math_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/staking_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/pointer.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/set.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/blob.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/set.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/blob.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/pointer.js.map" />
-        <option value="$PROJECT_DIR$/src/abi/CountDown.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/abi/ori20.js.map" />
-        <option value="$PROJECT_DIR$/src/abi/BlockWrap.js.map" />
-        <option value="$PROJECT_DIR$/src/abi/BlockWrap.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/abi/CoinDetail.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/abi/CountDown.js.map" />
-        <option value="$PROJECT_DIR$/src/abi/ori20.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/abi/CoinDetail.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_bytes_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/ownable_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/reentrancy_guard_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/ownable_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/reentrancy_guard_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/authorizable_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/authorizable_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/safe_math_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_address_array_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_address_array_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_bytes_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/safe_math_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xtypes/index.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xtypes/index.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-forwarder/revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-forwarder/revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange/revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange/revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata_block.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/iterator.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/raw_calldata.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/iterator.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/raw_calldata.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata_block.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/mixin_weth_utils_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/mixin_weth_utils_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/lib_asset_data_transfer_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/lib_asset_data_transfer_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/rules.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/queue.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/math.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/signature_parser.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/math.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/rules.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/queue.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/signature_parser.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/pointer.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/set.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/blob.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/set.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/blob.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/pointer.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/interfaces.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/interfaces.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/data_type.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/data_type.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/meta_transaction_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/transform_erc20_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/simple_function_registry_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/signature_validator_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/proxy_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/wallet_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/ownable_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/ownable_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/transform_erc20_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/common_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/simple_function_registry_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/spender_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/proxy_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/signature_validator_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/common_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/liquidity_provider_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/wallet_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/liquidity_provider_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/spender_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/meta_transaction_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/int.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/address.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/array.js.map" />
         <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/pointer.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/int.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/pointer.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/array.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/address.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/index.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/index.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/web3_wrapper.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/web3_wrapper.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/index.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/types.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/types.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/fixed_math_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/authorizable_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/address_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/blob.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/reentrancy_guard_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/mixin_weth_utils_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/pointer.js" />
         <option value="$PROJECT_DIR$/src/base/eth/0xw3w/index.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/index.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/hex_utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/random.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/class_utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/interval_utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_error.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_decoder.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/address_utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/log_utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/address_utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/random.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/delete_nested_property.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/hex_utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/promisify.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/promisify.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_error.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/error_utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_decoder.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/constants.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/error_utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/token_utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/constants.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/filter_utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/class_utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/types.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/index.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/filter_utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/provider_utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/delete_nested_property.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/types.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/token_utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/provider_utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/log_utils.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/broker/revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/broker/revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/coordinator/revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/coordinator/revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-libs/lib_math_revert_errors.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-libs/lib_math_revert_errors.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/schemas.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/types.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/validations.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/base.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/base0x.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/types.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/validations.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/schemas.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/iterator.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/types.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/ownable_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/set.js.map" />
         <option value="$PROJECT_DIR$/src/base/eth/subscription_manager.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/lib_asset_data_transfer_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/index.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/meta_transaction_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/meta_transaction_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata_block.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/rules.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/lib_asset_data_transfer_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/set.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/types.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/broker/revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.js.map" />
+        <option value="$PROJECT_DIR$/src/abi/CoinDetail.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/array.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/proxy_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/delete_nested_property.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_decoder.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xassert/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/interval_utils.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/address_utils.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/class_utils.d.ts" />
         <option value="$PROJECT_DIR$/src/base/eth/subscription_manager.js.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xassert/index.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/0xassert/index.js.map" />
-        <option value="$PROJECT_DIR$/src/abi/subgraph.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/abi/subgraph.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/common_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-forwarder/revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/index.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/set.js.map" />
+        <option value="$PROJECT_DIR$/src/abi/BlockWrap.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/authorizable_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/wallet_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/set.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/transform_erc20_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/set.d.ts" />
         <option value="$PROJECT_DIR$/src/abi/subgraph.js" />
-        <option value="$PROJECT_DIR$/src/base/storemodule/subgraph.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/storemodule/subgraph.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/storemodule/subgraph.js" />
-        <option value="$PROJECT_DIR$/src/base/wallet.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/provider_utils.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/types.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/staking_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange/revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/data_type.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/queue.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_error.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/set.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/address.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/interfaces.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/log_utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-forwarder/revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/coordinator/revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/index.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/blob.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/array.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/address.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/ownable_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xassert/index.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/spender_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_address_array_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/staking_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/hex_utils.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/transform_erc20_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/class_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/random.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/data_type.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/provider_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/pointer.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-libs/lib_math_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/pointer.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/fixed_math_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/delete_nested_property.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/utils.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/index.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_bytes_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-libs/lib_math_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/string.d.ts.map" />
         <option value="$PROJECT_DIR$/src/base/wallet.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/wallet.js" />
-        <option value="$PROJECT_DIR$/src/base/eth/base0x.d.ts.map" />
-        <option value="$PROJECT_DIR$/src/base/eth/base0x.d.ts" />
-        <option value="$PROJECT_DIR$/src/base/eth/base.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/int.js" />
+        <option value="$PROJECT_DIR$/src/abi/BlockWrap.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/set.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/schemas.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/mixin_weth_utils_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/blob.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/int.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/coordinator/revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/base.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/promisify.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/liquidity_provider_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/reentrancy_guard_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/types.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/safe_math_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_bytes_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/subscription_manager.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/error_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_utils.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_error.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/hex_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/signature_validator_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/simple_function_registry_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/constants.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/math.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/wallet_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/math.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/token_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/liquidity_provider_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/pointer.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/iterator.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/spender_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/reentrancy_guard_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/raw_calldata.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/coordinator/revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/transform_erc20_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/hex_utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/ownable_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/validations.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/safe_math_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/signature_parser.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_decoder.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/staking_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/abi/CoinDetail.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/delete_nested_property.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-forwarder/revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/abi/CountDown.d.ts.map" />
         <option value="$PROJECT_DIR$/src/base/eth/base.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/validations.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/staking_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/index.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_bytes_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xtypes/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/web3_wrapper.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/int.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/constants.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/web3_wrapper.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/index.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xassert/index.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/proxy_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/authorizable_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/token_utils.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/log_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/abi/ori20.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange/revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-libs/lib_math_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/subscription_manager.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/pointer.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/safe_math_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/common_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/schemas.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/pointer.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/types.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/array.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/signature_validator_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/types.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/types.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/error_utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/uint.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xtypes/index.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/web3_wrapper.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_error.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/authorizable_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/spender_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/broker/revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/common_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/index.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/method.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/abi/CoinDetail.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/wallet_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/blob.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/filter_utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/simple_function_registry_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata_block.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/signature_parser.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/safe_math_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/base.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/random.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/log_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/wallet.js" />
+        <option value="$PROJECT_DIR$/src/base/wallet.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/wallet_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/simple_function_registry_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-forwarder/revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/iterator.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/blob.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/queue.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/address.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/base0x.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xassert/index.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/base0x.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/signature_validator_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_address_array_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/meta_transaction_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/fixed_math_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/ownable_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/hex_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_address_array_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/types.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/configured_bignumber.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/token_utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/provider_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/reentrancy_guard_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/set.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/schemas.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/data_type.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/pointer.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/raw_calldata.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/liquidity_provider_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/broker/revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/error_utils.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/int.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange/revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/filter_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange-libs/lib_math_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/base.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/static_bytes.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/error_utils.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/random.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/tuple.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/broker/revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/raw_calldata.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/filter_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/queue.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/ownable_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/math.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/raw_calldata.d.ts" />
+        <option value="$PROJECT_DIR$/src/abi/CountDown.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/ownable_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/staking/fixed_math_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/constants.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/class_utils.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_error.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/common_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/address_utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/bool.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/spender_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/promisify.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/calldata_block.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/index.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/constants.js.map" />
+        <option value="$PROJECT_DIR$/src/abi/CoinDetail.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/iterator.js.map" />
+        <option value="$PROJECT_DIR$/src/abi/subgraph.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/abi/ori20.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/signature_validator_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/pointer.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/rules.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/calldata/blocks/pointer.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/extensions/lib_asset_data_transfer_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/abi/ori20.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/types.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/marshaller.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/filter_utils.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xw3w/utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/random.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/rules.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/rules.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/exchange/revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_types/dynamic_bytes.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/schemas.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/queue.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/proxy_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/data_type.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_decoder.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xtypes/index.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/interval_utils.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/0xtypes/index.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/meta_transaction_revert_errors.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/types.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/simple_function_registry_revert_errors.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/zero-ex/ownable_revert_errors.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/types/blob.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/abi/BlockWrap.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/evm_data_type_factory.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/abstract_data_types/interfaces.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/revert_errors/utils/lib_bytes_revert_errors.js" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/promisify.js.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/base0x.d.ts" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/class_utils.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/index.d.ts.map" />
+        <option value="$PROJECT_DIR$/src/base/eth/utils/log_utils.js.map" />
       </list>
     </option>
   </component>
@@ -588,7 +588,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="345" y="282" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1639115254768">

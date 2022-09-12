@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #cnpm install puer -g
-#prj_bVihbCXZ2LTrPh4YOIQcT0aQxwUd
+
 pbuild(){
   export NODE_OPTIONS=--max_old_space_size=8096
   npm run nuxtbuild-demo

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 target_port=8080
 if ! command -v ngrok &> /dev/null
 then

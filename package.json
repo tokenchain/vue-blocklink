@@ -1,6 +1,6 @@
 {
   "name": "vue-blocklink",
-  "version": "0.1.281",
+  "version": "0.1.282",
   "description": "Vue support for the Blockchain Link browser extension",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -33,7 +33,7 @@
   ],
   "source": "src/index.js",
   "module": "dist/index.js",
-  "author": "HeskemoKondax",
+  "author": "Dex-Uniswap",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tokenchain/vue-blocklink/issues"
