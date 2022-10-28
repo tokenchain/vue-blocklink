@@ -218,8 +218,8 @@ export default {
             if (this.blockLink) {
                 if (acc.length > 0) {
                     this.signedInConnection = true
-                    this.notify_block_installed()
                     this.blockLink.setAccounts(acc)
+                    this.notify_block_installed()
                 } else {
                     this.checkError("DISCONNECTED")
                 }
@@ -326,4 +326,3 @@ export default {
         })
     }
 }
-;

@@ -9,12 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="465319e4-8af1-4e99-9bf0-9b64e0eff644" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/abi_encoder/utils/constants.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/interval_utils.d.ts.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/eth/utils/sign_typed_data_utils.d.ts.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mixins/vue-metamask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/vue-metamask.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,19 +45,19 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/hesdx/Documents/piplines/vue-blocklink",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/hesdx/Documents/piplines/vue-blocklink/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hesdx/Documents/piplines/vue-blocklink&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/hesdx/Documents/piplines/vue-blocklink/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -195,7 +191,8 @@
       <workItem from="1654423746485" duration="448000" />
       <workItem from="1654489692530" duration="16000" />
       <workItem from="1655118459684" duration="2000" />
-      <workItem from="1662980745944" duration="820000" />
+      <workItem from="1662980745944" duration="1020000" />
+      <workItem from="1666949455365" duration="122000" />
     </task>
     <servers />
   </component>
@@ -590,36 +587,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="345" y="282" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1639115254768">
-      <screen x="43" y="25" width="1493" height="935" />
-    </state>
-    <state x="345" y="282" key="#com.intellij.fileTypes.FileTypeChooser/43.25.1493.935@43.25.1493.935" timestamp="1639115254768" />
-    <state width="1368" height="177" key="GridCell.Tab.0.bottom" timestamp="1634391856044">
-      <screen x="43" y="25" width="1493" height="935" />
-    </state>
-    <state width="1368" height="177" key="GridCell.Tab.0.bottom/43.25.1493.935@43.25.1493.935" timestamp="1634391856044" />
-    <state width="1368" height="177" key="GridCell.Tab.0.center" timestamp="1634391856043">
-      <screen x="43" y="25" width="1493" height="935" />
-    </state>
-    <state width="1368" height="177" key="GridCell.Tab.0.center/43.25.1493.935@43.25.1493.935" timestamp="1634391856043" />
-    <state width="1368" height="177" key="GridCell.Tab.0.left" timestamp="1634391856043">
-      <screen x="43" y="25" width="1493" height="935" />
-    </state>
-    <state width="1368" height="177" key="GridCell.Tab.0.left/43.25.1493.935@43.25.1493.935" timestamp="1634391856043" />
-    <state width="1368" height="177" key="GridCell.Tab.0.right" timestamp="1634391856044">
-      <screen x="43" y="25" width="1493" height="935" />
-    </state>
-    <state width="1368" height="177" key="GridCell.Tab.0.right/43.25.1493.935@43.25.1493.935" timestamp="1634391856044" />
-    <state x="309" y="116" key="SettingsEditor" timestamp="1638946991376">
-      <screen x="43" y="25" width="1493" height="935" />
-    </state>
-    <state x="309" y="116" key="SettingsEditor/43.25.1493.935@43.25.1493.935" timestamp="1638946991376" />
-    <state x="546" y="247" width="587" height="548" key="find.popup" timestamp="1640252645204">
-      <screen x="69" y="25" width="1467" height="935" />
-    </state>
-    <state x="528" y="247" width="597" height="548" key="find.popup/43.25.1493.935@43.25.1493.935" timestamp="1639192638827" />
-    <state x="546" y="247" width="587" height="548" key="find.popup/69.25.1467.935@69.25.1467.935" timestamp="1640252645204" />
   </component>
 </project>
