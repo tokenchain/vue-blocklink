@@ -84,11 +84,11 @@ export default {
       agent_contract: "0x6a18b9A2fb67B6D0301f71327d2055BaC3ec055E",
       networkConf: {
         chainId: "1023",
-        chainName: "RSC Mainnet",
+        chainName: "BAC Mainnet",
         // iconUrls?: string[];
         nativeCurrency: {
-          name: "Rae Stone Coin",
-          symbol: "RSC",
+          name: "BCAA Coin",
+          symbol: "BAC",
           decimals: 18
         },
         blockExplorerUrls: ["https://www.raisc.io"],

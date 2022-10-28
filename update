@@ -82,7 +82,7 @@ CMD_FINAL="npm i -g $PROJECT_NAME@$VERSION"
 NODEPFILE="package.json"
 mod_package_json ".version" $VERSION
 mod_package_json ".name" $PROJECT_NAME
-mod_package_json ".author" "Dex-Uniswap"
+mod_package_json ".author" "SuexUniswap"
 mod_package_json ".repository" "git@github.com:tokenchain/vue-blocklink.git"
 mod_package_json ".homepage" "https://github.com/tokenchain/vue-blocklink.git"
 echo "==== done ====="
